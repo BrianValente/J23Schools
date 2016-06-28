@@ -15,7 +15,7 @@ body {
 
 header {
     width: 100%;
-    padding: 20px 40px 0 40px;
+    padding: 20px 0 10px 0;
     background-color: #713cff;
     box-sizing: border-box; /* Hace que se respete el ancho y alto del elemento al usar padding y borders */
 }
@@ -27,9 +27,9 @@ header #title {
 
 header nav {
     position: relative;
-    left: -10px;
+    left: -15px;
     margin-top: 20px;
-    border-bottom: solid 10px transparent; /* workaround */
+    -border-bottom: solid 10px transparent; /* workaround */
 }
 
 header nav a {
@@ -44,4 +44,9 @@ header nav a {
 
 header nav a:hover {
     border-bottom-color: #ff448b;
+}
+
+#contenido {
+    width: 90%;
+    margin: auto;
 }
