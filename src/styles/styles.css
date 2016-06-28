@@ -1,0 +1,47 @@
+html,
+body {
+    /* para evitar bordes blancos en la Web */
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Helvetica Neue', 'Roboto', 'Helvetica', 'Arial', sans-serif; /* El navegador va a usar la primera fuente que tenga instalada el sistema */
+}
+
+body {
+    background-color: #fefefe;
+}
+
+header {
+    width: 100%;
+    padding: 20px 40px 0 40px;
+    background-color: #713cff;
+    box-sizing: border-box; /* Hace que se respete el ancho y alto del elemento al usar padding y borders */
+}
+
+header #title {
+    font-size: 26px;
+    color: white;
+}
+
+header nav {
+    position: relative;
+    left: -10px;
+    margin-top: 20px;
+    border-bottom: solid 10px transparent; /* workaround */
+}
+
+header nav a {
+    color:white;
+    text-decoration: none;
+    padding:8px 15px;
+    color: white;
+    font-size:16px;
+    border-bottom: solid 2px transparent;
+    transition: ease-in all .15s;
+}
+
+header nav a:hover {
+    border-bottom-color: #ff448b;
+}
