@@ -1,4 +1,105 @@
 body {
-  background-color: black;
+  background-color: #151515;
   color: white;
+  font-family: Verdana, serif;
+}
+
+#icono{
+  width: 120px;
+  position: absolute;
+  left: 46%;
+}
+
+#papa{
+  width: 95px;
+  position: absolute;
+  left: 93%;
+}
+
+#j23school{
+  position: absolute;
+  left: 44.50%;
+  top: 16.5%;
+  font-size: 200%;
+  color: red;
+
+}
+#Juancho{
+  width: 95px;
+  position: absolute;
+  left: 84%;
+}
+
+#cole{
+  position: absolute;
+  left: 82%;
+  bottom: 80%;
+  }
+
+  .btn {
+    -webkit-border-radius: 12;
+    -moz-border-radius: 12;
+    border-radius: 12px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 100px;
+    background: #929ba1;
+    padding:2px 20px 2px 20px;
+    text-decoration: none;
+  }
+
+  .btn:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+  }
+
+#HTML{
+  position: absolute;
+  left: 15%;
+  bottom: 60%;
+  }
+
+#CSS{
+  position: absolute;
+  left: 35%;
+  bottom: 60%;
+  }
+#JavaScript{
+  position: absolute;
+  left: 53%;
+  bottom: 60%;
+  }
+
+#PHP{
+    position: absolute;
+    left: 15%;
+    bottom: 40%;
+    }
+
+#Python{
+    position: absolute;
+    left: 35%;
+    bottom: 40%;
+    }
+
+#C{
+    position: absolute;
+    left: 60%;
+    bottom: 40%;
+    }
+
+#integrantes{
+  position: absolute;
+  bottom: 30%;
+}
+
+#chamuyo {
+  position: absolute;
+  bottom: 30%;
+  left: 70%;
 }
