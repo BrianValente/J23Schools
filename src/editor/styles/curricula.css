@@ -1,0 +1,104 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(../fonts/Roboto.woff) format('woff');
+}
+
+html {
+	font-family: 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+	font-size: 14px;
+}
+
+body {
+	background-color: #141414;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 0px;
+	box-sizing: border-box;
+}
+
+h1 {
+	color:#ffffff;
+	font-size: 2rem;
+	margin-top: 60px;
+}
+
+h1:nth-child(1) {
+	margin-top: 35px;
+}
+
+h2 {
+	color:#ffffff;
+	padding-top: 10px;
+	font-size: 1.2rem;
+}
+
+p, li, code, th, td {
+	color:#dedede;
+	line-height: 1.15rem;
+	margin-top: 10px;
+}
+
+p {
+	white-space: pre-line;
+	width: 100%;
+	box-sizing: border-box;
+	display: block;
+	font-size: 1rem;
+	line-height: 1.3rem;
+}
+
+ol, ul {
+	list-style: circle;
+	padding-left: 20px;
+}
+
+span {
+	color:#ffffff;
+	display: block;
+	width:100%;
+	padding:10px;
+	box-sizing: border-box;
+	border: solid 1px #505050;
+	background-color: #4a4a4a;
+	margin-top: 18px;
+}
+
+code {
+	font-family: monospace;
+	color:#ffffff;
+	display: block;
+	width:100%;
+	padding:5px;
+	box-sizing: border-box;
+	background-color: transparent;
+	margin-top: 10px;
+	white-space: pre-line;
+}
+
+img {
+	margin-top: 10px;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: black; 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: black; 
+}
