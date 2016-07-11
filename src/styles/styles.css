@@ -1,8 +1,12 @@
+@import url(reset.css);
+@import url(fonts.css);
+
 html,
 body {
     /* para evitar bordes blancos en la Web */
     margin: 0;
     padding: 0;
+    min-height: 100%;
 }
 
 html {
@@ -10,43 +14,229 @@ html {
 }
 
 body {
-    background-color: #fefefe;
+    background-color: #efefef;
+    /*height: 2000px; /* Para testear */
+    margin-bottom: 50px;
+    position: relative;
 }
 
 header {
     width: 100%;
-    padding: 20px 0 10px 0;
-    background-color: #713cff;
-    box-sizing: border-box; /* Hace que se respete el ancho y alto del elemento al usar padding y borders */
+    height: 58px;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .7), transparent);
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, .7), transparent);
+    position: fixed;
+    z-index: 900;
 }
 
-header #title {
-    font-size: 26px;
-    color: white;
+#header_solidbackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #56ba34;
+    opacity: 0;
+    box-shadow: rgba(0,0,0,.5) 0 0 10px;
 }
 
-header nav {
-    position: relative;
-    left: -15px;
-    margin-top: 20px;
-    -border-bottom: solid 10px transparent; /* workaround */
-}
-
-header nav a {
-    color:white;
-    text-decoration: none;
-    padding:8px 15px;
-    color: white;
-    font-size:16px;
-    border-bottom: solid 2px transparent;
-    transition: ease-in all .15s;
-}
-
-header nav a:hover {
-    border-bottom-color: #ff448b;
-}
-
-#contenido {
-    width: 90%;
+#header_content {
+    width: 80%;
     margin: auto;
+    position: relative;
+    top:50%;
+    transform: translateY(-50%);
+    line-height: 0;
+}
+
+#header_menu {
+    background-image: url("../images/ic_menu_24.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 58px;
+    height: 58px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#header_title {
+    vertical-align: text-top;
+    color: white;
+    font-size: 18px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: -12px;
+}
+
+#page_content {
+    min-height: 100%;
+}
+
+#slideshow {
+    box-shadow: rgba(0,0,0,.5) 0 0 5px;
+}
+
+#slideshow,
+#slideshow > div  {
+    width:100%;
+    height:550px;
+}
+
+#slideshow > div {
+    background-size: cover;
+    position: relative;
+}
+
+#slideshow_1 {
+    background: url(../images/slideshow_1_bg.jpg) center #56ba34;
+}
+
+#slideshow .slideshow_title {
+    font-family: "Maven Pro", "Helvetica Neue", "Roboto", "Arial", sans-serif;
+    font-weight: 900;
+    font-size: 34px;
+    color: white;
+    text-transform: uppercase;
+    display: block;
+}
+
+#slideshow .slideshow_description {
+    font-family: "Maven Pro", "Helvetica Neue", "Roboto", "Arial", sans-serif;
+    font-size: 18px;
+    color: white;
+    padding-top: 20px;
+    display: block;
+    max-width: 40%
+}
+
+#slideshow_content {
+    width: 80%;
+    margin: auto;
+    padding-top:100px;
+}
+
+#page_content > div h1 {
+    display: block;
+    text-align: center;
+    font-size: 27px;
+    color: #222;
+    font-family: "Open Sans", "Helvetica Neue", "Roboto", "Arial", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 50px 0 25px 0;
+}
+
+#page_content > div p {
+    width:60%;
+    margin:auto;
+    line-height: 120%;
+    font-size: 16px;
+    color:#333;
+}
+
+#why #languages {
+    margin: 50px auto 50px auto;
+    text-align: center;
+}
+
+#why #languages span {
+    width: 132px;
+    height: 132px;
+    border-radius: 100%;
+    display: inline-block;
+    background-size: 60px;
+    margin: 0 35px 0 35px;
+}
+
+#languages_html5 {
+    background: url(../images/html5.png) center no-repeat, #45ba34;
+}
+
+#languages_css3 {
+    background: url(../images/css3.png) center no-repeat, #45ba34;
+}
+
+#languages_js {
+    background: url(../images/js.png) center no-repeat, #45ba34;
+}
+
+
+
+
+#sidebar {
+    width: 375px;
+    height: 100%;
+    background-color: white;
+    box-shadow: rgba(0,0,0,.5) 0 0 5px;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: ease-in-out transform .15s;
+}
+
+#sidebar.hide {
+    transform: translateX(-375px);
+    box-shadow: rgba(0,0,0,.5) 0 0 0;
+}
+
+#sidebar #header {
+    width:100%;
+    height:60px;
+    border-bottom: solid 1px #eee;
+    position: relative;
+}
+
+#sidebar_header_title {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #aaa;
+    font-family: "Open Sans", "Helvetica Neue", "Roboto", "Arial", sans-serif;
+    font-weight: 900;
+    position: relative;
+    top:50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#sidebar_header_close {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    background: url(../images/ic_cross_25.png) center no-repeat, transparent;
+    background-size: 15px;
+    transition: linear background-color .1s;
+    cursor: pointer;
+}
+
+#sidebar_header_close:hover {
+    background-color: rgba(0,0,0,.05);
+}
+
+
+/* Sólo para teléfonos en vertical */
+@media (max-width: 500px) {
+    #header_content {
+        width: 100%;
+    }
+
+    #slideshow .slideshow_description {
+        max-width: 80%;
+    }
+}
+
+/* Sólo para teléfonos pequeños en vertical */
+
+@media (max-width: 400px) {
+    #sidebar {
+        width: 100%;
+    }
+
+    #sidebar.hide {
+        transform: translateX(-100%);
+    }
 }
