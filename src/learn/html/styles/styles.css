@@ -1,0 +1,145 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(../fonts/Roboto.woff) format('woff');
+}
+
+html.realhtml,
+html.realhtml > body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	margin:0;
+	padding: 0;
+}
+
+html.realhtml > body > #content {
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+html.realhtml > body > #content > .column {
+	flex:1;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	transition: ease-in flex .1s;
+}
+
+html.realhtml > body > #content > .column > div {
+	width:100%;
+	height: 100%;
+	overflow: auto;
+}
+
+html.realhtml > body > #content > #curricula {
+	overflow: hidden;
+	background-color: #141414;
+}
+
+html.realhtml > body > #content > #curricula > iframe {
+	width:100%;
+	height: 100%;
+	border:none;
+	padding:0;
+	margin:0;
+}
+
+html.realhtml > body > #content > .column > .bv_controls {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 20px;
+	display: inline-block;
+	background-color: rgba(30,30,30,.3);
+	z-index: 99;
+	font-family: 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+html.realhtml > body > #content > .column > .bv_controls,
+html.realhtml > body > #content > .column > .bv_controls > * {
+	-moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+html.realhtml > body > #content > .column > .bv_controls > #bv_credits {
+	font-size: 0.6rem;
+	color: #777;
+	position: absolute;
+	right: 0.5rem;
+	top:50%;
+	transform: translateY(-50%);
+}
+
+html.realhtml > body > #content > .column > .bv_fab {
+	width: 42px;
+	height: 42px;
+	display: block;
+	position: absolute;
+	bottom: 40px;
+	right: 20px;
+	border-radius: 100%;
+	box-shadow: rgba(0,0,0,.6) 0 5px 10px;
+	background: url(../images/ic_run.png) 15px center no-repeat, #4CAF50;
+	cursor: pointer;
+	transform: scale(1);
+	transition: ease-in-out all .1s;
+}
+
+html.realhtml > body > #content > .column > .bv_fab:hover {
+	transform: scale(1.06);
+}
+
+html.realhtml > body > #content > .column > .bv_fab:active {
+	background: url(../images/ic_run.png) 15px center no-repeat, #66BB6A;
+}
+
+html.realhtml > body > #content > .column > .bv_fab.hide {
+	transform: scale(0);
+}
+
+
+html.realhtml > body > #content > .column > .bv_controls > .bv_controls_plus,
+html.realhtml > body > #content > .column > .bv_controls > .bv_controls_minus,
+html.realhtml > body > #content > .column > .bv_controls > .bv_controls_prev,
+html.realhtml > body > #content > .column > .bv_controls > .bv_controls_next {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	color: white;
+	cursor: pointer;
+	text-align: center;
+}
+
+html.realhtml > body > #content > .column > .bv_controls > .bv_controls_prev,
+html.realhtml > body > #content > .column > .bv_controls > .bv_controls_next {
+	float: right;
+	line-height: 1.7rem;
+}
+
+html.realhtml > body > #content > .column > .bv_controls > .bv_controls_next {
+	margin-right: 20px;
+}
+
+html.realhtml > body > #content > .column > .bv_controls > .bv_controls_plus:hover,
+html.realhtml > body > #content > .column > .bv_controls > .bv_controls_minus:hover,
+html.realhtml > body > #content > .column > .bv_controls > .bv_controls_prev:hover,
+html.realhtml > body > #content > .column > .bv_controls > .bv_controls_next:hover {
+	background-color: rgba(0,0,0,.5);
+}
+
+html.realhtml > body > #content > .column > .bv_controls > .bv_controls_instantrun {
+	margin:0 5px;
+}
+
+html.realhtml > body > #content > .column > .bv_controls > .bv_controls_instantrun > label {
+	color: #777;
+	font-size: 0.6rem;
+	margin-left: 3px;
+}

@@ -1,0 +1,132 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+
+<h1>Función date()</h1>
+<p>
+  La función de PHP date () da formato a una marca de tiempo a una fecha y hora más legible.
+</p>
+<h1>Sintaxis</h1>
+<p>
+  date(format,timestamp)
+</p>
+<table class="w3-table-all notranslate">
+  <tbody><tr>
+    <th style="width:20%">Parametro</th>
+    <th style="width:80%">Descripción</th>
+  </tr>
+  <tr>
+    <td>formato</td>
+    <td>Requerido. Especifica el formato del tiempo</td>
+  </tr>
+  <tr>
+    <td>Tiempo</td>
+    <td>Opcional. Especifica el tiempo</td>
+  </tr>
+</tbody></table>
+<span style="background-color:green;">Una marca de tiempo es una secuencia de caracteres, que indica la fecha y / o tiempo en que se produjo un evento determinado.</span>
+<h1>Obtener una simple Fecha</h1>
+<p>
+  La requerido formato de parámetro de la función date () especifica cómo dar formato a la fecha (u hora).
+Estas son algunas de caracteres que se utilizan comúnmente para las fechas:
+<ul>
+  <li>d - Representa el día del mes (01 a 31)</li>
+  <li>m - representa un mes (01 a 12)</li>
+  <li>Y - representa un año (con cuatro dígitos)</li>
+  <li>l ( 'L' minúscula) - Representa el día de la semana</li>
+</ul>
+
+Otros personajes, como "/", o "." "-" También puede ser insertado entre los personajes para agregar formato adicional.
+El siguiente ejemplo da formato a la fecha de hoy en tres formas diferentes:
+</p>
+<span><p>&lt;?php
+echo "Today is " . date("Y/m/d") . "&lt;br>";
+echo "Today is " . date("Y.m.d") . "&lt;br>";
+echo "Today is " . date("Y-m-d") . "&lt;br>";
+echo "Today is " . date("l");
+?>
+</p></span>
+<h1>Cambio automático del año de los derechos de autor</h1>
+<p>
+  Utilice la función date () para actualizar automáticamente el año de copyright en su sitio web:
+
+  &copy; 2010-&lt;?php echo date("Y");?>
+</p>
+<h1>Obtener un tiempo simple</h1>
+<p>
+  Aquí hay algunos caracteres que se utilizan comúnmente para los horarios:
+  <ul>
+    <li>h - formato de 12 horas de una hora con ceros a la izquierda (01 a 12)</li>
+    <li>i - Minutos con ceros a la izquierda (00 a 59)</li>
+    <li>s - segundos con ceros a la izquierda (00 a 59)</li>
+    <li>a - Minúsculas ante meridiem y post meridiem (am o pm)</li>
+  </ul>
+  El siguiente ejemplo da salida a la hora actual en el formato especificado:
+
+  &lt;?php
+echo "The time is " . date("h:i:sa");
+?>
+
+<span style="background-color:green;">Tenga en cuenta que la función de PHP date () devolverá la fecha / hora actual del servidor!</span>
+</p>
+<h1>Obtener su zona horaria</h1>
+<p>
+  Si el tiempo te de regresar desde el código no es el momento adecuado, es probable que sea debido a que su servidor está en otro país o la creación de una zona horaria diferente.
+
+Por lo tanto, si usted necesita el tiempo para ser correcta de acuerdo a una ubicación específica, se puede establecer una zona horaria de su uso.
+
+El ejemplo siguiente establece la zona horaria a "América / New_York", a continuación, da salida a la hora actual en el formato especificado:
+</p>
+<span><p>
+  &lt;?php
+date_default_timezone_set("America/New_York");
+echo "The time is " . date("h:i:sa");
+?>
+</p></span>
+<h1>Crear una cita con mktime () de PHP</h1>
+<p>
+  El sistema opcional de marca de tiempo del parámetro en la función date () especifica una marca de tiempo. Si no se especifica una marca de tiempo, se utilizarán la fecha y hora actuales (como se muestra en los ejemplos anteriores).
+La función mktime () devuelve la marca de tiempo Unix de una fecha. La marca de tiempo Unix contiene el número de segundos entre el Epoch Unix (1 de enero 1970 00:00:00 GMT) y la hora especificada.
+</p>
+<h1>Sintaxis</h1>
+<p>
+  mktime(hour,minute,second,month,day,year)
+
+El ejemplo a continuación crea una fecha y hora de una serie de parámetros en la función mktime ():
+</p>
+<span><p>&lt;?php
+$d=mktime(11, 14, 54, 8, 12, 2014);
+echo "Created date is " . date("Y-m-d h:i:sa", $d);
+?>
+</p></span>
+<h1>Crear una fecha en una cadena con strtotime()</h1>
+<p>
+  La función de PHP strtotime () se utiliza para convertir una cadena legible por humanos a un tiempo de Unix.
+</p>
+<h1>Sintaxis</h1>
+<p>
+strtotime(time,now)
+
+El siguiente ejemplo crea una fecha y hora de la función strtotime ():
+</p>
+<span><p>&lt;?php
+$d=strtotime("10:30pm April 15 2014");
+echo "Created date is " . date("Y-m-d h:i:sa", $d);
+?>
+</p></span>
+<p>
+  PHP es muy inteligente acerca de cómo convertir una cadena a una fecha, por lo que puede poner en diferentes valores:
+</p>
+<span><p>&lt;?php
+$d=strtotime("tomorrow");
+echo date("Y-m-d h:i:sa", $d) . "<br>";
+
+$d=strtotime("next Saturday");
+echo date("Y-m-d h:i:sa", $d) . "<br>";
+
+$d=strtotime("+3 Months");
+echo date("Y-m-d h:i:sa", $d) . "<br>";
+?>
+</p></span>
+<p>
+  Sin embargo, strtotime () no es perfecto, así que recuerde para comprobar las cadenas que poner ahí.
+</p>

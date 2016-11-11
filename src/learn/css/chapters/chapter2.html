@@ -1,0 +1,141 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<meta charset="UTF-8">
+
+
+
+<h1>CSS Fondos</h1>
+<p>Las propiedades de fondo CSS se utilizan para definir los efectos de fondo para los elementos.</p>
+<ul>
+	<li>Color de fondo</li>
+	<li>imagen de fondo</li>
+	<li>background-repeat</li>
+	<li>background-position</li>
+</ul>
+
+	<h1>Color de fondo</h1>
+	<p>background-color es una propiedad que especifica el color de fondo de un elemento</p>
+	<p>Así establecemos el color de fondo de una página:</p>
+<pre>
+<code>
+	body {
+			background-color : lightblue;
+	}
+</code>
+</pre>
+<p>Con css, un color más a menudo se especifica por: </p>
+
+<ul>
+	<li>un nombre válido de color - como "verde"</li>
+	<li>un valor HEX - como "# FF0000"</li>
+	<li>un valor RGB - como "rgb (255,0,0)"</li>
+</ul>
+
+<p>Mira valores de color CSS para obtener una lista completa de los posibles valores de color</p> /* tenemos que hacer la nuestra*/
+<p>En el siguiente ejemplo, el &lt;h1&gt;, &lt;p&gt; y &lt;div&gt; elementos tienen diferentes colores de fondo:</p>
+
+<code>
+		h1 {
+				background-color : green;
+		}
+		div {
+				background-color : lightblue;
+		}
+		p {
+				background-color : yellow;
+		}
+</code>
+
+<h1>Imagen de fondo</h1>
+
+<p>background-image es una propiedad que establece una imagen como fondo de un elemento
+Por defecto, la imagen se repite de forma que cubra todo el elemento.
+Así establecemos una imagen de fondo:</p>
+
+<code>
+	body {
+			background-image : url("paper.gif");
+	}
+</code>
+
+<h1>Fondo de imagen - Repetir horizontal o vertical</h1>
+<p>De forma predeterminada, la background-image propiedad se repite una imagen, tanto horizontal como verticalmente.
+Algunas de las imágenes se deben repetir sólo en horizontal o vertical, o van a parecer extraño, como esto:
+</p>
+
+<code>
+	body {
+			background-image : url("gradient_bg.png");
+	}
+</code>
+<p>Si la imagen anterior se repite tanto en sentido horizontal ( background-repeat: repeat-x;), el fondo se verá mejor:</p>
+<h2>Ejemplo</h2>
+<code>
+	body {
+			background-image : url("gradient_bg.png");
+			background-repeat: repeat-x;
+	}
+</code>
+<p>Consejo: Para repetir una imagen verticalmente, fijadobackground-repeat: repeat-y;</p>
+<h1>Fondo de imagen - Establecer la posición y no-repeat</h1>
+<p>Mostrando la imagen de fondo una sola vez también se especifica mediante la background-repeat propiedad:</p>
+<code>
+	body {
+			background-image : url("img_tree.png");
+			background-repeat: no-repeat;
+	}
+</code>
+<p>En el ejemplo anterior, la imagen de fondo se muestra en el mismo lugar que el texto. Queremos cambiar la posición de la imagen, de modo que no perturbe el texto demasiado.
+La posición de la imagen se especifica mediante la background-position	propiedad:
+</p>
+<h2>Ejemplo</h2>
+<code>
+	body {
+			background-image : url("img_tree.png");
+			background-repeat: no-repeat;
+			background-position: right top;
+	}
+</code>
+<h1>Fondo de imagen - Posición fija</h1>
+<p>Para especificar que la imagen de fondo debe ser fijo (no se desplazará con el resto de la página), utilice la background-attachment propiedad:</p>
+<code>
+	body {
+			background-image : url("img_tree.png");
+			background-repeat: no-repeat;
+			background-position: right top;
+			background-attachment: fixed;
+	}
+</code>
+<h1>Antecedentes - Abreviación de las propiedades</h1>
+<p>Para acortar el código, también es posible especificar todas las propiedades de fondo en una sola propiedad. Esto se llama una propiedad abreviada.
+La propiedad abreviada para el fondo es background:
+</p>
+<code>
+	body {
+			background: #ffffff url("img_tree.png") no-repeat right top;
+	}
+</code>
+<p>Cuando se utiliza la propiedad rápida el orden de los valores de la propiedad es:</p>
+<ul>
+	<li>background-color</li>
+	<li>background-image</li>
+	<li>background-repeat</li>
+	<li>background-attachment</li>
+	<li>background-position</li>
+</ul>
+<p>No importa si uno de los valores de la propiedad no se encuentra, siempre y cuando los otros son en este orden</p>
+<h2>Example Explained</h2>
+<ul>
+	<li>The DOCTYPE declaration defines the document type to be HTML</li>
+	<li>The text between &lt;html&gt; and &lt;/html&gt; describes an HTML document</li>
+	<li>The text between &lt;head&gt; and &lt;/head&gt; provides information about the document</li>
+	<li>The text between &lt;title&gt; and &lt;/title&gt; provides a title for the document</li>
+	<li>The text between &lt;body&gt; and &lt;/body&gt; describes the visible page content</li>
+	<li>The text between &lt;h1&gt; and &lt;/h1&gt; describes a heading</li>
+	<li>The text between &lt;p&gt; and &lt;/p&gt; describes a paragraph</li>
+</ul>
+<p>Using this description, a web browser can display a document with a heading and a paragraph.</p>
+
+
+
+

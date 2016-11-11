@@ -1,0 +1,44 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+
+<h1>If-Else-Else if</h1>
+
+<p>
+  Muy a menudo, cuando se escribe código, que desea realizar diferentes acciones para diferentes condiciones. Puede utilizar sentencias condicionales en el código para hacer esto.
+
+En PHP tenemos las siguientes instrucciones condicionales:
+<ul>
+  <li>if - Ejecuta código si una condición es verdadera</li>
+  <li>if ... else - Ejecuta código si una condición es verdadera y otro código si esa condición es falsa</li>
+  <li>if ... elseif .... else - ejecuta códigos diferentes por más de dos condiciones</li>
+  <li>switch - selecciona uno de los muchos bloques de código para ser ejecutado</li>
+</ul>
+</p>
+<h1>If</h1>
+<p>
+  La sentencia if se ejecuta algún código si una condición es verdadera.
+  Sintaxis
+  if (condition) {
+    codigo que es ejecutado si es true;
+}
+</p>
+<span><p>&lt;?php
+  $t = date("H");
+
+  if ($t < "20") {
+      echo "Have a good day!";
+  }
+?>
+</p>
+</span>
+<h1>Else if</h1>
+<p>
+  La sentencia else if .... Ejecuta código si una condición es verdadera y otro código si esa condición es falsa.
+
+Sintaxis
+if (condition) {
+    codigo que es ejecutado si es true;
+} else {
+    codigo que es ejecutado si es falso;
+}
+</p>

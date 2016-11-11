@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<meta charset="UTF-8">
+<title>Capítulo 1</title>
+</head>
+
+<body>
+	<h1>Capítulo 1: Introducción a HTML</h1>
+<h2>¿Qué es HTML?</h2>
+<p>HTML es el lenguaje estándar de etiquetas usado para crear páginas Web.</p>
+<p>HTML significa: Hyper Text Markup Language (Lenguaje de Marcas de HiperTexto)</p>
+<p>Los elementos HTML son el bloque de construcción de una página HTML. Estos elementos están representados mediante "etiquetas".</p>
+<p>El navegador web no mostrará estas etiquetas, pero las utilizará para mostrar el contenido de la página</p>
+
+
+<h1>Un ejemplo de HTML</h1>
+
+<h2>Un pequeño documento HTML:</h2>
+<pre>
+<code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Titulo de pagina&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+
+		&lt;h1&gt;Mi primer encabezado.&lt;/h1&gt;
+		&lt;p&gt;Mi primer párrafo.&lt;/p&gt;
+
+	&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+
+<h2>Explicación del ejemplo</h2>
+<ul>
+	<li>La declaración !DOCTYPE html define que el tipo de documento es HTML</li>
+	<li>Todo el contenido de este documento HTML va entre las etiquetas &lt;html&gt; y &lt;/html&gt;</li>
+	<li>El texto entre &lt;head&gt; y &lt;/head&gt; da información sobre el documento en general, no será mostrado en el navegador</li>
+	<li>El texto entre &lt;title&gt; y &lt;/title&gt; le da un título a la página. </li>
+	<li>Todo el contenido de la página que se va a ver dentro del navegador se encuentra entre &lt;body&gt; y &lt;/body&gt;</li>
+	<li>El texto entre &lt;h1&gt; y &lt;/h1&gt; define un encabezado</li>
+	<li>El texto entre &lt;p&gt; y &lt;/p&gt; define un párrafo</li>
+</ul>
+
+<p>Dentro del navegador web, este documento se mostrará como una simple página con un encabezado y un párrafo.</p>
+
+
+<h1>Etiquetas HTML</h1>
+<p>Como podemos ver, las etiquetas HTML son "palabras clave" encerradas dentro de corchetes angulares:</p>
+<code>&lt;etiqueta&gt;contenido&lt;/etiqueta&gt;</code>
+<ul>
+	<li>Estas etiquetas HTML normalmente vienen en pares, como de esta forma: &lt;p&gt; y &lt;/p&gt;</li>
+	<li>La primera etiqueta es la etiqueta de comienzo, la segunda es la etiqueta de fin.</li>
+	<li>La etiqueta final se escribe como la primera, pero con una barra (/) antes del nombre de dicha etiqueta.</li>
+</ul>
+<span class="tip">La etiqueta del comienzo se llama "etiqueta de apertura", y la final se la llama "etiqueta de cierre".</span>
+
+<h1>Estructura de página HTML</h1>
+<p>Debajo hay una visualizacion de la estructura de una pagina HTMl:</p>
+<!-- Table hehe -->
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">&lt;html&gt;
+	<div style="width:90%;border:1px solid grey;padding:3px;margin:20px">&lt;head&gt;
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;title&gt;Titulo de la pagina&lt;/title&gt;</div>
+		&lt;/head&gt;
+	</div>
+	<div style="width:90%;border:1px solid grey;padding:3px;margin:20px;background-color:#fff">&lt;body&gt;
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;h1&gt;Esto es un encabezado.&lt;/h1&gt;</div>
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;p&gt;Esto es un parrafo.&lt;/p&gt;</div>
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;p&gt;Esto es otro parrafo.&lt;/p&gt;</div>
+		&lt;/body&gt;
+	</div>
+	&lt;/html&gt;
+</div>
+<span class="tip">Sólo el area dentro de la etiqueta "&lt;body&gt;" se muestra en el navegador web.</span>
+
+
+
+<h1>La declaración &lt;!DOCTYPE&gt;:</h1>
+<p>La declaración &lt;!DOCTYPE&gt; ayuda al navegador a mostrar la página web correctamente.
+Hay diferentes tipos de documentos en la web, y por lo tanto, para mostrar un documento de forma correcta, el navegador debe saber tipo y versión del documento.
+La declaración &lt;!DOCTYPE&gt; no distingue las mayúsculas de las minúsculas. Todas las formas son aceptables.:</p>
+<code>&lt;!DOCTYPE html&gt;
+
+&lt;!DOCTYPE HTML&gt;
+
+&lt;!doctype html&gt;
+
+&lt;!Doctype Html&gt;</code>

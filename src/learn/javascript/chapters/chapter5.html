@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+</head>
+<body>
+	<h1>Capítulo 5: Variables y tipos de datos</h1>
+<h1>Tipos de datos</h1>
+<ul>
+	Una de las características fundamentales de un lenguaje de programación es el conjunto de tipos de datos 	que soporta.
+	Estos son el tipo de valores que se pueden representar y manipular en un lenguaje de programación.
+	<br>JavaScript le permite trabajar con tres tipos de datos primitivos
+	<ul>
+		<li>Los números(<b>numbers</b>), por ejemplo. 123, 120.50 etc.</li>
+		<li>Las cadenas(<b>strings</b>) de texto, por ejemplo "Esta cadena de texto", etc.</li>
+		<li>Las variables "<b>Boolean</b>" por ejemplo, verdadero o falso.</li>
+	</ul>
+</ul>
+<p>JavaScript también define dos tipos de datos triviales, nulos(null) y no definidos(undefined), cada uno de los cuales define un único valor. Además de estos tipos de datos primitivos, JavaScript admite un tipo de datos compuesto conocido como objeto(object).</p>
+
+<p><b>Nota</b> - JavaScript no hace una distinción entre valores enteros y valores flotantes. Todos los números en JavaScript se representan como valores de coma flotante. JavaScript representa números usando el formato de coma flotante de 64 bits definido por el estándar IEEE 754.</p>
+
+<h1>Las variables de JavaScript</h1>
+Al igual que muchos otros lenguajes de programación, las variables pueden ser considerados como contenedores con nombre. Puede colocar datos en estos contenedores y luego hacer referencia a los datos simplemente nombrando el contenedor.
+Antes de utilizar una variable en un programa JavaScript, se debe declararla antes. Las variables se declaran con la palabra clave: "var", de la siguiente manera.<br><br>
+<code>
+&lt;script type="text/javascript"&gt;<br>
+      var money;<br>
+      var name;<br>
+&lt;/script&gt;<br><br>
+</code>
+También se pueden declarar múltiples variables con el mismo var palabra clave de la siguiente manera:<br><br>
+<code>
+&lt;script type="text/javascript"&gt;<br>
+      var money, name;<br>
+   &lt;/script&gt;<br><br>
+</code>
+Almacenar un valor en una variable se llama inicialización de variables. Se puede hacer la inicialización de variables en el momento de la creación variable o en un momento posterior en el tiempo cuando se necesita esa variable.
+Por ejemplo, puede crear una variable llamada dinero y asignar el valor de 2000,50 a ella más tarde. Por otra variable, se puede asignar un valor en el momento de la inicialización de la siguiente manera.<br><br>
+<code>
+&lt;script type="text/javascript"&gt;<br>
+      var name = "Ali";<br>
+      var dinero;<br>
+      dinero = 2000.50;<br>
+&lt;/script&gt;<br><br>
+</code>
+<b>Nota</b> – Utilice la palabra var, una sola vez en todo el documento, una vez declarada no se debe volver a hacer. No se debe volver a declarar la misma variable en dos ocasiones.
+JavaScript es un lenguaje untyped. Esto significa que una variable de JavaScript puede contener un valor de cualquier tipo de datos. A diferencia de muchos otros idiomas, en JavaScript usted no tiene que colocar el tipo de dato durante la declaración de la variable. El tipo de dato de una variable puede cambiar durante la ejecución de un programa y JavaScript se encarga de forma automática.
+
+<h1>Alcance de las variables</h1>
+El alcance de una variable es la región de su programa en el que se define. Las variables JavaScript sólo tienen dos ámbitos:
+<ul>
+<li>Variables globales(global variables) - Una variable global tiene un alcance global, que significa que se puede definir y utilizar en cualquier parte del código JavaScript.</li>
+<li>Variables locales(local variables) - Una variable local será visible sólo dentro de una función donde se define. Parámetros de la función son siempre locales a esa función.</li>
+</ul>
+<br>
+Dentro del cuerpo de una función, una variable local tiene prioridad sobre una variable global con el mismo nombre. Si se declara una variable local o parámetro de la función con el mismo nombre que una variable global, se oculta con eficacia la variable global. Veamos el siguiente ejemplo.<br><br>
+<code>
+&lt;html&gt;<br>
+   &lt;body onload = checkscope();&gt;<br>
+      &lt;script type = "text/javascript"&gt;<br>
+            var myVar = "global"; // Declaración de una variable global<br>
+            function checkscope( ) {<br>
+               var myVar = "local";  // Declaración de una variable local<br>
+               document.write(myVar);<br>
+            }<br>
+      &lt;/script&gt;<br>
+   &lt;/body&gt;<br>
+&lt;/html&gt;<br><br>
+</code>
+
+Esto produce el siguiente resultado:<br><br>
+<code>
+local
+</code>
+<br>
+<h1>Nombres de variables de JavaScript</h1>
+Es bueno que tengas en cuenta las siguientes “reglas” al declarar las variables:
+<ul>
+	<li>No se debe utilizar ninguna de las palabras reservadas de JavaScript como nombre de variable. Estas palabras clave se mencionan en la siguiente sección. Por ejemplo, break o boolean no son válidos.</li>
+	<li>Los nombres de las variables en JavaScript no deben comenzar con un numeral (0-9). Deben comenzar con una letra o un guion bajo. Por ejemplo, 123test es un nombre de variable inválido pero _123test es válida.</li>
+	<li>Los nombres de las variables en JavaScript son case-sensitive (distingue entre minúsculas y mayúsculas). Por ejemplo, Nombre y nombre son dos variables diferentes.</li>
+</ul>
+<h1>Palabras JavaScript Reservados</h1>
+Una lista de todas las palabras reservadas en JavaScript se da en la siguiente tabla. Estas no se pueden utilizar como variables de JavaScript, funciones, métodos, etiquetas de bucle, o cualquier nombres de objeto.<br><br>
+
+<table border="1">
+	<tr>
+		<td>abstract</td><td>else</td><td>instanceof</td><td>switch</td>
+
+	</tr>
+	<tr>
+		<td>boolean</td><td>enum</td><td>int</td><td>synchronized</td>
+
+	</tr>
+	<tr>
+		<td>break</td><td>export</td><td>interface</td><td>this</td>
+
+	</tr>
+	<tr>
+		<td>byte</td><td>extends</td><td>long</td><td>throw</td>
+	</tr>
+	<tr>
+		<td>case</td><td>false</td><td>native</td><td>throws</td>
+	</tr>
+	<tr>
+		<td>catch</td><td>final</td><td>new</td><td>transient</td>
+	</tr>
+	<tr>
+		<td>char</td><td>finally</td><td>null</td><td>true</td>
+	</tr>
+<tr>
+		<td>class</td><td>float</td><td>package</td><td>typeof</td>
+	</tr>
+<tr>
+		<td>continue</td><td>function</td><td>protected</td><td>var</td>
+	</tr>
+<tr>
+		<td>debugger</td><td>goto</td><td>public</td><td>void</td>
+	</tr>
+<tr>
+		<td>default</td><td>if</td><td>return</td><td>volatile</td>
+	</tr>
+<tr>
+		<td>delete</td><td>implements</td><td>short</td><td>while</td>
+	</tr>
+<tr>
+		<td>do</td><td>import</td><td>static</td><td>with</td>
+	</tr>
+<tr>
+		<td>double</td><td>in</td><td>super</td>
+	</tr>
+</table>
+</html>

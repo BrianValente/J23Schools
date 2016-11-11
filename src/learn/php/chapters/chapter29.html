@@ -1,0 +1,177 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>PHP 5 Carga de archivos</h1>
+<p>
+  Con PHP, es fácil de cargar archivos en el servidor.
+
+Sin embargo, con mayor facilidad tiene peligro, por lo que siempre debe tener cuidado al permitir la carga de archivos!
+</p>
+<h1>Configurar el archivo "php.ini"</h1>
+<p>
+  En primer lugar, asegúrese de que PHP está configurado para permitir la carga de archivos.
+
+En el archivo "php.ini", la búsqueda de la directiva file_uploads, y configurarlo en On:
+</p>
+<span><p>
+  file_uploads = On
+</p></span>
+<h1>Crear el formulario HTML</h1>
+<p>
+  A continuación, cree un formulario HTML que permiten a los usuarios elegir el archivo de imagen que desea cargar:
+</p>
+<span><p>
+  &lt;!DOCTYPE html>
+&lt;html>
+&lt;body>
+
+&lt;form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    &lt;input type="file" name="fileToUpload" id="fileToUpload">
+    &lt;input type="submit" value="Upload Image" name="submit">
+&lt;/form>
+
+&lt;/body>
+&lt;/html>
+</p></span>
+<p>
+  Algunas reglas a seguir para el formulario HTML anterior:
+
+<li>Asegúrese de que el formulario utiliza method = "post"</li>
+<li>El formulario también necesita el atributo siguiente: enctype = "/ form-data de varias partes". Se especifica el tipo de contenido a utilizar al enviar el formulario</li>
+
+<p>
+  Sin los requisitos anteriores, la carga de archivos no funcionará.
+</p>
+</p>
+<p>
+  Otras cosas a destacar:
+
+  <li>El tipo = "archivo" atributo de la etiqueta &lt;input> muestra el campo de entrada como un archivo de control de selección, con un botón "Examinar" junto al control de entrada</li>
+<p>
+  El formulario anterior envía datos a un archivo llamado "upload.php", lo que vamos a crear la próxima.
+</p>
+
+
+</p>
+<h1>Crear la carga del archivo de secuencias de comandos PHP</h1>
+<p>
+  El archivo "upload.php" contiene el código para cargar un archivo:
+</p>
+<span><p>
+  &lt;?php
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        echo "El archivo no es una imagen - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "El archivo no es una imagen.";
+        $uploadOk = 0;
+    }
+}
+?>
+</p></span>
+<p>
+  Script PHP explicado:
+  <li>$ Target_dir = "uploads /" - Especifica el directorio donde se va a colocar el archivo</li>
+  <li>$ Target_file especifica la ruta del archivo sea cargado</li>
+  <li>$ UploadOk = 1 no se utiliza todavía (se utilizará más adelante)</li>
+  <li>$ ImageFileType tiene la extensión de archivo del archivo</li>
+  <li>A continuación, compruebe si el archivo de imagen es una imagen real o una imagen falsa</li>
+</p>
+<span><p>
+  Nota: Usted tendrá que crear un nuevo directorio llamado "cargas" en el directorio donde reside el archivo "upload.php". Los archivos subidos se guardarán allí.
+</p></span>
+<h1>Compruebe si el archivo ya existe</h1>
+<p>
+  Ahora podemos añadir algunas restricciones.
+
+En primer lugar, vamos a comprobar si el archivo ya existe en la carpeta "archivos". Si lo hace, se muestra un mensaje de error y $ uploadOk se establece en 0:
+</p>
+<span><p>
+  // Revisa si el archivo ya existe
+if (file_exists($target_file)) {
+    echo "Lo siento, el archivo ya existe.";
+    $uploadOk = 0;
+}
+</p></span>
+<h1>Límite de tamaño del archivo</h1>
+<p>
+  El campo de entrada de archivo en el formulario HTML anterior se denomina "fileToUpload".
+
+Ahora, queremos comprobar el tamaño del archivo. Si el archivo es más grande que 500 KB, se muestra un mensaje de error y $ uploadOk se establece en 0:
+</p>
+<span><p>
+  // Revisa el tamaño del archivo
+if ($_FILES["fileToUpload"]["size"] > 500000) {
+   echo "Lo sentimos, su archivo es demasiado grande.";
+   $uploadOk = 0;
+}
+</p></span>
+<h1>Tipo de límite de archivos</h1>
+<p>
+  El código siguiente sólo permite a los usuarios subir JPG, JPEG, PNG y GIF. Todos los demás tipos de archivos da un mensaje de error antes de $ uploadOk a 0:
+</p>
+<span><p>
+  // Permite ciertos tipos de archivos
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+    echo "Lo siento, solo se permiten archivos de tipo JPG, JPEG, PNG && GIF.";
+    $uploadOk = 0;
+}
+</p></span>
+<h1>Carga de archivos completa</h1>
+<p>
+  El expediente completo "upload.php" ahora se ve así:
+</p>
+<span><p>
+  &lt;?php
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+// Revisa si la imagen es una de verdad o una falsa
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        echo "El archivo es una imagen - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+}
+// Revisa si el archivo ya existe
+if (file_exists($target_file)) {
+    echo "Lo siento, el archivo ya existe.";
+    $uploadOk = 0;
+}
+// Comprueba el tamaño del archivo
+if ($_FILES["fileToUpload"]["size"] > 500000) {
+    echo "Lo siento, el tamaño de archivo es demasiado grande.";
+    $uploadOk = 0;
+}
+// Permite unicamente ciertos tipos de archivos
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+    echo "Lo siento, solo los siguientes tipos de archivos son permitidos: JPG, JPEG, PNG & GIF.";
+    $uploadOk = 0;
+}
+// Comprueba si $uploadOk fue puesto en 0 por un error
+if ($uploadOk == 0) {
+    echo "Lo siento, el archivo no se subio.";
+// si todo esta bien, intenta subir el archivo
+} else {
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        echo "El archivo ". basename( $_FILES["fileToUpload"]["name"]). " ha sido subido.";
+    } else {
+        echo "Lo siento, hubo un error al subir el archivo.";
+    }
+}
+?>
+</p></span>

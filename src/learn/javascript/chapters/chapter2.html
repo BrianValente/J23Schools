@@ -1,0 +1,82 @@
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+
+
+
+<h1>Capítulo 2: Sintaxis</h1>
+<p>JS puede ser implementado con las etiquetas &ltscript&gt…&lt/script&gt en el código HTML. Pueden ponerse en cualquier parte del código de la página, pero lo mejor es ponerlo entre las etiquetas &lthead&gt y &lt/head&gt.</p>
+<p>Las etiquetas &ltscript&gt avisan al navegador que todo lo que esté luego de las mismas es un script de JS.</p>
+<p>Una sintaxis correcta luce de la siguiente manera:</p>
+<code>
+&nbsp;  &lthead&gt
+  &nbsp;&nbsp;	Head code
+  &nbsp;&nbsp;	&ltscript language=“javascript” type=“text/javascript”&gt
+  &nbsp;&nbsp;&nbsp;&nbsp;		Script JS
+  &nbsp;&nbsp;  &lt/script&gt
+&nbsp;  &lt/head&gt
+</code>
+<p>Donde los atributos de la etiqueta script significa:</p>
+<ul>
+  <li>Language: qué lenguaje utiliza el script. Normalmente se obvia este campo, ya que es sabido que se tratará de JS. Las últimas versiones de HTML y XHTML no reconocen ya este atributo.</li>
+  <li>Type: indica qué tipo de lenguaje se utiliza.</li>
+</ul>
+<br><br>
+<h2>Creando el primer código</h2>
+<p>Vamos a hacer el ejemplo más básico de todos: mostrar en pantalla el clásico “¡Hola Mundo!”. </p>
+<p>Para escribir una línea de texto en la página, llamamos a la función document.write. Esta función sirve para colocar texto, modificar una parte del HTML o ambas. Escribí el ejemplo en la consola de al lado y mirá lo que pasa.</p>
+<code>
+  &nbsp;&lthtml&gt
+   &nbsp;&nbsp;&ltbody&gt
+      &nbsp;&nbsp;&nbsp;&ltscript language="javascript" type="text/javascript"&gt
+         &nbsp;&nbsp;&nbsp;&nbsp;&lt!--
+            &nbsp;&nbsp;&nbsp;&nbsp;document.write("Hello World!")
+         &nbsp;&nbsp;&nbsp;&nbsp;//--&gt
+      &nbsp;&nbsp;&nbsp;&lt/script&gt
+   &nbsp;&nbsp;&lt/body&gt
+&nbsp;&lt/html&gt
+</code>
+<br><br>
+<h2>Prácticas de JS</h2>
+<p>JS ignora los espacios, tabulaciones y enters que estén en los programas de JavaScript. Podés usarlos para formatear e identificar tu código, para hacerlo más fácil de leer e interpretar, pero JS no va a notar la diferencia si está ahí o no.</p>
+<p><b>Punto y coma</b>: Cada línea de código finaliza con un punto y coma, al igual que en cualquier lenguaje (C, C++, Java…), pero JS te permite omitirlo si cada línea de código está en una línea distinta. Estos códigos son comprensibles tanto uno como el otro, pero es una buena práctica siempre poner un punto y coma.</p>
+<p>Un código sólo tabulado por enter luce de esta manera:</p>
+<code>
+&nbsp;&ltscript language="javascript" type="text/javascript"&gt
+  &nbsp;&nbsp;&lt!--
+    &nbsp;&nbsp;&nbsp;var1 = 10
+    &nbsp;&nbsp;&nbsp;var2 = 20
+  &nbsp;&nbsp;//--&gt
+&nbsp;&lt/script&gt
+</code>
+<p>Mientras que con punto y coma, puede realizarse de esta forma y ser igualmente efectivo:</p>
+<code>
+&nbsp;&ltscript language="javascript" type="text/javascript"&gt
+  &nbsp;&nbsp;&lt!--
+    &nbsp;&nbsp;&nbsp;var1 = 10; var2 = 20;
+  &nbsp;&nbsp;//--&gt
+&nbsp;&lt/script&gt
+</code>
+<br>
+<p><b>Sensibilidad ante las mayúsculas (Case Sensitivity)</b>: JS es un lenguaje que distingue entre mayúsculas y minúsculas, lo cual significa que las variables, los nombres de las funciones, y cualquier otra identificación deben ser siempre escritos con la misma capitalización de las letras.</p>
+<p>Es decir: una variable que se llame hola, no es lo mismo que se una que se llame Hola ni HOLA. Para JS, serán tres variables diferentes.</p>
+<br>
+<p><b>Comentarios en JavaScript:</b> JavaScript identifica comentarios del estilo de C, C++ y HTML. Esto significa que:</p>
+<ul>
+  <li>Cualquier texto con // al principio es calificado como un comentario de una sola línea.</li>
+  <li>Cualquier texto entre /* y */ es un comentario, y puede ocupar múltiples líneas.</li>
+  <li>Cualquier texto entre &lt!-- y --&gt es interpretado como comentario de una sola línea.</li>
+</ul>
+<br>
+<p>El siguiente ejemplo muestra cómo usar comentarios en JS:</p>
+<code>
+&nbsp;&ltscript language="javascript" type="text/javascript"&gt
+&nbsp;&nbsp;&lt!--
+&nbsp;&nbsp;&nbsp;// This is a comment. It is similar to comments in C++
+&nbsp;&nbsp;&nbsp;/*
+&nbsp;&nbsp;&nbsp;* This is a multiline comment in JavaScript
+&nbsp;&nbsp;&nbsp;* It is very similar to comments in C Programming
+&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;//--&gt
+&nbsp;&lt/script&gt
+</code>

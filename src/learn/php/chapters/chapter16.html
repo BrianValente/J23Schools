@@ -1,0 +1,76 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+
+<h1>Las funciones de clasificación para las matrices</h1>
+<p>
+  En este capítulo, vamos a ir a través de las siguientes funciones PHP matriz de clasificación:
+  <ul>
+    <li>sort () - matrices de clasificación en orden ascendente</li>
+    <li>rsort() - matrices de clasificación en orden descendente</li>
+    <li>asort () - ordenar matrices asociativas en orden ascendente, de acuerdo con el valor</li>
+    <li>ksort () - ordenar matrices asociativas en orden ascendente, de acuerdo con la clave</li>
+    <li>arsort () - ordenar matrices asociativas en orden descendente, de acuerdo con el valor</li>
+    <li>krsort () - ordenar matrices asociativas en orden descendente, de acuerdo con la clave</li>
+  </ul>
+</p>
+<h1>sort()</h1>
+<p>
+  El siguiente ejemplo ordena los elementos de la matriz $ coches en orden alfabético ascendente:
+</p>
+<span><p>&lt;?php
+$cars = array("Volvo", "BMW", "Toyota");
+sort($cars);
+?>
+</p></span>
+<p>
+  El siguiente ejemplo ordena los elementos de la matriz $ los números en orden numérico ascendente:
+</p>
+<span><p>&lt;?php
+$numbers = array(4, 6, 2, 22, 11);
+sort($numbers);
+?>
+</p></span>
+<h1>rsort()</h1>
+<p>
+  El siguiente ejemplo ordena los elementos de la matriz $ coches en orden alfabético descendente:
+</p>
+<span><p>&lt;?php
+$cars = array("Volvo", "BMW", "Toyota");
+rsort($cars);
+?>
+</p></span>
+<p>
+  El siguiente ejemplo ordena los elementos de la matriz $ los números en orden numérico descendente:
+</p>
+<span><p>&lt;?php
+$numbers = array(4, 6, 2, 22, 11);
+rsort($numbers);
+?>
+</p></span>
+<h1>asort()</h1>
+<p>
+  El siguiente ejemplo ordena una matriz asociativa en orden ascendente, de acuerdo con la clave:
+</p>
+<span><p>&lt;?php
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+ksort($age);
+?>
+</p></span>
+<h1>arsort()</h1>
+<p>
+  El siguiente ejemplo ordena una matriz asociativa en orden descendente, de acuerdo con el valor:
+</p>
+<span><p>&lt;?php
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+arsort($age);
+?>
+</p></span>
+<h1>krsort()</h1>
+<p>
+  El siguiente ejemplo ordena una matriz asociativa en orden descendente, de acuerdo con la clave:
+</p>
+<span><p>&lt;?php
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+krsort($age);
+?>
+</p></span>

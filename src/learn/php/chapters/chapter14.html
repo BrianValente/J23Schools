@@ -1,0 +1,80 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>Funciones</h1>
+<p>
+  Además de las funciones de PHP incorporadas, podemos crear nuestras propias funciones.
+Una función es un bloque de instrucciones que se pueden utilizar en varias ocasiones en un programa.
+Una función no se ejecutará inmediatamente cuando se carga una página.
+Una función se ejecutará mediante una llamada a la función.
+</p>
+<h1>Crear una función definida por el usuario en PHP</h1>
+<p>
+  Una declaración de la función definida por el usuario comienza con la palabra "function":
+
+  function functionName() {
+      codigo a ser ejecutado;
+  }
+
+  Nota: Un nombre de función puede comenzar con una letra o un guión bajo (no es un número).
+Consejo: Dar la función de un nombre que refleja lo que hace la función!
+</p>
+<span style="background-color:green;">Los nombres de función no entre mayúsculas y minúsculas.</span>
+<p>
+  En el siguiente ejemplo, creamos una función llamada "writeMsg ()". La llave de apertura rizado ({) indica el comienzo del código de función y de la llave de cierre (}) indica el final de la función. La función da salida a "¡Hola mundo!". Para llamar a la función, simplemente escriba su nombre:
+</p>
+<span><p>&lt;?php
+function writeMsg() {
+    echo "Hello world!";
+}
+
+writeMsg(); // llama a la función
+?>
+</p></span>
+<h1>Argumentos de una función de PHP</h1>
+<p>
+  La información puede suministrarse a las funciones a través de argumentos. Un argumento es como una variable.
+Los argumentos se especifican después de que el nombre de la función, dentro de los paréntesis. Puede añadir tantos argumentos como desee, sólo les separan con una coma.
+El siguiente ejemplo tiene una función con un argumento ($ fname). Cuando la función familyName () se llama, también pasamos a lo largo de un nombre (por ejemplo, Jani), y el nombre se utiliza dentro de la función, que da salida a varios nombres diferentes, pero un igual apellidos:
+</p>
+<span><p>&lt;?php 
+function familyName($fname) {
+    echo "$fname Refsnes.&lt;br>";
+}
+
+familyName("Jani");
+familyName("Hege");
+familyName("Stale");
+familyName("Kai Jim");
+familyName("Borge");
+?>
+</p></span>
+<h1>Valor de argumento por defecto</h1>
+<p>
+  El siguiente ejemplo muestra cómo utilizar un parámetro por defecto. Si llamamos a la función setHeight () sin argumentos que toma el valor por defecto como argumento:
+</p>
+<span><p>&lt;?php
+function setHeight($minheight = 50) {
+    echo "El peso es : $minheight &lt;br>";
+}
+
+setHeight(350);
+setHeight(); // este va a tomar el valor por defecto de 50
+setHeight(135);
+setHeight(80);
+?>
+</p></span>
+<h1>Devolución de valores</h1>
+<p>
+  Para permitir que una función devuelve un valor, utilice la instrucción de retorno:
+</p>
+<span><p>&lt;?php
+function sum($x, $y) {
+    $z = $x + $y;
+    return $z;
+}
+
+echo "5 + 10 = " . sum(5, 10) . "&lt;br>";
+echo "7 + 13 = " . sum(7, 13) . "&lt;br>";
+echo "2 + 4 = " . sum(2, 4);
+?>
+</p></span>

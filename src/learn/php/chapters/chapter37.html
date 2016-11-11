@@ -1,0 +1,119 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>PHP conectado a MySQL</h1>
+<p>
+  HP 5 y más tarde pueden trabajar con una base de datos MySQL usando:
+  <ul>
+    <li>Extensión mysqli (la "i" significa mejorado)</li>
+    <li>PDO (PHP Data objects)</li>
+  </ul>
+  Las versiones anteriores de PHP utilizan la extensión de MySQL. Sin embargo, esta extensión está desfasada en 2012.
+</p>
+<h1>¿Debo utilizar MySQLi o DOP?</h1>
+<p>
+  Si necesita una respuesta corta, que sería "Lo que quieras".
+
+Tanto MySQLi y PDO tienen sus ventajas:
+
+DOP trabajará en 12 sistemas de bases de datos diferentes, donde como MySQLi sólo funciona con bases de datos MySQL.
+
+Por lo tanto, si usted tiene que cambiar su proyecto de utilizar otra base de datos, DOP hace que el proceso sea fácil. Sólo hay que cambiar la cadena de conexión y algunas consultas. Con MySQLi, tendrá que volver a escribir el código completo - consultas incluidos.
+
+Ambos son orientado a objetos, pero MySQLi también ofrece una API de procedimiento.
+
+Ambos apoyan instrucciones preparadas. Sentencias preparadas protegen de la inyección de SQL, y son muy importantes para la seguridad de las aplicaciones web.
+</p>
+<h1>MySQL ejemplos en ambos MySQLi y PDO Sintaxis</h1>
+<p>
+  En este y en los siguientes capítulos se demuestra tres formas de trabajar con PHP y MySQL:
+  <ul>
+    <li>MySQLi (orientado a objetos)</li>
+    <li>MySQLi (procedimiento)</li>
+    <li>DOP</li>
+  </ul>
+  </p>
+  <h1>Instalación MySQLi</h1>
+  <p>
+    Para Linux y Windows: La extensión mysqli se instala automáticamente en la mayoría de los casos, cuando se instala el paquete php5 mysql.
+Para detalles de la instalación, vaya a: http://php.net/manual/en/mysqli.installation.php
+  </p>
+  <h1>Instalación DOP</h1>
+  <p>
+    Para detalles de la instalación, vaya a:
+    http://php.net/manual/en/pdo.installation.php
+  </p>
+  <h1>Abrir una conexión a MySQL</h1>
+<p>
+  Antes de poder acceder a los datos en la base de datos MySQL, tenemos que ser capaces de conectar con el servidor:
+</p>
+<span><p>&lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+// Crea la conexión
+$conn = new mysqli($servername, $username, $password);
+
+// Checkea la conexión
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+?>
+</p></span>
+<span style="background-color:green;">PHP es un lenguaje sorprendente y popular!
+
+Nota sobre el ejemplo anterior orientado a objetos: $ connect_error se rompió hasta PHP 5.2.9 y 5.3.0. Si usted necesita para asegurar la compatibilidad con las versiones de PHP anteriores a 5.2.9 y 5.3.0, utilice el código siguiente en su lugar:
+
+// Comprobar la conexión
+si (mysqli_connect_error ()) {
+    die ( "conexión de base de datos no se pudo:". Mysqli_connect_error ());
+}</span>
+<h1>Ejemplo (MySQLi procesal)</h1>
+<span><p>&lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+// Crea la conexión
+$conn = mysqli_connect($servername, $username, $password);
+
+// Checkea la conexión
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
+?>
+</p></span>
+<h1>Ejemplo DOP</h1>
+<span><p>&lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+    }
+catch(PDOException $e)
+    {
+    echo "Connection failed: " . $e->getMessage();
+    }
+?>
+</p></span>
+<span style="background-color:">Nótese que en el ejemplo anterior DOP también hemos especificado una base de datos (myDB). DOP requiere una base de datos válida para conectarse a. Si no se especifica ninguna base de datos, se genera una excepción.</span>
+<p>
+  Consejo: Una gran ventaja de DOP es que tiene una clase de excepción para manejar cualquier problema que pueda ocurrir en nuestras consultas de bases de datos. Si se produce una excepción dentro del bloque try {}, el guión deja de ejecutar y fluye directamente a la primera captura () {} bloque.
+</p>
+<h1>Cierre la conexión</h1>
+<p>
+  La conexión se cerrará automáticamente cuando termina la secuencia de comandos. Para cerrar la conexión antes, utilizar lo siguiente:
+</p>
+<h1>Ejemplo (MySQLi orientada a objetos)</h1>
+<span>$conn->close();</span>
+<h1>Ejemplo (MySQLi procesal)></h1>
+<span>mysqli_close($conn);</span>
+<h1>Ejemplo (DOP)</h1>
+<span>$conn = null;</span>

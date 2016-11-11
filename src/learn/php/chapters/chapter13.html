@@ -1,0 +1,47 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>For</h1>
+<p>
+  El bucle se utiliza cuando se sabe de antemano cuántas veces la secuencia de comandos debe ejecutarse.
+</p>
+<h1>Sintaxis</h1>
+<p>
+  for (init counter; test counter; increment counter) {
+    codigo a ser ejecutado;
+}
+parámetros:
+<ul>
+  <li>init counter : Inicializa el valor de contador de bucle</li>
+  <li>test counter : evalúa para cada iteración del bucle. Si se evalúa como TRUE, el bucle continúa. Si se evalúa como FALSE, el bucle termina.</li>
+  <li>increment counter : Aumenta el valor del contador de bucle</li>
+</ul>
+
+El ejemplo a continuación muestra los números del 0 al 10:
+</p>
+<span><p>&lt;?php
+for ($x = 0; $x <= 10; $x++) {
+    echo "The number is: $x <br>";
+}
+?>
+</p></span>
+<h1>Foreach</h1>
+<p>
+  El bucle foreach funciona solamente con matrices, y se utiliza para recorrer cada par clave / valor en una matriz.
+</p>
+<h1>Sintaxis</h1>
+<p>
+  foreach ($array as $value) {
+    codigo a ser ejecutado;
+}
+Para cada iteración del bucle, el valor del elemento de matriz actual se asigna al valor de $ y el puntero se mueve a una, hasta que alcanza el último elemento de la matriz.
+
+El siguiente ejemplo muestra un bucle que dará salida a los valores de la matriz dada ($) colores:
+</p>
+<span><p>&lt;?php
+$colors = array("red", "green", "blue", "yellow");
+
+foreach ($colors as $value) {
+    echo "$value &lt;br>";
+}
+?>
+</p></span>

@@ -1,0 +1,74 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<meta charset="UTF-8">
+
+
+<h1>CSS Sintaxis y selectores</h1>
+<h1>sintaxis CSS</h1>
+<p>Un conjunto de reglas CSS consta de un selector y un bloque de declaración:</p>
+<img src="E:\html\images\selector.gif" alt="Selector View" style="width:404px;height:200px;">
+<p>El bloque de declaración contiene una o más declaraciones separadas por punto y coma</p>
+<p>Cada declaración incluye un nombre de propiedad CSS y un valor, separados por dos puntos</p>
+<p>Una declaración CSS siempre termina con un punto y coma, y los bloques de declaraciones están rodeados por llaves</p>
+<p>En el siguiente ejemplo todos los elementos &lt;p&gt; estarán alineados-centro, con un color rojo texto:</p>
+
+<code>
+		p {
+				color : green;
+        text-align: center;
+		}
+</code>
+
+<h1>Los selectores CCS</h1>
+<p>se utilizan para "encontrar" (o seleccionar) elementos HTML en función de su nombre de elemento, de la identificación, clase, atributo, y mucho más </p>
+
+<h1>El selector de elemento</h1>
+<p>Selecciona elementos basados en el nombre del mismo</p>
+<p>Puede seleccionar todos los elementos &lt;p&gt; en una página como esta (en este caso, todos los elementos &lt;p&gt; estarán alineados-centro, con un color rojo texto):</p>
+<p>Ejemplo:</p>
+<code>
+  p {
+  text-align: center;
+  color: red;
+}
+</code>
+
+<h1>El selector ID</h1>
+<p>Utiliza el atributo id de un elemento HTML para seleccionar un elemento específico</p>
+<p>El selector ID debe ser único, ya que deberá buscar el elemento especifico de la página, y no debe confundirse con otros</p>
+<p>Para seleccionar un elemento con un ID específico, escribe un carácter hashtag (#), seguido por el nombre de id del elemento</p>
+<p>La regla de estilo a continuación se aplica al elemento HTML con id = "párrafo1":</p>
+
+<code>
+  #para1 {
+  text-align: center;
+  color: red;
+}
+</code>
+<p>Nota: Una ID no puede comenzar con un número!</p>
+
+<h1>El selector de clase</h1>
+
+<p>Selecciona los elementos con un atributo de clase específica</p>
+<p>Para seleccionar elementos con una clase específica, escriba un punto (.) carácter, seguido del nombre de la clase</p>
+<p>En el siguiente ejemplo, todos los elementos HTML con class = "centro" será de color rojo y alineado al centro:</p>
+
+<code>
+  .center {
+  text-align: center;
+  color: green;
+}
+</code>
+
+<p>Los elementos HTML especificados solamente deben verse afectados por una clase</p>
+<p>En el siguiente ejemplo, solamente &lt;p&gt; elementos con class = "centro" estarán alineados-centro:</p>
+<code>
+  p.center {
+  text-align: center;
+  color: green;
+}
+</code>
+<p>Los elementos de HTML también pueden referirse a más de una clase</p>
+<p>En el siguiente ejemplo, el elemento &lt;p&gt; se diseñó de acuerdo a
+class = "centro" y para class = "grande":</p>
+<p></p>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+    <style>
+    code {
+    	display:inline-block;
+    	padding:10px;
+    	border:solid 1px #ffffff;
+    }
+    </style>
+    <title>Manejo de archivos</title>
+    </head>
+    <body>
+      <h1>PHP 5 Manejo de archivos</h1>
+      <p>
+        El manejo de archivos es una parte importante de cualquier aplicación web. A menudo se necesita para abrir y procesar un archivo para diferentes tareas.
+      </p>
+      <h1>Manipulacion de archivos PHP</h1>
+      <p>
+        PHP tiene varias funciones para crear, leer, cargar y editar archivos.
+      </p>
+      <span><p>
+        Tenga cuidado al manipular los archivos!
+        Cuando está manipulando archivos que debe tener mucho cuidado.
+        Usted puede hacer mucho daño si haces algo mal. Los errores más comunes son: editar el archivo incorrecto, llenar una unidad de disco duro con datos de la basura y eliminar el contenido de un archivo por accidente.
+      </p></span>
+      <h1>PHP funcion readfile ()</h1>
+      <p>
+        La función readfile () lee un archivo y lo escribe en el búfer de salida.
+
+        Supongamos que tenemos un archivo de texto llamado "webdictionary.txt", almacenado en el servidor, que tiene este aspecto:
+      </p>
+      <span><p>
+        AJAX = Asynchronous JavaScript and XML
+        CSS = Cascading Style Sheets
+        HTML = Hyper Text Markup Language
+        PHP = PHP Hypertext Preprocessor
+        SQL = Structured Query Language
+        SVG = Scalable Vector Graphics
+        XML = EXtensible Markup Language
+      </p></span>
+      <p>
+        El código PHP para leer el archivo y escribir en la memoria intermedia de salida es el siguiente (el readfile () devuelve el número de bytes leídos en caso de éxito):
+      </p>
+      <span><p>&lt;?php
+        echo readfile("diccionarioweb.txt");
+        ?>
+      </p></span>
+      La función readfile () es útil si todo lo que quiere hacer es abrir un archivo y leer su contenido.
+
+      En los siguientes capítulos le enseñará más sobre el manejo de archivos.
+    </body>

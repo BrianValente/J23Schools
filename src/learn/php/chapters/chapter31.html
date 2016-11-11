@@ -1,0 +1,145 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>PHP 5 Sesiones</h1>
+<p>
+  Una sesión es una forma de almacenar la información (variables) para ser utilizado a través de múltiples páginas.
+
+A diferencia de una cookie, la información no se almacena en el ordenador del usuario.
+</p>
+<h1>¿Qué es una sesión de PHP?</h1>
+<p>
+  Cuando se trabaja con una aplicación, se abre, hace algunos cambios, y luego se cierra. Esto es muy parecido a una sesión. El equipo sabe quién eres. Se sabe cuando se inicia la aplicación y cuando se termina. Sin embargo, en Internet hay un problema: el servidor web no sabe quién eres o lo que haces, porque la dirección HTTP no mantiene estado.
+
+Las variables de sesión resolver este problema mediante el almacenamiento de la información del usuario a utilizar en varias páginas (por ejemplo, nombre de usuario, color preferido, etc). Por defecto, las variables de sesión duran hasta que el usuario cierra el navegador.
+
+Asi que; Las variables de sesión contienen información acerca de un solo usuario, y están disponibles para todas las páginas en una sola aplicación.
+</p>
+<span><p>
+  Consejo: Si usted necesita un almacenamiento permanente, es posible que desee almacenar los datos en una base de datos .
+</p></span>
+<h1>Iniciar una sesión de PHP</h1>
+<p>
+  Una sesión se inició con la función session_start ().
+
+Las variables de sesión se establecen con la variable global PHP: $ _SESSION.
+
+Ahora, vamos a crear una nueva página llamada "demo_session1.php". En esta página, se comienza una nueva sesión de PHP y establecer algunas variables de sesión:
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+  &lt;?php
+// Empieza la sesion
+session_start();
+?>
+<!DOCTYPE html>
+&lt;html>
+&lt;body>
+
+&lt;?php
+// Programa las variables de la sesion
+$_SESSION["favcolor"] = "green";
+$_SESSION["favanimal"] = "cat";
+echo "Las variables de la sesion han sido colocadas.";
+?>
+
+&lt;/body>
+&lt;/html>
+</p></span>
+<span><p>
+  Nota: La función session_start () debe ser la primera cosa en su documento. Antes de cualquier etiqueta HTML.
+</p></span>
+<h1>Obtener PHP Sesión de valores de variables</h1>
+<p>
+  A continuación, creamos otra página llamada "demo_session2.php". Desde esta página, vamos a tener acceso a la información de la sesión nos propusimos en la primera página ( "demo_session1.php").
+
+Tenga en cuenta que las variables de sesión no se pasan individualmente a cada página nueva, sino que se recuperan de la sesión abrimos al principio de cada página (session_start ()).
+
+Observe también que todos los valores de las variables de sesión se almacenan en la variable global $ _SESSION:
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+  &lt;?php
+session_start();
+?>
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;body>
+
+&lt;?php
+// Las variables echo que fueron puestas en la sesion anterior
+echo "Favorite color is " . $_SESSION["favcolor"] . ".<br>";
+echo "Favorite animal is " . $_SESSION["favanimal"] . ".";
+?>
+
+&lt;/body>
+&lt;/html>
+</p></span>
+<p>
+  Otra manera de mostrar todos los valores de las variables de sesión para una sesión de usuario es ejecutar el siguiente código:
+</p>
+<span><p>
+  &lt;?php
+session_start();
+?>
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;body>
+
+&lt;?php
+print_r($_SESSION);
+?>
+
+&lt;/body>
+&lt;/html>
+</p></span>
+<span><p>
+  ¿Como funciona? ¿Cómo sabe que soy yo?
+
+La mayoría de las sesiones establece una clave de usuario en el ordenador del usuario que se ve algo como esto: 765487cf34ert8dede5a562e4f3a7e12. Entonces, cuando se abre una sesión en otra página, se examina el equipo para una clave de usuario. Si hay una coincidencia, se accede a esa sesión, si no, se inicia una nueva sesión.
+</p></span>
+<h1>Modificar una variable PHP Sesión</h1>
+<p>
+  Para cambiar una variable de sesión, simplemente sobrescribir:
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+  &lt;?php
+session_start();
+?>
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;body>
+
+&lt;?php
+// Para cambiar la variable de sesion, simplemente sobrescribela
+$_SESSION["favcolor"] = "yellow";
+print_r($_SESSION);
+?>
+
+&lt;/body>
+&lt;/html>
+</p></span>
+<h1>Destruir una sesión de PHP</h1>
+<p>
+  Para eliminar todas las variables globales de sesión y destruir la sesión, el uso session_unset () y session_destroy ():
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+  &lt;?php
+session_start();
+?>
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;body>
+
+&lt;?php
+// saca todas las variables de sesion
+session_unset();
+
+// destruye la sesion
+session_destroy();
+?>
+
+&lt;/body>
+&lt;/html>
+</p></span>

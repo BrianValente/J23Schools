@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+</head>
+<body>
+<h1>Capítulo 7: Estructuras If y Else</h1>
+<p>Mientras escribe un programa, puede haber una situación en la que es necesario adoptar uno de un conjunto dado de caminos. En tales casos, es necesario utilizar instrucciones condicionales que permiten su programa para tomar decisiones correctas y realizar acciones correctas.
+JavaScript soporta sentencias condicionales que se utilizan para llevar a cabo diferentes acciones basadas en diferentes condiciones. Aquí vamos a explicar el if..else comunicado.</p>
+<h1>Diagrama de flujo if-else</h1>
+<p>El siguiente diagrama de flujo muestra cómo funciona la instrucción if-else.<p>
+ <IMG SRC="../chapters/images/imagen.jpg"><br>
+JavaScript soporta las siguientes formas de if..else:
+<ul>
+<li>if</li>
+<li>if ... else</li>
+<li>if ... else if ...</li>
+<ul>
+<h1>if</h1>
+</p>El caso de declaración es la sentencia de control fundamental que permite JavaScript para tomar decisiones y ejecutar sentencias condicionalmente.
+<h1>Sintaxis</h1>
+La sintaxis de una base, si la declaración es el siguiente:</p>
+<code>
+if (expression){<br>
+   Statement(s) to be executed if expression is true<br>
+}<br></code>
+<p>Aquí se evalúa una expresión JavaScript. Si el valor resultante es verdadera, se ejecuta la sentencia (s) dado. Si la expresión es falsa, entonces ninguna declaración sería no ejecutado.La mayoría de las veces, que va a utilizar operadores de comparación, mientras que la toma de decisiones.
+Ejemplo:<br>
+Prueba el siguiente ejemplo para entender cómo funciona el si funciona comunicado.</p>
+</code>
+&lt;html&gt;<br>
+   &lt;body&gt;<br>
+
+      &lt;script type="text/javascript"&gt;<br>
+         &lt;!--<br>
+            var age = 20;<br>
+
+            if( age > 18 ){<br>
+               document.write("<b>Qualifies for driving</b>");<br>
+            }<br>
+         //--&gt;<br>
+      &lt;/script&gt;<br>
+
+      <p>Set the variable to different value and then try...</p>
+   &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</code>
+<p>Salida:<br>
+Qualifies for driving<br>
+Set the variable to different value and then try...<br></p>
+
+<h1>if ... else</h1>
+<p>El 'if ... else' declaración es el siguiente formulario de la declaración de control que permite JavaScript para ejecutar sentencias de una manera más controlada.</p>
+<h2>Sintaxis</h2>
+<code>
+if (expression){<br>
+   Statement(s) to be executed if expression is true<br>
+}<br>
+
+else{<br>
+   Statement(s) to be executed if expression is false<br>
+}<br></code>
+<p>Aquí se evalúa JavaScript expresión. Si el valor resultante es cierto, la declaración (s) dada en el "si" de bloque, se ejecutan. Si la expresión es falsa, entonces la sentencia (s) dada en el bloque else se ejecuta.<br>
+Ejemplo:<br>
+Pruebe el siguiente código para aprender cómo implementar una instrucción if-else en JavaScript.</p>
+<code>
+&lt;html&gt;<br>
+   &lt;body&gt;<br>
+
+      &lt;script type="text/javascript"&gt;<br>
+         &lt;!--<br>
+            var age = 15;<br>
+
+            if( age > 18 ){<br>
+               document.write("<b>Qualifies for driving</b>");<br>
+            }<br>
+
+            else{<br>
+               document.write("<b>Does not qualify for driving</b>");<br>
+            }<br>
+         //--&gt;<br>
+      &lt;/script&gt;<br>
+
+      <p>Set the variable to different value and then try...</p>
+   &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</code>
+<p>Salida:<br>
+Does not qualify for driving
+Set the variable to different value and then try...</p>
+<h1>if ... else if ... comunicado</h1>
+<p>El if ... else if ... afirmación es una forma avanzada de si ... otra cosa que permite JavaScript para tomar una decisión correcta de varias condiciones.</p>
+<h2>Sintaxis</h2>
+La sintaxis de una instrucción if-else-if es la siguiente:<br>
+<code>
+if (expression 1){<br>
+   Statement(s) to be executed if expression 1 is true<br>
+}<br>
+
+else if (expression 2){<br>
+   Statement(s) to be executed if expression 2 is true<br>
+}<br>
+
+else if (expression 3){<br>
+   Statement(s) to be executed if expression 3 is true<br>
+}<br>
+
+else{<br>
+   Statement(s) to be executed if no expression is true<br>
+}<br>
+</code>
+<p>
+No hay nada especial en este código. Es sólo una serie de si los estados, donde cada caso es una parte de la otra cláusula de la declaración anterior. Declaración (s) se ejecuta sobre la base de la verdadera condición, si ninguna de las condiciones es verdadera, entonces el otrose ejecuta el bloque.
+Ejemplo:
+Pruebe el siguiente código para aprender cómo implementar una sentencia if-else-if en JavaScript.</p>
+<code>
+&lt;html&gt;<br>
+   &lt;body&gt;<br>
+
+      &lt;script type="text/javascript"&gt;<br>
+         &lt;!--<br>
+            var book = "maths";<br>
+            if( book == "history" ){<br>
+               document.write("<b>History Book</b>");<br>
+            }<br>
+
+            else if( book == "maths" ){<br>
+               document.write("<b>Maths Book</b>");<br>
+            }<br>
+
+            else if( book == "economics" ){<br>
+               document.write("<b>Economics Book</b>");<br>
+            }<br>
+
+            else{<br>
+               document.write("<b>Unknown Book</b>");<br>
+            }<br>
+         //--&gt;<br>
+      &lt;/script&gt;<br>
+
+      <p>Set the variable to different value and then try...</p>
+   &lt;/body&gt;<br>
+&lt;html&gt;<br>
+</code>
+<p>
+Salida:<br>
+Maths Book<br>
+Set the variable to different value and then try...<br><p>
+</body>
+</html>

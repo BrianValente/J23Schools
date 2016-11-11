@@ -1,0 +1,80 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>Sintaxis básica de PHP</h1>
+
+<p>
+Un script PHP se puede colocar en cualquier parte del documento.
+Un script PHP comienza con <? Php? Y termina con ?> :
+
+<span>&#60;?php
+
+?&#62;
+</span>
+</p>
+<p>
+	La extensión de archivo por defecto para archivos PHP es ".php".
+
+Un archivo PHP normalmente contiene etiquetas HTML, y algo de código de programación PHP.
+
+A continuación, tenemos un ejemplo de un archivo PHP simple, con un script PHP que utiliza una función integrada de PHP "eco" a la salida del texto "Hello World!" en una página web:
+</p>
+<h1>Ejemplo</h1>
+<span><p>&lt;!DOCTYPE html&gt;
+	&lt;html&gt;
+	&lt;body&gt;
+
+		&lt;?php
+	<p style="color:grey;">	// Este es un comentario de una sola línea </p>
+	<p>
+
+<p style="color:grey;"> #Este también es un comentario de una sola línea</p>
+<p style="color:grey;">
+/*
+Este es un comentario que sirve para abarcar varias lineas
+*/ </p>
+<p>
+<p style="color:grey;">// También se puede usar para comentar partes del código</p>
+<p>$x = 5/* + 15 */  + 5;
+echo $x;
+		?&gt;
+
+	&lt;/body&gt;
+&lt;/html&gt;
+</p>
+</p>
+</p>
+</span><h1>Sensibilidad a las mayúsculas</h1>
+<p>En PHP, todas las palabras clave (por ejemplo, si, no puede, cuando, eco, etc.), clases, funciones y funciones definidas por el usuario no entre mayúsculas y minúsculas.
+
+En el ejemplo siguiente, los tres estados de eco a continuación son legales (e igual):
+</p>
+<h1>Ejemplo</h1>
+<span><p>&lt;!DOCTYPE html&gt;
+	&lt;html&gt;
+	&lt;body&gt;
+	&lt;?php
+	ECHO "Hello World!&lt;br&gt;";
+	echo "Hello World!&lt;br&gt;";
+	EcHo "Hello World!&lt;br&gt;";
+	?>
+	&lt;/body&gt;
+&lt;/html&gt;
+</p>
+</span>
+<p>
+	Sin embargo; todos los nombres de las variables entre mayúsculas y minúsculas.
+
+En el siguiente ejemplo, sólo la primera sentencia visualiza el valor de la variable $ color (esto se debe a $ color, $ color, y $ color son tratados como tres variables diferentes):
+</p>
+<span><p>&lt;!DOCTYPE html&gt;
+	&lt;html&gt;
+	&lt;body&gt;
+	&lt;?php
+	echo "My car is " . $color ."&lt;br&gt;";
+	echo "My car is " . $COLOR ."&lt;br&gt;";
+	echo "My car is " . $coLOR ."&lt;br&gt;";
+	?>
+	&lt;/body&gt;
+&lt;/html&gt;
+</p>
+</span>

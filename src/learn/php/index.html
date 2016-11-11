@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class="realhtml">
+	<head>
+		<!--<title>Curricula de Brian jej</title>-->
+		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+		<meta charset="utf-8" /> 
+	</head>
+	<body>
+		<div id="content">
+			<div id="curricula" class="column">
+				<!-- Loaded dynamically -->
+				<iframe src="chapters/chapter1.html" id="bv_curricula_iframe"></iframe>
+				<div class="bv_controls">
+					<span class="bv_controls_plus">+</span>
+					<span class="bv_controls_minus">-</span>
+					<span class="bv_controls_next">⃕</span>
+					<span class="bv_controls_prev">⃔</span>
+				</div>
+			</div>
+			<div class="column">
+				<div id="code">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Curricula de Brian&lt;/title&gt;
+		&lt;meta
+		    charset=&quot;UTF-8&quot;&gt;
+		&lt;link
+		    rel=&quot;stylesheet&quot;
+		    type=&quot;text/css&quot;
+		    href=&quot;styles/reset.css&quot;&gt;
+	    &lt;style&gt;
+	        html,
+	        body {
+	            background-color:#202020;
+	            font-family:&quot;Roboto&quot;,
+	                        &quot;Helvetica Neue&quot;,
+	                        &quot;Arial&quot;,
+	                        sans-serif;
+	        }
+	        
+	        header {
+	            width:100%;
+	            background-color:#2196F3;
+	            color:white;
+	            box-sizing:border-box;
+	            padding:20px 30px;
+	        }
+	        
+	        p {
+	            color:#ffffff;
+	            margin:30px;
+	        }
+	    &lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	    &lt;header&gt;T&#237;tulo&lt;/header&gt;
+        &lt;p&gt;&#161;Hola mundo!&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</div>
+				<span class="bv_fab" id="bv_run_fab"></span>
+				<div class="bv_controls">
+					<span class="bv_controls_plus">+</span>
+					<span class="bv_controls_minus">-</span>
+					<span class="bv_controls_instantrun"><input type="checkbox" id="bv_instantrun"/><label for="bv_instantrun">Instant run</label></span>
+					<span id="bv_credits">Learn HTML BETA • Made by Brian Valente</span>
+				</div>
+			</div>
+			<div class="column">
+				<!-- Result of the code editor, loaded dynamically -->
+				<div id="result"></div>
+				<div class="bv_controls">
+					<span class="bv_controls_plus">+</span>
+					<span class="bv_controls_minus">-</span>
+				</div>
+			</div>
+	</body>
+	<script src="scripts/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script src="scripts/script.js"></script>
+</html>

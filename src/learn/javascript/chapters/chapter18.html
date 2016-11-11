@@ -1,0 +1,125 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<meta charset="utf-8">
+
+<h1>Capítulo 18: Palabras claves: void</h1>
+<br>
+<p>Void es una palabra clave importante en JavaScript que puede ser utilizada como un operador unitario que aparece antes de un operador único, que puede ser de cualquier tipo. Este operador especifica una expresión a ser evaluada sin devolver un valor.</p>
+<br>
+<h1>Sintaxis</h1>
+<br>
+<p>La sintaxis de un void puede ser cualquiera de los dos siguientes:</p>
+<br>
+
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">&lt;!DOCTYPE html&gt;
+<br>
+<br>
+	&lt;html&gt;
+	<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;head&gt;
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;script type="text/javascript"&gt;
+      <br>
+      <br>
+      &lt;!--
+      <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">void func()
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">javascript:void func()</div>
+      </div>
+      o:
+        <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">void(func())
+          <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">javascript:void(func())</div>
+        </div>
+    //--&gt;
+    <br>
+    <br>
+    &lt;/script&gt;
+    </div>
+    &lt;/head&gt;
+  </div>
+  &lt;/html&gt;
+	</div>
+	</div>
+
+<br>
+<h2>Ejemplo 1</h2>
+<br>
+<p>El uso más común de este operador está en un client-side (lado del cliente) javascript: URL, donde se le permite evaluar una expresión para sus side-effects (efectos secundarios) sin el explorador que muestra el valor de la expresión evaluada.</p>
+<br>
+<p>Aquí la expresión alert ( 'Advertencia!!!') se evaluó pero no se carga de nuevo en el documento actual.</p>
+<br>
+
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">&lt;!DOCTYPE html&gt;
+<br>
+<br>
+	&lt;html&gt;
+	<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;head&gt;
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;script type="text/javascript"&gt;
+    &lt;/script&gt;
+    </div>
+    &lt;/head&gt;
+    </div>
+      <div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;body&gt;
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;p&gt;Haga clic en el siguiente, Esto no va a reaccionar en absoluto...&lt;/p&gt;</div>
+        <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;a href="javascript:void(alert('Advertencia!!!'))">Haz clic en mi!&lt;/a&gt;</div>
+      &lt;/body&gt;
+      </div>
+  &lt;/html&gt;
+  </div>
+	</div>
+
+<br>
+<h2>Ejemplo 2</h2>
+<br>
+<p>El siguiente enlace no hace nada porque la expresión "0" no tiene ningún efecto en JavaScript. Aquí se evalúa la expresión "0", pero no se carga de nuevo en el documento actual.</p>
+<br>
+
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">&lt;!DOCTYPE html&gt;
+<br>
+<br>
+	&lt;html&gt;
+	<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;head&gt;
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;script type="text/javascript"&gt;
+    &lt;/script&gt;
+    </div>
+    &lt;/head&gt;
+    </div>
+      <div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;body&gt;
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;p&gt;Haga clic en el siguiente, Esto no va a reaccionar en absoluto...&lt;/p&gt;</div>
+        <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;a href="javascript:void(0)">Haz clic en mi!&lt;/a&gt;</div>
+      &lt;/body&gt;
+      </div>
+  &lt;/html&gt;
+  </div>
+	</div>
+
+<br>
+<h2>Ejemplo 3</h2>
+<br>
+<p>Otro uso del void es generar deliberadamente el valor indefinido de la siguiente manera:</p>
+<br>
+
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">&lt;!DOCTYPE html&gt;
+<br>
+<br>
+	&lt;html&gt;
+	<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;head&gt;
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;script type="text/javascript"&gt;
+      <div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">function getValue() {
+        <div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">var a,b,c;</div>
+        <div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">a = void (b = 5, c = 7);</div>
+        <div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">document.write('a = ' + a + ' b = ' + b +' c = ' + c );</div>
+      }
+    </div>
+    &lt;/script&gt;
+    </div>
+    &lt;/head&gt;
+    </div>
+      <div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;body&gt;
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;p&gt;Haga clic en el siguiente para ver el resultado:&lt;/p&gt;</div>
+        <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;form&gt;
+          <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;input type="button" value="Haz clic en mi" onclick="getValue();" /&gt;</div>
+        &lt;/form&gt;
+        </div>
+      &lt;/body&gt;
+      </div>
+  &lt;/html&gt;
+</div>
+<br>

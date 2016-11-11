@@ -1,0 +1,123 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<meta charset="utf-8">
+
+<h1>Capítulo 17: Cuadros de diálogo</h1>
+<br>
+<p>JavaScript soporta tres tipos importantes de los cuadros de diálogo. Estos cuadros de diálogo se pueden utilizar para subir y alertar, o para obtener la confirmación de cualquier entrada o tener un tipo de entrada de los usuarios. Aquí vamos a discutir cada cuadro de diálogo.</p>
+<h1>El cuadro de diálogo de alerta</h1>
+<br>
+<p>Un cuadro de diálogo de alerta se utiliza sobre todo para dar un mensaje de advertencia a los usuarios. Por ejemplo, si un campo de entrada requiere que se introduzca algún texto, pero el usuario no proporciona ninguna entrada, a continuación, como parte de la validación, se puede utilizar un cuadro de alerta para dar un mensaje de advertencia.</p>
+<br>
+<p>No obstante, un cuadro de alerta se puede utilizar para mensajes amigables. Un cuadro de alerta sólo da el botón "OK" para seleccionar y proceder.</p>
+<br>
+
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">&lt;!DOCTYPE html&gt;
+<br>
+<br>
+	&lt;html&gt;
+	<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;head&gt;
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;script type="text/javascript"&gt;
+			<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">function Warn() {
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">alert ("Mensaje de alerta");</div>
+        <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">document.write ("Mensaje de alerta);</div>
+        }
+				</div>
+		&lt;/script&gt;
+		</div>
+	&lt;/head&gt;
+	</div>
+	<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;body&gt;
+    <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;p&gt;Haga clic en el siguiente botón para ver el resultado:&lt;/p&gt;</div>
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;form&gt;
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;input type="button" value="Haz clic en mi" onclick="Warn();" /&gt;</div>
+			&lt;/form&gt;
+			</div>
+		&lt;/body&gt;
+		</div>
+	&lt;/html&gt;
+  </div>
+
+<br>
+<h1>El cuadro de diálogo de confirmación</h1>
+<br>
+<p>Un cuadro de diálogo de confirmación se utiliza principalmente para tomar el consentimiento del usuario en cualquier opción. Se muestra un cuadro de diálogo con dos botones: Aceptar y Cancelar.</p>
+<br>
+<p>Si el usuario hace clic en el botón Aceptar, el método de la ventana de confirm() devolverá true. Si el usuario hace clic en el botón Cancelar, y confirm() devuelve false. Puede utilizar un cuadro de diálogo de confirmación de la siguiente manera.</p>
+<br>
+
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">&lt;!DOCTYPE html&gt;
+<br>
+<br>
+	&lt;html&gt;
+	<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;head&gt;
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;script type="text/javascript"&gt;
+			<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">function getConfirmation() {
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">var retVal = confirm("¿Deseas continuar?");</div>
+        <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">if( retVal == true ){
+          <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">document.write ("El usuario quiere continuar!");</div>
+          <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">return true;</div>
+        }
+        </div>
+        <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">else {
+          <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">document.write ("El usuario no quiere continuar!");</div>
+          <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">return false;</div>
+        }
+        </div>
+        }
+				</div>
+		&lt;/script&gt;
+		</div>
+	&lt;/head&gt;
+	</div>
+	<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;body&gt;
+    <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;p&gt;Haga clic en el siguiente botón para ver el resultado:&lt;/p&gt;</div>
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;form&gt;
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;input type="button" value="Haz clic en mi" onclick="getConfirmation();" /&gt;</div>
+			&lt;/form&gt;
+			</div>
+		&lt;/body&gt;
+		</div>
+	&lt;/html&gt;
+  </div>
+
+<br>
+<h1>Diálogo de consulta</h1>
+<br>
+<p>El cuadro de diálogo de consulta es muy útil cuando se desea para que aparezca un cuadro de texto para obtener la entrada del usuario. Por lo tanto, le permite interactuar con el usuario. El mismo, tiene que llenar el campo y hacer clic en OK.</p>
+<br>
+<p>Este cuadro de diálogo se muestra utilizando un método llamado prompt() que toma dos parámetros: (i) una etiqueta que desea mostrar en el cuadro de texto y (ii) una secuencia predeterminada para mostrar en el cuadro de texto.</p>
+<br>
+<p>Este cuadro de diálogo tiene dos botones: Aceptar y Cancelar. Si el usuario hace clic en el botón Aceptar, el método de la ventana prompt() devolverá el valor introducido en el cuadro de texto. Si el usuario hace clic en el botón Cancelar, el método de la ventana prompt() devuelve “nulo”.</p>
+<br>
+<h2>Ejemplo</h2>
+<br>
+<p>El siguiente ejemplo muestra cómo utilizar un cuadro de diálogo de consulta:</p>
+<br>
+
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">&lt;!DOCTYPE html&gt;
+<br>
+<br>
+	&lt;html&gt;
+	<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;head&gt;
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;script type="text/javascript"&gt;
+			<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">function getValue() {
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">var retVal = prompt("Inserte su nombre: ", "su nombre aquí");</div>
+        <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">document.write("Has entrado: " + retVal);</div>
+      }
+			</div>
+		&lt;/script&gt;
+		</div>
+	&lt;/head&gt;
+	</div>
+	<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;body&gt;
+    <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;p&gt;Haga clic en el siguiente botón para ver el resultado:&lt;/p&gt;</div>
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;form&gt;
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;input type="button" value="Haz clic en mi" onclick="getValue();" /&gt;</div>
+			&lt;/form&gt;
+			</div>
+		&lt;/body&gt;
+		</div>
+	&lt;/html&gt;
+  </div>
+<br>

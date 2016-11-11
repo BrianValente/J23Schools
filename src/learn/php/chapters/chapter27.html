@@ -1,0 +1,163 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>PHP 5 Abrir Archivo / Leer / Cerrar</h1>
+<p>
+  En este capítulo te enseñaremos cómo abrir, leer y cerrar un archivo en el servidor.
+</p>
+<h1>Abrir archivo PHP - fopen ()</h1>
+<p>
+  Un mejor método para abrir archivos es con la función fopen (). Esta función le da más opciones que la función readfile ().
+</p>
+<p>
+  Vamos a utilizar el archivo de texto, "diccionarioweb.txt", durante las clases:
+</p>
+<span><p>
+  AJAX = Asynchronous JavaScript and XML
+  CSS = Cascading Style Sheets
+  HTML = Hyper Text Markup Language
+  PHP = PHP Hypertext Preprocessor
+  SQL = Structured Query Language
+  SVG = Scalable Vector Graphics
+  XML = EXtensible Markup Language
+</p></span>
+<p>
+  El primer parámetro de la función fopen () contiene el nombre del archivo que se abrirá y el segundo parámetro especifica el modo en el que el archivo se debe abrir. El ejemplo siguiente también se genera un mensaje si la función fopen () no puede abrir el archivo especificado:
+</p>
+<h1>Ejemplo</h1>
+<span><p>&lt;?php
+$myfile = fopen("dic.txt", "r") or die("Unable to open file!");
+echo fread($myfile,filesize("webdictionary.txt"));
+fclose($myfile);
+?>
+</p></span>
+<p>
+  Tip: El fread () y el fclose () funciones se explicarán a continuación.
+
+  El archivo se puede abrir en uno de los siguientes modos:
+</p>
+<span><table class="w3-table-all notranslate">
+  <tbody><tr>
+    <th style="width:10%">Modes</th>
+    <th style="width:90%">Description</th>
+  </tr>
+  <tr>
+    <td>r</td>
+    <td><strong>Abre un archivo solo para lectura</strong>. El puntero del arvhico empieza al principo del archivo.</td>
+  </tr>
+    <tr>
+    <td>w</td>
+    <td><strong>Abre un archivo solo para lectura</strong>. Borra el contenido del archivo o crea uno nuevo si este no existe.
+	El puntero del archivo empieza al principio del archivo</td>
+    </tr>
+	<tr>
+    <td>a</td>
+    <td><strong>Abre un archivo solo para escritura</strong>. La data en el archivo existente se preserva. El puntero empieza al final del archivo. Crea un nuevo archivo si el archivo no existe</td>
+    </tr>
+	<tr>
+    <td>x</td>
+    <td><strong>Crea un archivo solo para escritura</strong>. Devuelve un FALSO y un error si el archivo ya existia</td>
+    </tr>
+  <tr>
+    <td>r+</td>
+    <td><strong>Abre un archivo para escritura/lectura</strong>. El puntero del archivo empieza al principio del mismo</td>
+  </tr>
+  <tr>
+    <td>w+</td>
+    <td><strong>Abre un archivo para lectura/escritura</strong>. Borra el contenido del archivo o crea uno nuevo si este no existe. El puntero del archivo comienza al principio del archivo</td>
+  </tr>
+  <tr>
+    <td>a+</td>
+    <td><strong>Abre un archivo para lectura/escritura</strong>. La data existente en el archivo se preserva. El puntero del archivo comienza al final del archivo. Crea un archivo nuevo si este no existia.</td>
+  </tr>
+  <tr>
+    <td>x+</td>
+    <td><strong>Crea un nuevo archivo para lectura/escritura</strong>. Devuelve FALSO y un error si el archivo ya existia</td>
+  </tr>
+</tbody></table></span>
+<h1>PHP Leer archivo - fread ()</h1>
+<p>
+  La función fread () lee de un archivo abierto.
+
+  El primer parámetro de fread () contiene el nombre del archivo a leer y el segundo parámetro especifica el número máximo de bytes a leer.
+
+  El siguiente código PHP lee el archivo "webdictionary.txt" hasta el final:
+
+</p>
+<span><p>
+  fread($myfile,filesize("diccionarioweb.txt"));
+</p>
+</span>
+<h1>PHP Cerrar archivo - fclose ()</h1>
+<p>
+  La función fclose () se utiliza para cerrar un archivo abierto.
+</p>
+<span><p>
+  Es una buena práctica de programación  cerrar todos los archivos después de haber terminado con ellos. Usted no quiere un archivo abierto corriendo en el servidor sacrificando los recursos!
+</p></span>
+<p>
+  El fclose () requiere el nombre del archivo (o una variable que contiene el nombre del archivo) queremos cerrar:
+</p>
+<span><p>&lt;?php
+$miarchivo = fopen("diccionarioweb.txt", "r");
+// algun codigo a ser ejecutado...
+fclose($miarchivo);
+?>
+</p></span>
+<h1>PHP Leer Unica linea - fgets ()</h1>
+<p>
+  La función fgets () se utiliza para leer una sola línea de un archivo.
+
+  El siguiente ejemplo muestra la primera línea del archivo "diccionarioweb.txt":
+</p>
+<h1>Ejemplo</h1>
+<span><p>
+  &lt;?php
+$miarchivo = fopen("diccionarioweb.txt", "r") or die("No se pudo abrir el archivo!");
+echo fgets($miarchivo);
+fclose($miarchivo);
+?>
+</p></span>
+<p>
+  Nota: Después de llamar a los fgets () de función, el puntero de archivo se ha movido a la siguiente línea.
+</p>
+<h1>PHP Consulta EOF - feof ()
+</h1>
+<p>
+  La función comprueba feof () si se ha alcanzado el "EOF" (end-of-file).
+
+  La función feof () es útil para recorrer a través de datos de longitud desconocida.
+
+  El siguiente ejemplo lee el "diccionarioweb.txt" archivo línea por línea, hasta que se llega al final de su archivo
+</p>
+<h1>Ejemplo</h1>
+<span><p>
+  &lt;?php
+$miarchivo = fopen("diccionarioweb.txt", "r") or die("No se pudo abrir el archivo!");
+// Sale una linea hasta el final del archivo
+while(!feof($miarchivo)) {
+  echo fgets($miarchivo) . "<br>";
+}
+fclose($miarchivo);
+?>
+</p></span>
+<h1>PHP Leer carácter único - fgetc ()
+</h1>
+<p>
+  La función fgetc () se utiliza para leer un solo carácter de un archivo.
+
+  El siguiente ejemplo lee el "diccionarioweb.txt" caracteres de archivo por carácter, hasta que se llega al final de su archivo:
+</p>
+<h1>Ejemplo</h1>
+<span><p>
+  &lt;php
+$miarchivo = fopen("diccionarioweb.txt", "r") or die("No se pudo abrir el archivo!");
+// Sale un caracter a la vez hasta el final del archivo
+while(!feof($miarchivo)) {
+  echo fgetc($miarchivo);
+}
+fclose($miarchivo);
+?>
+</p></span>
+<p>
+  Nota: Después de llamar a la función fgetc (), el puntero de archivo se desplaza al siguiente carácter.
+</p>

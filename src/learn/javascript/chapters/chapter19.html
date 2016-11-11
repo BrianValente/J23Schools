@@ -1,0 +1,41 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<meta charset="utf-8">
+
+<h1>Capítulo 19: Impresión</h1>
+<br>
+<p>Muchas veces se desea colocar un botón en su página web para imprimir el contenido de esa página web a través de una impresora real. JavaScript ayuda a implementar esta funcionalidad utilizando la función de impresión.</p>
+<br>
+<p>La función de impresión JavaScript window.print() imprime la página web actual cuando se ejecuta. Puede llamar directamente a esta función mediante el evento onclick, como se muestra en el siguiente ejemplo:</p>
+<br>
+
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">&lt;!DOCTYPE html&gt;
+<br>
+<br>
+	&lt;html&gt;
+	<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;head&gt;
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;script type="text/javascript"&gt;
+    &lt;/script&gt;
+    </div>
+    &lt;/head&gt;
+    </div>
+      <div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;body&gt;
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;form&gt;
+          <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;input type="button" value="Imprimir" onclick="window.print()" /&gt;</div>
+        &lt;/form&gt;
+        </div>
+      &lt;/body&gt;
+      </div>
+  &lt;/html&gt;
+</div>
+
+<br>
+<p>A pesar de que sirve al propósito de conseguir una impresión, no es un método recomendado. Una página impresa es en realidad sólo una página con el texto, sin imágenes, gráficos, o publicidad.</p>
+<br>
+<p>Puede hacer que una impresora funcione de la siguiente manera:</p>
+<br>
+<ul>
+  <li>Haga una copia de la página y deje de lado el texto y los gráficos no deseados, a continuación, enlace  esa página impresa a la original.</li>
+  <li>Si no desea conservar una copia adicional de una página, entonces usted puede marcar su texto imprimible usando los comentarios apropiados como <! – LA IMPRESIÓN COMIENZA AQUÍ -> ..... <! – LA IMPRESIÓN TERMINA AQUÍ -> y luego se puede utilizar PERL o cualquier otro script en el fondo para purgar el texto imprimible y mostrar la impresión final.</li>
+</ul>
+<br>

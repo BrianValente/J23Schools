@@ -1,0 +1,206 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>Los operadores de PHP</h1>
+<p>
+  Los operadores se utilizan para realizar operaciones sobre las variables y valores.
+
+PHP divide a los operadores en los siguientes grupos:
+<ul>
+  <li>Operadores aritméticos</li>
+  <li>Operadores de Asignación</li>
+  <li>Los operadores de comparación</li>
+  <li>operadores de incremento / decremento</li>
+  <li>Operadores logicos</li>
+  <li>operadores de cadena</li>
+  <li>operadores de matriz</li>
+</ul>
+</p>
+<h1>Los operadores aritméticos PHP</h1>
+<p>
+  Los operadores aritméticos se usan PHP con valores numéricos para realizar operaciones aritméticas comunes, tales como suma, resta, multiplicación, etc.
+</p>
+<span><P><table>
+<tbody>
+<th style="width:15%">Operador</th>
+<th style="width:20%">Nombre</th>
+<th style="width:20%">Ejemplo</th>
+<th style="width:35%">Resultado</th>
+</tr>
+<tr>
+<td>+</td>
+<td>Suma</td>
+<td>$x + $y</td>
+<td>Suma $x y $y</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Resta</td>
+<td>$x - $y</td>
+<td>resta $x y $y</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiplicación</td>
+<td>$x * $y</td>
+<td>multiplica $x y $y</td>
+</tr>
+<tr>
+<td>/</td>
+<td>División</td>
+<td>$x / $y</td>
+<td>divide $x y $y</td>
+</tr>
+<tr>
+<td>%</td>
+<td>Porcentaje</td>
+<td>$x % $y</td>
+<td>Porcentaje de $x por $y</td>
+</tr>
+<tr>
+<td>**</td>
+<td>Potencia</td>
+<td>$x ** $y</td>
+<td>potenciacia a $x por $y</td>
+</tr>
+</tbody>
+</table></p> </span>
+<h1>Operadores de comparación de PHP</h1>
+<p>
+  Los operadores de comparación PHP se utilizan para comparar dos valores (número o cadena):
+</p>
+<span><P><table>
+<tbody><tr>
+<th style="width:15%">Operador</th>
+<th style="width:22%">Nombre</th>
+<th style="width:15%">Ejemplo</th>
+<th style="width:38%">Resultado</th>
+</tr>
+<tr>
+<td>==</td>
+<td>Igual</td>
+<td>$x == $y</td>
+<td>devuelve si $x es igual a $y</td>
+</tr>
+<tr>
+<td>===</td>
+<td>Identico</td>
+<td>$x === $y</td>
+<td>devuelve true si $x es igual a $y, y son del mismo tipo</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>No igual</td>
+<td>$x != $y</td>
+<td>devuelve true si $x no es igual a $y</td>
+</tr>
+<tr>
+<td>&lt;&gt;</td>
+<td>No igual</td>
+<td>$x &lt;&gt; $y</td>
+<td>devuelve true si $x no es igual a $y</td>
+</tr>
+<tr>
+<td>!==</td>
+<td>No idénticos</td>
+<td>$x !== $y</td>
+<td>devuelve true si $x no es igual a  $y, o si no son del mismo tipo</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Mayor</td>
+<td>$x &gt; $y</td>
+<td>devueltve true si $x es más grande que $y</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>Menor</td>
+<td>$x &lt; $y</td>
+<td>devuelve true si $x es más chico que $y</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>Mayor o igual</td>
+<td>$x &gt;= $y</td>
+<td>devuelve true si $x es mayor o igual que $y</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>Menor o igual</td>
+<td>$x &lt;= $y</td>
+<td>devuelve true si $x es menor o igual que $y</td>
+</tr>
+</tbody></table></p></span>
+<h1>Operadores de incremento y decremento </h1>
+<span><P><table>
+  <tbody><tr>
+<th style="width:15%">Operador</th>
+<th style="width:20%">Nombre </th>
+<th style="width:55%">Descripción</th>
+</tr>
+<tr>
+<td>++$x</td>
+<td>Pre-incrementar</td>
+<td>Incrementa $x en uno, después devuelve $x</td>
+</tr>
+<tr>
+<td>$x++</td>
+<td>Post-incrementar</td>
+<td>Devuelve $x, después incrementa $x en uno</td>
+</tr>
+<tr>
+<td>--$x</td>
+<td>Pre-decrementar</td>
+<td>Decrementa $x en uno, después devuelve $x</td>
+</tr>
+<tr>
+<td>$x--</td>
+<td>Post-decrementar</td>
+<td>Devuelve $x, después decrementa $x por 1</td>
+</tr>
+</tbody>
+</table></p></span>
+<h1>Operadores lógicos</h1>
+<span><P><table>
+<tbody><tr>
+<th style="width:15%">Operador</th>
+<th style="width:20%">Nombre</th>
+<th style="width:20%">Ejemplo</th>
+<th style="width:35%">Resultado</th>
+</tr>
+<tr>
+<td>and</td>
+<td>And</td>
+<td>$x and $y</td>
+<td>Devuelve true si $x y $y son true</td>
+</tr>
+<tr>
+<td>or</td>
+<td>Or</td>
+<td>$x or $y</td>
+<td>Devuelve true si $x o $y es true</td>
+</tr>
+<tr>
+<td>xor</td>
+<td>Xor</td>
+<td>$x xor $y</td>
+<td>True if either $x or $y is true, but not both</td>
+</tr>
+<tr>
+<td>&amp;&amp;</td>
+<td>And</td>
+<td>$x &amp;&amp; $y</td>
+<td>True if both $x and $y are true</td>
+</tr>
+<tr>
+<td>||</td>
+<td>Or</td>
+<td>$x || $y</td>
+<td>True if either $x or $y is true</td>
+</tr>
+<tr>
+<td>!</td>
+<td>Not</td>
+<td>!$x</td>
+<td>True if $x is not true</td>
+</tr>
+</tbody></table></p></span>

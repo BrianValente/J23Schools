@@ -1,0 +1,79 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>Matrices multidimensionales</h1>
+<p>
+  Una matriz multidimensional es una matriz que contiene una o más matrices.
+PHP entiende matrices multidimensionales que son dos, tres, cuatro, cinco, o más niveles de profundidad. Sin embargo, las matrices más de tres niveles de profundidad son difíciles de manejar para la mayoría de la gente.
+</p>
+<span style="background-color:green;">La dimensión de una matriz indica el número de índices que necesita para seleccionar un elemento.
+
+Para una matriz bidimensional que necesita dos índices para seleccionar un elemento
+Para una matriz tridimensional se necesitan tres índices para seleccionar un elemento</span>
+<h1>Arrays bidimensionales</h1>
+<p>
+  Una matriz bidimensional es una matriz de matrices (una matriz tridimensional es una matriz de matrices de matrices).
+En primer lugar, echar un vistazo a la siguiente tabla:
+</p>
+<span><table>
+  <tbody><tr>
+    <th>Nombre</th>
+    <th>Stock</th>
+    <th>Vendidos</th>
+  </tr>
+  <tr>
+    <td>Volvo</td>
+    <td>22</td>
+    <td>18</td>
+  </tr>
+  <tr>
+    <td>BMW</td>
+    <td>15</td>
+    <td>13</td>
+  </tr>
+  <tr>
+    <td>Saab</td>
+    <td>5</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Land Rover</td>
+    <td>17</td>
+    <td>15</td>
+  </tr>
+</tbody></table></span>
+<p>
+  Podemos almacenar los datos de la tabla anterior en una matriz de dos dimensiones, como esto:
+
+$cars = array
+  (
+  array("Volvo",22,18),
+  array("BMW",15,13),
+  array("Saab",5,2),
+  array("Land Rover",17,15)
+  );
+
+  Ahora el bidimensional $ coches matriz contiene cuatro matrices, y tiene dos índices: fila y columna.
+Para obtener acceso a los elementos de la matriz $ coches hay que apuntar a los dos índices (fila y columna):
+</p>
+<span><p>
+  &lt;?php
+echo $cars[0][0].": In stock: ".$cars[0][1].", sold: ".$cars[0][2].".&lt;br>";
+echo $cars[1][0].": In stock: ".$cars[1][1].", sold: ".$cars[1][2].".&lt;br>";
+echo $cars[2][0].": In stock: ".$cars[2][1].", sold: ".$cars[2][2].".&lt;br>";
+echo $cars[3][0].": In stock: ".$cars[3][1].", sold: ".$cars[3][2].".&lt;br>";
+?>
+</p></span>
+<p>
+  También podemos poner un bucle dentro de otro bucle For para obtener los elementos de la matriz $ coches (que aún tenemos que apuntar a los dos índices):
+</p>
+<span><p>&lt;?php
+for ($row = 0; $row < 4; $row++) {
+  echo "&lt;p>&lt;b>Row number $row&lt;/b>&lt;/p>";
+  echo "&lt;ul>";
+  for ($col = 0; $col < 3; $col++) {
+    echo "&lt;li>".$cars[$row][$col]."&lt;/li>";
+  }
+  echo "&lt;/ul>";
+}
+?>
+</p></span>

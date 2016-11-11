@@ -1,0 +1,82 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>Validar nombre</h1>
+<p>
+  El código siguiente muestra una forma sencilla de comprobar si el campo de nombre sólo contiene letras y espacios en blanco. Si el valor del campo nombre no es válido, entonces almacenar un mensaje de error:
+
+$name = test_input($_POST["name"]);
+if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+  $nameErr = "Only letters and white space allowed";
+}
+</p>
+<span style="background-color:green;">La función preg_match () busca en una cadena de patrón, devolviendo true si existe el patrón, y falso en caso contrario.</span>
+<h1>Validar E-mail</h1>
+<p>
+  La forma más fácil y más seguro para comprobar si está bien formado una dirección de correo electrónico es utilizar la función de PHP filter_var ().
+En el código de abajo, si no está bien formada la dirección de correo electrónico, a continuación, almacenar un mensaje de error:
+
+$email = test_input($_POST["email"]);
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  $emailErr = "Invalid email format";
+}
+</p>
+<h1>Validar URL</h1>
+<p>
+  El código siguiente muestra una manera de comprobar si una sintaxis de la dirección URL es válida (esta expresión regular también permite guiones en la URL). Si la sintaxis de dirección URL no es válida, entonces almacenar un mensaje de error:
+
+$website = test_input($_POST["website"]);
+if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+  $websiteErr = "Invalid URL";
+}
+</p>
+<h1>Validar nombre, dirección de correo, y la URL</h1>
+<span><p>&lt;?php
+// Define las variables y las configura con valores vacios
+$nameErr = $emailErr = $genderErr = $websiteErr = "";
+$name = $email = $gender = $comment = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+      $nameErr = "Only letters and white space allowed";
+    }
+  }
+
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email format";
+    }
+  }
+
+  if (empty($_POST["website"])) {
+    $website = "";
+  } else {
+    $website = test_input($_POST["website"]);
+    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
+    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+      $websiteErr = "Invalid URL";
+    }
+  }
+
+  if (empty($_POST["comment"])) {
+    $comment = "";
+  } else {
+    $comment = test_input($_POST["comment"]);
+  }
+
+  if (empty($_POST["gender"])) {
+    $genderErr = "Gender is required";
+  } else {
+    $gender = test_input($_POST["gender"]);
+  }
+}
+?>
+</p></span>

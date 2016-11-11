@@ -1,0 +1,106 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<meta charset="utf-8">
+
+<h1>Capítulo 16: Redirección de páginas</h1>
+<br>
+<h1>¿Qué es la redirección de la página?</h1>
+<br>
+<p>Es posible que haya encontrado con una situación en la que ha hecho clic en un enlace para llegar a una página X pero internamente se le ha remitido a otra página Y. Esto ocurre debido a la página de redirección. Este concepto es diferente de JavaScript Page Refresh.</p>
+<br>
+<p>Podría haber varias razones por las que le gustaría volver a dirigir a un usuario la página original. Esta lista muestra algunas de las razones:</p>
+<ul>
+	<li>No te gustaba el nombre de su dominio y se está moviendo a una nueva. En tal escenario, es posible que desee dirigir todos sus visitantes al nuevo sitio. Aquí usted puede mantener su dominio de edad pero puso una sola página con una redirección de la página de tal manera que todos sus viejos visitantes de dominio puedan llegar a su nuevo dominio.</li>
+	<li>Usted ha construido en marcha varias páginas basadas en versiones de navegadores o sus nombres o puede basarse en diferentes países, a continuación, en lugar de utilizar la página en el servidor de redirección, puede utilizar la redirección de la página del lado del cliente a sus usuarios de la tierra en la página correspondiente.</li>
+	<li>Los motores de búsqueda pueden ya han indexado sus páginas. Pero mientras se mueve a otro dominio, no le gustaría perder a sus visitantes a través de motores de búsqueda. Así que usted puede utilizar la página de redirección del lado del cliente. Pero hay que tener en cuenta que no se debe hacer para engañar a los motores de búsqueda, que podría conseguir que sea baneado.</li>
+</ul>
+<br>
+<h2>¿Cómo funciona la Re-dirección?</h2>
+<br>
+<p>Las implementaciones de la página-redirección son las siguientes:</p>
+<br>
+<h2>Ejemplo 1</h2>
+<p>Es muy simple hacer una redirección de una página usando JavaScript del lado del cliente. Para redirigir los visitantes del sitio a una nueva página, sólo tiene que añadir una línea en su sección de la cabeza de la siguiente manera:</p>
+<br>
+
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">&lt;!DOCTYPE html&gt;
+<br>
+<br>
+	&lt;html&gt;
+	<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;head&gt;
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;script type="text/javascript"&gt;
+			<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">function Redirect() {
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">window.location="j23schools.ml";</div>
+				}
+				</div>
+		&lt;/script&gt;
+		</div>
+	&lt;/head&gt;
+	</div>
+	<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;body&gt;
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;form&gt;
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;input type="button" value="Me redirecciona" onclick="Redirect();" /&gt;</div>
+			&lt;/form&gt;
+			</div>
+		&lt;/body&gt;
+		</div>
+	&lt;/html&gt;
+  </div>
+
+<br>
+
+<h2>Ejemplo 2</h2>
+<p>Puede mostrar un mensaje adecuado a sus visitantes del sitio antes de redirigir a una nueva página. Esto necesitaría un retardo de poco tiempo en cargar una página nueva. El siguiente ejemplo muestra cómo implementar la misma. Aquí setTimeout() es una función incorporada en JavaScript que puede ser utilizada para ejecutar otra función después de un intervalo de tiempo dado.</p>
+<br>
+
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">&lt;!DOCTYPE html&gt;
+<br>
+<br>
+	&lt;html&gt;
+	<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;head&gt;
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;script type="text/javascript"&gt;
+			<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">function Redirect() {
+			<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">window.location="j23schools.ml";</div>
+			}
+		</div>
+			<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">document.write("Usted será redirigido a la página principal en 10 seg.");</div>
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">setTimeout('Redirect()', 10000);</div>
+				&lt;/script&gt;
+			</div>
+			&lt;/head&gt;
+		</div>
+	&lt;/html&gt;
+	</div>
+
+<br>
+
+<h2>Ejemplo 3</h2>
+<p>El siguiente ejemplo muestra cómo redirigir a sus visitantes del sitio a una página diferente en función de sus navegadores.</p>
+<br>
+
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">&lt;!DOCTYPE html&gt;
+<br>
+<br>
+	&lt;html&gt;
+	<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;head&gt;
+		<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">&lt;script type="text/javascript"&gt;
+			<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">var browsername=navigator.appName;</div>
+			<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">if( browsername == "Netscape" ) {
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">window.location="http://www.location.com/ns.htm";</div>
+			}
+		</div>
+			<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">else if ( browsername =="Microsoft Internet Explorer") {
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">window.location="http://www.location.com/ie.htm";</div>
+			}
+			</div>
+			<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">else {
+				<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">window.location="http://www.location.com/other.htm";</div>
+				}
+			</div>
+			&lt;/script&gt;
+		</div>
+	&lt;/head&gt;
+	</div>
+	&lt;/html&gt;
+</div>
+<br>

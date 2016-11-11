@@ -1,0 +1,133 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>PHP 5 Tipos de datos</h1>
+<p>
+  Las variables pueden almacenar datos de diferentes tipos y diferentes tipos de datos pueden hacer cosas diferentes.
+
+PHP soporta los siguientes tipos de datos:
+<ul>
+<li>string</li>
+<li>int</li>
+<li>float</li>
+<li>boolean</li>
+<li>array</li>
+<li>objet</li>
+<li>null</li>
+<li>resource</li>
+</ul>
+</p>
+<h1>PHP cadena</h1>
+<p>
+  Las variables pueden almacenar datos de diferentes tipos y diferentes tipos de datos pueden hacer cosas diferentes.
+
+PHP soporta los siguientes tipos de datos:
+</p>
+<span><p>
+	&lt;?php
+  $x = "Hello world!";
+  $y = 'Hello wolrd!';
+	echo $x;
+	echo "&lt;br>";
+	echo $y;
+	?>
+</p>
+</span>
+<h1>PHP entero</h1>
+<p>
+  Un tipo de datos entero es un número no decimal entre -2147483648 y 2147483647.
+
+  Reglas para los números enteros:
+  <ul>
+    <li>Un entero debe tener al menos un dígito</li>
+    <li>Un entero no debe tener un punto decimal</li>
+    <li>Un entero que puede ser positivo o negativo</li>
+    <li>Los enteros pueden ser especificados en tres formatos: decimal (base-10), hexadecimal (16-basados ​​- el prefijo 0x) u octal (8-basados ​​- el prefijo 0)</li>
+  </ul>
+</p>
+<span><p>&lt;?php
+  $x = 5985;
+  var_dump($x);
+  ?>
+</p>
+</span>
+<h1>Float PHP</h1>
+<p>
+  Un float (número de punto flotante) es un número con un punto decimal o un número en forma exponencial.
+
+En el siguiente ejemplo $ x es un float. La función de PHP var_dump () devuelve el tipo de datos y el valor:
+</p>
+<span><p>&lt;?php
+$x = 10.365;
+var_dump($x);
+?>
+</p>
+</span>
+<h1>PHP Boolean</h1>
+<p>
+  Un booleano representa dos estados posibles: verdadero o falso.
+</p>
+<span><p>
+  $x = true;
+  $y = false;
+</p>
+</span>
+<h1>PHP Array</h1>
+<p>
+  Un array almacena varios valores en una sola variable.
+
+En el siguiente ejemplo $ coches es un array. La función de PHP var_dump () devuelve el tipo de datos y el valor:
+</p>
+<span><p>&lt;?php
+  $cars = array("Volvo","BMW","Toyota");
+  var_dump($cars);
+?>
+</p>
+</span>
+<h1>PHP Object</h1>
+<p>
+  Un object es un tipo de datos que almacena los datos y la información sobre cómo procesar esos datos.
+
+En PHP, un objeto debe declararse explícitamente.
+
+En primer lugar debemos declarar una clase de objeto. Para ello, se utiliza la palabra clave class. Una clase es una estructura que puede contener propiedades y métodos:
+</p>
+<span><p>&lt;?php
+  class Car {
+    function Car() {
+        $this->model = "VW";
+    }
+}
+
+// crea un objeto
+$herbie = new Car();
+
+// muestra las propiedades del objeto
+echo $herbie->model;
+?>
+</p>
+</span>
+<h1>PHP null</h1>
+<p>
+  Null es un tipo de datos especial que sólo puede tener un valor de: NULL.
+
+Una variable del tipo de datos NULL es una variable que no tiene ningún valor asignado a la misma.
+
+Consejo: Si se crea una variable sin un valor, se le asigna automáticamente un valor de NULL.
+
+Las variables también se pueden vaciar estableciendo el valor a NULL:
+</p>
+<span><p>&lt;?php
+  $x = "Hello world!";
+  $x = null;
+  var_dump($x);;
+?>
+</p>
+</span>
+<h1>PHP Resources</h1>
+<p>
+  El tipo de recurso especial no es un tipo de datos real. Es el almacenamiento de una referencia a las funciones y los recursos externos a PHP.
+
+Un ejemplo común de utilizar el tipo de datos de recursos es una llamada de base de datos.
+
+No vamos a hablar sobre el tipo de recurso que aquí, ya que es un tema avanzado.
+</p>

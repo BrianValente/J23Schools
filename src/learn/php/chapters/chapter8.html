@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+ <h1>Constantes</h1>
+ <p>
+   Una constante es un identificador (nombre) para un valor simple. El valor no se puede cambiar durante la secuencia de comandos.
+
+Un nombre válido constante comienza con una letra o un guión bajo (sin signo $ antes del nombre de constante).
+
+Nota: A diferencia de las variables, las constantes son automáticamente mundial a través de toda la secuencia de comandos.
+ </p>
+ <h1>Crear una constante de PHP</h1>
+ <p>
+   Para crear una constante, utilice la funcion define()
+ </p>
+ <span><p>define(name, value, case-insensitive)</p></span>
+<h1>Las constantes son Global</h1>
+<p>
+  Las constantes son automáticamente global y se pueden utilizar a través de toda la secuencia de comandos.
+
+El ejemplo siguiente utiliza una constante dentro de una función, incluso si se define fuera de la función:
+</p>
+<span><p>&lt;?php
+  define("GREETING", "Welcome to W3Schools.com!");
+
+  function myTest() {
+      echo GREETING;
+  }
+
+  myTest();
+  ?>
+</p>
+</span>

@@ -1,0 +1,53 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>PHP 5 strings</h1>
+<h1>Obtener la longitud de una cadena</h1>
+<p>
+  La función de PHP strlen () devuelve la longitud de una cadena.
+
+El ejemplo siguiente devuelve la longitud de la cadena "Hola mundo!":
+</p>
+<span><p>&lt;?php
+  echo strlen("Hello world!"); // outputs 12
+?>
+</p>
+</span>
+<p>La salida del código anterior será: 12.</p>
+<h1>Contar el número de palabras en una cadena</h1>
+<p>La función de PHP str_word_count () cuenta el número de palabras en una cadena:</p>
+<span><p>&lt;?php
+echo str_word_count("Hello world!"); // muestra 2
+?>
+</p>
+</span>
+<h1>Invertir una cadena</h1>
+<p>La funcion de PHP strrev() invierte una cadena</p>
+<span><p>&lt;?php
+  echo strrev("Hello world!"); // muestra !dlrow olleH
+?>
+</p>
+</span>
+<h1>Buscar Un texto específico en una cadena</h1>
+<p>
+  Los strpos PHP () función busca un texto específico dentro de una cadena.
+
+Si se encuentra una coincidencia, la función devuelve la posición del primer partido. Si no se encuentra ninguna coincidencia, se devolverá FALSE.
+
+El siguiente ejemplo busca el "mundo" de texto en la cadena "Hola mundo!":
+</p>
+<span><p>&lt;?php
+  echo strpos("Hello world!", "world"); // muestra 6
+?>
+</p>
+</span>
+<h1>Reemplazar texto dentro de una cadena</h1>
+<p>
+  La función de PHP str_replace () sustituye a algunos personajes con algunos otros caracteres de una cadena.
+
+El siguiente ejemplo reemplaza el texto "world" con "Dolly":
+</p>
+<span><p>&lt;?php
+echo str_replace("world", "Dolly", "Hello world!"); // muestra Hello Dolly!
+?>
+</p>
+</span>

@@ -1,0 +1,37 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>Do while</h1>
+<p>
+  El bucle do ... while siempre se ejecutará el bloque de código una vez, se compruebe el estado, y repetir el bucle mientras la condición especificada es verdadera.
+</p>
+<h1>Sintaxis</h1>
+<p>
+  do {
+    code to be executed;
+} while (condition is true);
+
+El ejemplo siguiente primero establece una variable $ x 1 ($ x = 1). A continuación, el bucle Do While escribirá alguna salida, y luego incrementar la variable $ x con 1. A continuación, se comprueba la condición (es $ x menor que, o igual a 5?), Y el bucle continuará funcionando siempre y cuando $ x es menor que, o igual a 5:
+</p>
+<span><p>&lt;?php
+$x = 1;
+
+do {
+    echo "El numero es: $x &lt;br>";
+    $x++;
+} while ($x <= 5);
+?>
+</p></span>
+<p>
+  Tenga en cuenta que en un bucle Do While la condición se comprueba después de ejecutar las sentencias dentro del bucle. Esto significa que el bucle Do While ejecutaría sus estados al menos una vez, incluso si la condición es falsa la primera vez.
+
+El ejemplo siguiente establece la variable $ x 6, a continuación, se ejecuta el bucle, y luego se comprueba la condición :
+</p>
+<span><p>&lt;?php
+$x = 6;
+
+do {
+    echo "The number is: $x &lt;br>";
+    $x++;
+} while ($x <= 5);
+?>
+</p></span>

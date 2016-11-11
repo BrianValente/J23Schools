@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<meta charset="UTF-8">
+<title>Capítulo 7</title>
+</head>
+
+<body>
+  <h1>Capítulo 7: Párrafos</h1>
+  <p>Se usa &lt;p&gt; para definir un párrafo.</p>
+  <code>&lt;p&gt;Este es un párrafo.&lt;/p&gt;
+   &lt;p&gt;Este es otro párrafo.&lt;/p&gt;</code>
+   <br>
+   <br>
+   <hr>
+<h1>Visualización</h1>
+<p>No se puede saber con seguridad cómo un documento HTML será mostrado en el navegador</p>
+<p>Grandes o pequeñas pantallas, ventanas de tamaños diferentes, crearán diferentes resultados.</p>
+<p>Con HTML, no se puede cambiar lo que se muestra simplemente poniendo espacios libres o saltos de línea (renglón) en el código.</p>
+<p>El navegador removerá cualquier espacio extra y cualquier línea de más al momento de mostrar la página. Por ejemplo:</p>
+<code>&lt;p&gt;
+Este párrafo
+contiene varias líneas
+en el código fuente,
+pero el navegador
+lo ignora.
+&lt;/p&gt;
+<br>
+&lt;p&gt;
+Este párrafo
+contiene&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;un montón de espacios
+en el código&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fuente,
+pero el&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navegador
+lo ignora.
+&lt;/p&gt;</code>
+<br>
+<h1>No olvides la etiqueta final </h1>
+<p>La mayoría de los navegadores mostrarán el HTML correctamente incluso aunque te olvides de poner la etiqueta final (en este caso, &lt;/p&gt;).</p>
+<code>&lt;p&gt;Un párrafo.
+&lt;p&gt;Otro párrafo.</code>
+<p> Este ejemplo se mostrará correctamente en la mayor parte de los navegadores, pero no te acostumbres. Poné siempre la etiqueta final: &lt;/p&gt;.</p>
+<br>
+<h1>Saltos de línea</h1>
+<p>El elemento &lt;br&gt; define un salto de línea (un nuevo renglón).</p>
+<p>Usá &lt;br&gt; si querés un salto de línea sin tener que empezar un nuevo párrafo.</p>
+<code>&lt;p&gt;Este es&lt;br&gt;un párrafo&lt;br&gt;con saltos de línea.&lt;p&gt;</code>
+<p>La etiqueta &lt;br&gt; es una etiqueta vacía, es decir que no tiene etiqueta final, no existe un "&lt;/br&gt;".</p>
+<br>
+<h1>El elemento &lt;pre&gt;</h1>
+<p>El elemento &lt;pre&gt; define un texto con formato predefinido.</p>
+<p>Un texto dentro de &lt;pre&gt; es mostrado en una fuente de ancho fijo (normalmente Courier), y preserva tanto espacios como saltos de línea.</p>
+<code>
+  <pre>
+  &lt;pre&gt;
+  Este texto            tiene varios espacios
+  y también           varios saltos
+  de línea,           y el explorador
+  lo mostrará así           como está ahora.
+  &lt;/pre&gt;
+</pre>
+</code>
+</body>
+
+</html>

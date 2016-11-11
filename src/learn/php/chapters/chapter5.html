@@ -1,0 +1,55 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+
+
+
+<h1>PHP 5 echo y declaraciones de impresión</h1>
+<p>
+  En PHP hay dos formas básicas para obtener una salida: eco y de impresión.
+
+En este tutorial usamos eco (e imprimir) en casi todos los ejemplos. Por lo tanto, este capítulo contiene un poco más de información acerca de esos dos estados de salida.
+</p>
+
+<h1>echo y print</h1>
+<p>
+  echo y print son más o menos lo mismo. Ambos se utilizan para enviar datos a la pantalla.
+
+Las diferencias son pequeñas: echo no tiene valor de retorno, mientras que print tiene un valor de retorno de 1 por lo que se puede utilizar en expresiones. echo puede tomar varios parámetros (aunque tal uso es poco frecuente), mientras que print puede tener un argumento. echo es marginalmente más rápido que print.
+</p>
+<h1>Declarar echo en PHP</h1>
+<p>
+  La declaración de eco se puede utilizar con o sin paréntesis: echo o echo ().
+</p>
+  El siguiente ejemplo muestra cómo la salida de texto con el comando echo (aviso de que el texto puede contener marcado HTML):
+</p>
+<span><p>	&lt;?php
+	echo "&lt;h2>PHP es divertido!&lt;/h2>";
+	echo "Estoy aprendiendo PHP!&lt;br&gt;";
+	echo "este","string","fue","hecho","con multiples parámetros";
+	?>
+</p>
+</span>
+<h1>Print en PHP </h1>
+<p>La sentencia print se puede utilizar con o sin paréntesis:print o print().</p>
+<p>El siguiente ejemplo muestra cómo el texto de salida con el comando de impresión (aviso de que el texto puede contener marcado HTML):</p>
+<span><p>	&lt;?php
+  print "Hello world!";
+  print "&lt;h2>PHP es divertido!&lt;/h2>";
+	print "Estoy aprendiendo PHP!&lt;br&gt;";
+	?>
+</p>
+</span>
+<p style="text-decoration:underline">Las variables de visualización</p>
+<p>El siguiente ejemplo muestra cómo el texto de salida y las variables con la declaración de impresión:</p>
+<span><p>	&lt;?php
+  $txt1 = "Learn PHP";
+  $txt2 = "W3Schools.com";
+  $x = 5;
+  $y = 4;
+
+  print "&lt;h2>$txt1&lt;/h2>";
+  print "Study PHP at $txt2&lt;br>";
+  print $x + $y;
+	?>
+</p>
+</span>

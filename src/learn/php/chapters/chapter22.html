@@ -1,0 +1,19 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>Mantener los valores en el formulario</h1>
+<p>
+  Para mostrar los valores en los campos de entrada después de que el usuario pulsa el botón de enviar, añadimos un pequeño script PHP dentro del atributo de valor de los siguientes campos de entrada: nombre, correo electrónico y página web. En el campo de comentarios área de texto, ponemos la secuencia de comandos entre el <textarea> y </ textarea> etiquetas. El pequeño script devuelve el valor del nombre $, $ correo electrónico, página web $, y las variables de comentario $.
+Entonces, también tenemos que mostrar qué botón de radio que fue marcada. Para esto, hay que manipular el atributo checked (no el atributo de valor para los botones de radio):
+
+Name: &lt;input type="text" name="name" value="&lt;?php echo $name;?>">
+E-mail: &lt;input type="text" name="email" value="&lt;?php echo $email;?>">
+Website: &lt;input type="text" name="website" value="&lt;?php echo $website;?>">
+Comment: &lt;textarea name="comment" rows="5" cols="40">&lt;?php echo $comment;?></textarea>
+Gender:
+&lt;input type="radio" name="gender"
+&lt;?php if (isset($gender) && $gender=="female") echo "checked";?>
+value="female">Female
+&lt;input type="radio" name="gender"
+&lt;?php if (isset($gender) && $gender=="male") echo "checked";?>
+value="male">Male
+</p>

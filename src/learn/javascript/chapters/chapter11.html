@@ -1,0 +1,78 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+
+
+
+<h1>Capítulo 11: Bucle FOR...IN</h1>
+<p>El bucle for...in es usado para buclear entre las propiedades de un objeto. Como todavia no discutimos temas sobre objetos, puede que todavia no te sientas comodo con este bucle. Seguramente, cuando comprendas como los objetos se comportan en Javascript, te resulte util.</p>
+
+<h1>Sintaxis</h1>
+<code>
+for (nombreDeVariable en el objeto){
+   comando(s) a ejecutar;
+}
+</code>
+
+<p>En cada iteracion, una propiedad del objeto es asignada a nombreDeVAriable y este bucle continua hasta que todas las propiedades del objeto son usadas.</p>
+
+<h1>Ejemplo.</h1>
+<p>Trata de ejecutar el siguiente ejemplo para implementar "for-in". Este, muestra los objetos del navegador web.</p>
+
+<code>
+&lt;html&gt;
+   &lt;body&gt;
+
+      &lt;script type="text/javascript"&gt;
+
+            var aProperty;
+            document.write("Navigator Object Properties&lt;br /&gt; ");
+
+            for (aProperty in navigator) {
+               document.write(aProperty);
+               document.write("&lt;br /&gt;");
+            }
+            document.write ("Exiting from the loop!");
+
+      &lt;/script&gt;
+
+      &lt;p&gt;Set the variable to different object and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+
+<h1>Output</h1>
+<code>
+Navigator Object Properties
+serviceWorker
+webkitPersistentStorage
+webkitTemporaryStorage
+geolocation
+doNotTrack
+onLine
+languages
+language
+userAgent
+product
+platform
+appVersion
+appName
+appCodeName
+hardwareConcurrency
+maxTouchPoints
+vendorSub
+vendor
+productSub
+cookieEnabled
+mimeTypes
+plugins
+javaEnabled
+getStorageUpdates
+getGamepads
+webkitGetUserMedia
+vibrate
+getBattery
+sendBeacon
+registerProtocolHandler
+unregisterProtocolHandler
+Exiting from the loop!
+Set the variable to different object and then try...
+</code>

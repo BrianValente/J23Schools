@@ -1,0 +1,69 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>PHP 5 Crear archivo / escritura</h1>
+<p>
+  En este capítulo te enseñaremos cómo crear y escribir archivo en el servidor.
+</p>
+<h1>PHP Crear archivo - fopen ()</h1>
+<p>
+  La función fopen () también se utiliza para crear un archivo. Tal vez un poco confuso, pero en PHP, un archivo se crea utilizando la misma función que se utiliza para abrir archivos.
+
+Si utiliza la función fopen () en un archivo que no existe, se creará que, dado que el archivo se abre para la escritura (w) o de agregar (a).
+
+El ejemplo siguiente crea un nuevo archivo llamado "archivoadeprueba.txt". El archivo se creará en el mismo directorio donde reside el código PHP:
+</p>
+<h1>Ejemplo</h1>
+<p>
+  $miarchivo = fopen("archivodeprueba.txt", "w")
+</p>
+<h1>Los permisos de archivo en PHP</h1>
+<p>
+  La función fwrite () se utiliza para escribir en un archivo.
+
+El primer parámetro de fwrite () contiene el nombre del archivo para escribir en y el segundo parámetro es la cadena a ser escrito.
+
+El siguiente ejemplo escribe un par de nombres en un nuevo archivo llamado "nuevoarchivo.txt":
+</p>
+<h1>Ejemplo</h1>
+<span><p>
+  &lt;?php
+$miarchivo = fopen("nuevoarchivo.txt", "w") or die("No se puede abrir el archivo!");
+$txt = "John Doe\n";
+fwrite($miarchivo, $txt);
+$txt = "Jane Doe\n";
+fwrite($miarchivo, $txt);
+fclose($miarchivo);
+?>
+</p></span>
+<p>
+  Nótese que hemos escrito en el fichero "nuevoarchivo.txt" dos veces. Cada vez que escribimos en el archivo que envía la cadena $ txt que contenía primera "John Doe" y el segundo contenía "Jane Doe". Después de haber terminado de escribir, cerramos el archivo utilizando la función fclose ().
+
+Si abrimos el "nuevoarchivo.txt" archivo se vería así:
+</p>
+<span><p>
+  John Doe
+Jane Doe
+</p></span>
+<h1>PHP Sobrescritura</h1>
+<p>
+  Ahora que "nuevoarchivo.txt" contiene algunos datos que podemos mostrar lo que pasa cuando abrimos un archivo existente para la escritura. Todos los datos existentes se borrarán y se comienza con un archivo vacío.
+
+En el siguiente ejemplo abrimos nuestro archivo existente "nuevoarchivo.txt", y escribimos algunos datos nuevos en ella:
+</p>
+<span><p>
+  &lt;?php
+$miarchivo = fopen("nuevoarchivo.txt", "w") or die("No se puede abrir el archivo!");
+$txt = "Mickey Mouse\n";
+fwrite($miarchivo, $txt);
+$txt = "Minnie Mouse\n";
+fwrite($miarchivo, $txt);
+fclose($miarchivo);
+?>
+</p></span>
+<p>
+  Si ahora abrimos el archivo "nuevoarchivo.txt", tanto John y Jane han desaparecido, y sólo los datos que acabamos de escribir está presente:
+</p>
+<span><p>
+  Mickey Mouse
+Minnie Mouse
+</p></span>

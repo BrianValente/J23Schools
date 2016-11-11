@@ -1,0 +1,66 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>PHP Filtros avanzados</h1>
+<h1>Validar un número entero dentro de un rango</h1>
+<p>
+  En el siguiente ejemplo se utiliza la función filter_var () para comprobar si una variable es tanto de tipo INT, y entre 1 y 200:
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+  &lt;?php
+$int = 122;
+$min = 1;
+$max = 200;
+
+if (filter_var($int, FILTER_VALIDATE_INT, array("options" => array("min_range"=>$min, "max_range"=>$max))) === false) {
+    echo("El valor de la variable no se encuentra en un rango legal");
+} else {
+    echo("El valor de la variable se encuentra en un rango legal");
+}
+?>
+</p></span>
+<h1>Validar direcciones IPv6</h1>
+<p>
+  En el siguiente ejemplo se utiliza la función filter_var () para comprobar si el $ ip variable es una dirección IPv6 válida:
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+  &lt;?php
+$ip = "2001:0db8:85a3:08d3:1319:8a2e:0370:7334";
+
+if (!filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) === false) {
+    echo("$ip es una direccion IPv6 valida");
+} else {
+    echo("$ip no es una direccion IPv6 valida");
+}
+?>
+</p></span>
+<h1>Validar URL - debe contener una cadena de consulta</h1>
+<p>
+  En el siguiente ejemplo se utiliza la función filter_var () para comprobar si el $ url variable es una URL con una cadena de consulta:
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+  &lt;?php
+$url = "http://www.j23schools.com";
+
+if (!filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_QUERY_REQUIRED) === false) {
+    echo("$url es una URL valida");
+} else {
+    echo("$url no es una URL valida");
+}
+?>
+</p></span>
+<h1>Remover caracteres ASCII Con Valor> 127</h1>
+<p>
+  En el siguiente ejemplo se utiliza la función filter_var () para desinfectar una cadena. Será tanto eliminar todas las etiquetas HTML y todos los caracteres con valor ASCII> 127, de la cadena:
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+  &lt;?php
+$str = "<h1>Hello WorldÆØÅ!</h1>";
+
+$newstr = filter_var($str, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+echo $newstr;
+?>
+</p></span>

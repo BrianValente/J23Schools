@@ -1,0 +1,112 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+
+<h1>Array</h1>
+<p>
+  Una matriz almacena varios valores en una sola variable:
+</p>
+<span><p>&lt;?php
+$cars = array("Volvo", "BMW", "Toyota");
+echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
+?>
+</p></span>
+<h1>¿Qué es una matriz?</h1>
+<p>
+  Una matriz es una variable especial, que puede contener más de un valor a la vez.
+
+Si usted tiene una lista de elementos (una lista de nombres de coche, por ejemplo), el almacenamiento de los coches en las variables individuales podría tener este aspecto:
+
+$cars1 = "Volvo";
+$cars2 = "BMW";
+$cars3 = "Toyota";
+
+Sin embargo, lo que si desea colocar a través de los coches y encontrar una específica? ¿Y si no tenías 3 coches, pero 300?
+
+La solución es crear una matriz!
+
+Una matriz puede contener muchos valores bajo un único nombre, y se puede acceder a los valores de referencia a un número de índice.
+</p>
+<h1>Crear un array en PHP</h1>
+<p>
+  En PHP, la función array () se utiliza para crear una matriz:
+
+array();
+
+En PHP, hay tres tipos de matrices:
+<ul>
+  <li>Arrays indexados - cadenas con un índice numérico</li>
+  <li>Los array asociativos - cadenas con claves denominadas</li>
+  <li>Los array multidimensionales - Las matrices que contienen una o más matrices</li>
+</ul>
+</p>
+<h1>Arrays indexados</h1>
+<p>
+  Hay dos maneras de crear matrices indexadas:
+El índice se puede asignar de forma automática (índice siempre empieza en 0), así:
+
+$cars = array("Volvo", "BMW", "Toyota");
+
+o el índice se puede asignar de forma manual:
+
+$cars[0] = "Volvo";
+$cars[1] = "BMW";
+$cars[2] = "Toyota";
+
+En el siguiente ejemplo se crea una matriz indexada llamada $ coches, asigna tres elementos a la misma, y ​​luego imprime un texto que contiene los valores de la matriz:
+</p>
+<span><p>&lt;?php
+$cars = array("Volvo", "BMW", "Toyota");
+echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
+?></p></span>
+<h1>Obtener la longitud de un array</h1>
+<p>
+  La función count () se utiliza para devolver la longitud (el número de elementos) de un array:
+</p>
+<span><p>&lt;?php
+$cars = array("Volvo", "BMW", "Toyota");
+echo count($cars);
+?>
+</p></span>
+<h1>Array asociativos</h1>
+<p>
+  Las matrices asociativas son matrices que utilizan claves con nombre que se asignan a los mismos.
+  Hay dos maneras de crear una matriz asociativa:
+
+  $age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+
+  o:
+
+  $age['Peter'] = "35";
+  $age['Ben'] = "37";
+  $age['Joe'] = "43";
+
+  Las teclas nombrados a continuación, se pueden utilizar en una secuencia de comandos:
+</p>
+<span><p>&lt;?php
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+echo "Peter is " . $age['Peter'] . " years old.";
+?>
+</p></span>
+<h1>Bucle de array asociativo</h1>
+<p>
+  Para recorrer e imprimir todos los valores de una matriz asociativa, se puede utilizar un bucle foreach, como esto:
+</p>
+<span><p>
+  &lt;?php
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+
+foreach($age as $x => $x_value) {
+    echo "Key=" . $x . ", Value=" . $x_value;
+    echo "&lt;br>";
+}
+?>
+</p></span>
+<h1>Las matrices multidimensionales</h1>
+<p>
+Las matrices multidimensionales se explicarán en la sección avanzada PHP.
+</p>
+<h1>PHP matriz de referencia completa</h1>
+<p>
+Para una referencia completa de todas las funciones de matriz, vaya a nuestra completa Referencia PHP matriz .
+La referencia contiene una breve descripción y ejemplos de uso, para cada función!
+</p>

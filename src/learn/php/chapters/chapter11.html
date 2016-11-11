@@ -1,0 +1,41 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>La sentencia switch</h1>
+<p>
+  Utilice la sentencia switch para seleccionar uno de los muchos bloques de código para ser ejecutado .
+</p>
+<h1>Sintaxis</h1>
+<span><p>switch (n) {
+    case label1:
+        codigo a ser ejecutado si n=label1;
+        break;
+    case label2:
+        codigo a ser ejecutado si n=label2;
+        break;
+    case label3:
+        codigo a ser ejecutado si n=label3;
+        break;
+    ...
+    default:
+        codigo a ser ejecutado si n es diferente de todos los labels;
+}</p></span>
+<p>
+  Así es como funciona: En primer lugar tenemos una sola expresión n (con mayor frecuencia una variable), que se evalúa una vez. El valor de la expresión se compara entonces con los valores para cada caso en la estructura. Si hay una coincidencia, se ejecuta el bloque de código asociado con ese caso. Utilice descanso para evitar que el código se ejecute en el siguiente caso de forma automática. El valor predeterminado sentencia se utiliza si no se encuentra ninguna coincidencia.
+</p>
+<span><p>&lt;?php
+$favcolor = "red";
+
+switch ($favcolor) {
+    case "rojo":
+        echo "Tu color favorito es el rojo!";
+        break;
+    case "azul":
+        echo "Tu color favorito es el azul!";
+        break;
+    case "verde":
+        echo "Tu color favorito es el verde!";
+        break;
+    default:
+        echo "Ningno de estos es tu color favorito!";
+}
+?></p></span>

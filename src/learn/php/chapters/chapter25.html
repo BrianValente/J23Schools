@@ -1,0 +1,112 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>Php 5 incluir archivos</h1>
+<p>
+  La declaracion incluir lleva todo el texto / código / marcado que existe en el archivo y lo copia especificada en el archivo que utiliza la instrucción de inclusión.
+
+Incluir archivos es muy útil cuando se desea incluir el mismo PHP, HTML o texto en varias páginas de un sitio web.
+</p>
+<h1>PHP incluye y requiere de Declaraciones</h1>
+<p>
+  Es posible insertar el contenido de un archivo PHP en otro archivo PHP (antes de que el servidor lo ejecute), con la declaración de incluir o requerir.
+  Las sentencias de inclusión y requieren son idénticos, excepto en caso de fallo:
+  <li>Requerir producirá un error fatal (E_COMPILE_ERROR) y detener el script</li>
+  <li>Incluir sólo producirá una advertencia (E_WARNING) y el guión seguirá</li>
+</p>
+
+<p>
+Por lo tanto, si desea que la ejecución de seguir y mostrar a los usuarios la salida, incluso si el archivo de inclusión no se encuentra, usar la instrucción de inclusión. De lo contrario, en el caso de Marco, CMS, o una codificación de aplicaciones PHP compleja, siempre utilice la instrucción
+requiere para incluir un archivo de clave para el flujo de ejecución. Esto ayudará a evitar poner en peligro la seguridad y la integridad de su aplicación, por si a caso un archivo clave es accidentalmente falta.
+Incluyendo archivos ahorra mucho trabajo. Esto significa que puede crear un encabezado, pie de página o archivo de menú estándar para todas sus páginas web. Entonces, cuando el encabezado necesita ser actualizado, sólo se puede actualizar el encabezado de archivo de inclusión.
+</p>
+<h1>Sintaxis</h1>
+<span><p>
+  include 'nombredelarchivo';
+
+or
+
+require 'nombredelarchivo';
+</p></span>
+<h1>Ejemplos de Incluir en PHP</h1>
+<h2>Ejemplo 1</h2>
+<p>
+  Supongamos que tenemos un archivo de pie de página estándar llamado "pie.php", que se ve así:
+</p>
+<span><p>
+  &lt;?php
+echo "&lt;p>Copyright &copy; 1999-" . date("Y") . " J23schools.com&lt;/p>";
+?>
+</p></span>
+<p>
+  Para incluir el archivo de pie de página en una página, utilice la instrucción de inclusión:
+</p>
+<h1>Ejemplo</h1>
+<span><p>
+  &lt;html>
+&lt;body>
+
+&lt;h1>Bienvenido a mi pagina principal!</h1>
+&lt;p>Algo de texto.</p>
+&lt;p>Un poco mas de texto.</p>
+&lt;?php include 'footer.php'?>
+
+&lt;/body>
+&lt;/html>;
+</p></span>
+<h1>Ejemplo 2</h1>
+<p>
+  Supongamos que tenemos un archivo de menú estándar llamado "menu.php":
+</p>
+<span><p>
+  &lt;?php
+echo '&lt;a href="/default.asp">Home&lt;/a> -
+&lt;a href="/html/default.asp">HTML Tutorial&lt;/a> -
+&lt;a href="/css/default.asp">CSS Tutorial&lt;/a> -
+&lt;a href="/js/default.asp">JavaScript Tutorial&lt;/a> -
+&lt;a href="default.asp">PHP Tutorial&lt;/a>'
+?>;
+</p></span>
+  <h1>Ejemplo 3</h1>
+  <p>
+    Supongamos que tenemos un archivo llamado "vars.php", con algunas variables definidas:
+  </p>
+  <span>p
+    <?php
+  $color='rojo';
+  $auto='BMW';
+  ?></span>
+  <p>
+    Entonces, si incluimos el archivo "vars.php", las variables se pueden utilizar en el archivo de llamada:
+  </p>
+  <h1>Ejemplo</h1>
+  <span><p>
+  &lt;html>
+    &lt;body>
+
+      &lt;h1>Welcome to my home page!&lt;/h1>
+      &lt;?php include 'vars.php';
+      echo "Tengo un $auto $color.";
+      ?>
+
+&lt;/body>
+&lt;/html>
+  </p></span>
+  <h1>PHP incluir vs. requierir</h1>
+  <p>
+    La declaración requerir también se utiliza para incluir un archivo en el código PHP.
+
+Sin embargo, hay una gran diferencia entre incluir y requerir; cuando un archivo se incluye con la declaración incluir  y PHP no puede encontrarlo, el guión continuará ejecutando:
+  </p>
+<h1>Ejemplo</h1>
+<span><p>
+  &lt;html>
+    &lt;body>
+
+      &lt;h1>Bienvenido a mi pagina principal!&lt;/h1>
+      &lt;?php include 'noexisteelarchivo.php';
+      echo "Tengo un $auto $color.";
+      ?>
+
+&lt;/body>
+&lt;/html>
+</p></span>

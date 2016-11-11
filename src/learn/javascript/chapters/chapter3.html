@@ -1,0 +1,66 @@
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+
+
+
+<h1>Capítulo 3: Activando JS en el navegador</h1>
+
+<p>La mayoría de los navegadores actuales vienen con un soporte integrado para JS. Frecuentemente hay que activarlo o desactivarlo manualmente.</p>
+<h2>En Internet Explorer (versión 9 o superior)</h2>
+<ol>
+  <li>En el menú del navegador web, has click en el icono "Herramientas" y selecciona la opción "Opciones de internet".</li>
+  <li>En la ventana "Opciones de internet" selecciona la pestaña "Seguridad".</li>
+  <li>En la pestaña "Seguridad" haz click en el botón "Nivel personalizado...".</li>
+  <li>Cuando el diálogo "Opciones de seguridad - Zona de internet" aparezca, dirígete a la sección "Scripts".</li>
+  <li>En el punto "Activar Scripts" selecciona "Activar" y luego haz click en "OK".</li>
+  <li>Cuando aparezca la ventana "¡Advertencia!" preguntando "¿Está seguro que desea cambiar las configuraciones para esta zona?" selecciona "Sí".</li>
+  <li>En la ventana "Opciones de internet" haz click en el botón "OK" para cerrarla.</li>
+  <li>Haz click en el botón "Actualizar" del navegador para recargar la página.</li>
+</ol>
+<br>
+<h2>Google Chrome</h2>
+<ol>
+  <li>En el navegador web, haz click en el menú "Personalización y Control de Google Chrome" y luego selecciona "Settings".</li>
+  <li>En la sección "Configuración" haz click en la opción "Mostrar configuración avanzada..."</li>
+  <li>Bajo la sección "Privacidad" haz click en la opción "Opciones de contenido".</li>
+  <li>Cuando la ventana aparezca, dirigirse a la sección "JavaScript" y seleccionar la opción "Permitir que todos los sitios ejecuten JavaScript (recomendado)".</li>
+  <li>Luego haz click en el botón "OK" para cerrar la ventana.</li>
+  <li>Cierra la pestaña "Opciones".</li>
+  <li>Finalmente haz click en el botón "Reload this page" del navegador web para refrescar la página.</li>
+</ol>
+<br>
+<h2>Mozilla Firefox</h2>
+<ol>
+  <li>En la barra de direcciones, escribe about:config y presiona Enter.</li>
+  <li>Haz click en "¡Tendré cuidado, lo prometo!" si es que un mensaje de advertencia aparece.</li>
+  <li>En la caja de búsqueda, filtra el listado escribiendo javascript.enabled</li>
+  <li>Del listado, modifica la opción "javascript.enabled" para que el valor cambie de "falso" a "true". Para hacerlo puedes hacer click derecho sobre el ítem y seleccionar "Modificar" o hacer doble click directamente sobre el ítem.</li>
+  <li>Haz click en el botón "Recargar esta página" del navegador web para refrescar la página.</li>
+</ol>
+<br>
+<h2>Opera</h2>
+<ol>
+  <li>a) Haz click en el botón "Menu" del navegador web. En las opciones que aparecen, dirígite a "Settings", luego a "Quick preferences" y marca la casilla "Enable JavaScript".</li>
+  <li>b) Si el "Menu bar" se encuentra, haz click en la opción "Tools" del navegador web, luego a "Quick preferences" y marca la casilla "Enable JavaScript".</li>
+</ol>
+<br>
+<h2>Navegadores sin JavaScript</h2>
+<p>Si la página requiere usar JavaScript y el navegador no lo soporta, podés avisar al usuario con la etiqueta &ltnoscript&gt.</p>
+<code>
+&nbsp&lthtml&gt
+&nbsp&nbsp&ltbody&gt
+<br>
+&nbsp&nbsp&nbsp&ltscript language="javascript" type="text/javascript"&gt
+&nbsp&nbsp&nbsp&nbsp&lt!--
+&nbsp&nbsp&nbsp&nbsp&nbspdocument.write("Hello World!")
+&nbsp&nbsp&nbsp&nbsp//--&gt
+&nbsp&nbsp&nbsp&lt/script&gt
+<br>
+&nbsp&nbsp&ltnoscript&gt
+&nbsp&nbsp&nbspNo se puede continuar sin JavaScript.
+&nbsp&nbsp&lt/noscript&gt
+<br>
+&nbsp&lt/body&gt
+&nbsp&lt/html&gt
+</code>

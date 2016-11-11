@@ -1,0 +1,127 @@
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+
+
+
+<h1>Capítulo 4: Ubicar en el HTML</h1>
+
+<p>Hay cierta flexibilidad para incluir el código JavaScript en cualquier parte del código HTML. Hay lugares preferenciales, como son:</p>
+<ul>
+  <li>Script en la sección &lthead&gt…&lt/head&gt</li>
+  <li>Script en la sección &ltbody&gt…&lt/body&gt</li>
+  <li>Script en ambas secciones</li>
+  <li>Script en un archivo externo, incluido en la sección &lthead&gt…&lt/head&gt.</li>
+</ul>
+<br>
+<h2>Script en &lthead&gt…&lthead&gt</h2>
+<p>Generalmente, estos scripts se colocan cuando van a ser ejecutados por un evento, como un click en algún botón o imagen.</p>
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">
+  &lthtml&gt
+<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">
+   &lthead&gt
+   <div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">
+      &ltscript type="text/javascript"&gt<br>
+         &lt!--<br>
+            function sayHello() {<br>
+               alert("Hello World")<br>
+            }<br>
+         //--&gt<br>
+      &lt/script&gt
+    </div>
+   &lt/head&gt
+ </div>
+ <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">
+   &ltbody&gt
+   <div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">
+      &ltinput type="button" onclick="sayHello()" value="Say Hello" /&gt
+   &lt/body&gt
+ </div>
+&lt/html&gt
+</div>
+</div>
+<br>
+<h2>JavaScript en &ltbody&gt…&lt/body&gt</h2>
+<p>Si necesitás que el script se ejecute cuando la página carga, y genere de esta manera contenido en la misma, entonces el script debe ir en &ltbody&gt…&lt/body&gt.</p>
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">
+<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">
+  &lthtml&gt
+<br>
+
+ </div>
+   <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">
+     &lthead&gt
+   &lt/head&gt
+ </div>
+   <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">
+   &ltbody&gt
+   <div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">
+      &ltscript type="text/javascript"&gt <br>
+         &lt!--<br>
+            document.write("Hello World")<br>
+         //--&gt<br>
+      &lt/script&gt<br>
+      &ltp&gtThis is web page body &lt/p&gt<br>
+
+
+ </div>
+ &lt/body&gt
+</div>
+&lt/html&gt
+</div>
+
+<br>
+<h2>Script en &lthead&gt y en &ltbody&gt</h2>
+<p>Hay casos en los que se necesita que un script se ejecute con la carga de la página, y otro que se ejecute sólo con un click. Es entonces cuando se coloca el script en ambas secciones del documento.</p>
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">
+  &lthtml&gt
+  <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">
+   &lthead&gt
+   <div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">
+      &ltscript type="text/javascript"&gt
+      <div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">
+         &lt!--
+            function sayHello() {
+               alert("Hello World")
+            }
+         //--&gt
+       </div>
+      &lt/script&gt
+    </div>
+   &lt/head&gt
+ </div>
+<div style="width:90%;border:1px solid grey;padding:5px;margin:20px">
+   &ltbody&gt
+   <div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">
+      &ltscript type="text/javascript"&gt<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">
+         &lt!--<br>
+            document.write("Hello World")<br>
+         //--&gt<br>
+      &lt/script&gt<br>
+      &ltinput type="button" onclick="sayHello()" value="Say Hello" /&gt<br>
+   &lt/body&gt
+ </div>
+&lt/html&gt
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<br>
+<h2>JavaScript en un archivo externo</h2>
+<p>Hay casos en los que un script debe utilizarse una y otra vez en diferentes páginas. Si bien nada te impide el escribirlo cada vez que lo necesites, es más conveniente tenerlo en un archivo *.js que luego será llamado desde el documento HTML, como si se tratara de un stylesheet de CSS.</p>
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">
+  &nbsp&lthead&gt
+<div style="width:90%;border:1px solid grey;padding:5px;margin:20px;background-color:#fff;">
+  &nbsp&nbsp    &ltscript type="text/javascript" src="filename.js" &gt&lt/script&gt
+</div>
+  &nbsp &lt/head&gt
+</div>
+
+<p>Cuando usás un script que está escrito en un archivo externo, podés llamar las funciones del mismo en cualquier parte de tu código, siguiendo los casos que explicamos anteriormente. Esto luciría de la siguiente manera, teniendo por ejemplo un archivo con una función en su interior llamada sayHello().</p>
+<div style="width:99%;border:1px solid grey;padding:3px;margin:0;background-color:#ddd;margin-top:10px;">
+&nbspfunction sayHello() {
+  &nbsp&nbspalert("Hello World")
+}
+</div>

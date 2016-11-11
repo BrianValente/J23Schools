@@ -1,0 +1,152 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>PHP Filtros</h1>
+<p>
+  Validación de datos = Determinar si los datos están en la forma apropiada.
+
+Desinfección de datos = Eliminar cualquier carácter ilegal de los datos.
+</p>
+<h1>La extensión de PHP Filtrar</h1>
+<p>
+  PHP filtros se utilizan para validar y desinfectar entrada externa.
+
+La extensión de filtro PHP tiene muchas de las funciones necesarias para el control de entrada del usuario, y está diseñada para hacer la validación de datos más fácil y rápido.
+
+La función filter_list () se puede utilizar para enumerar lo que ofrece la extensión de filtro PHP:
+</p>
+<h2>Ejemplos</h2>
+<span><p>
+  &lt;table>
+    &lt;tr>
+      &lt;td>Filtro de nombre&lt;/td>
+      &lt;td>Filtro de ID&lt;/td>
+    &lt;/tr>
+    &lt;?php
+    foreach (filter_list() as $id =>$filter) {
+        echo '&lt;tr>&lt;td>' . $filter . '&lt;/td>&lt;td>' . filter_id($filter) . '&lt;/td>&lt;/tr>';
+    }
+    ?>
+  &lt;/table>
+</p></span>
+<h1>¿Por qué utilizar filtros de búsqueda?</h1>
+<p>
+  Muchas aplicaciones web reciben de entrada externa. Datos de entrada / externos pueden ser:
+  <li>La entrada del usuario desde un formulario</li>
+  <li>Galletas</li>
+  <li>datos de servicios Web</li>
+  <li>variables de servidor</li>
+  <li>resultados de la consulta de base de datos</li>
+</p>
+<span><p>
+  Siempre debe validar los datos externos!
+Inválido presentó datos pueden conducir a problemas de seguridad y romper su página web!
+Mediante el uso de filtros de PHP puede estar seguro de que su aplicación obtiene la entrada correcta!
+</p></span>
+<h1>Funcion PHP filter_var ()</h1>
+<p>
+  La función filter_var () tanto validar y desinfectar datos.
+
+La función filter_var () filtra una sola variable con un filtro especificado. Se necesitan dos piezas de datos:
+<li>La variable que desea comprobar</li>
+<li>El tipo de verificación para utilizar</li>
+</p>
+<h1>Desinfectar una cadena</h1>
+<p>
+  En el siguiente ejemplo se utiliza la función filter_var () para eliminar todas las etiquetas HTML de una cadena:
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+  &lt;?php
+$str = "<h1>Hello World!</h1>";
+$newstr = filter_var($str, FILTER_SANITIZE_STRING);
+echo $newstr;
+?>
+</p></span>
+<h1>Validar un número entero</h1>
+<p>
+  En el siguiente ejemplo se utiliza la función filter_var () para comprobar si la variable de $ int es un entero. Si $ int es un entero, la salida del código anterior será: "Entero es válida". Si $ int no es un entero, la salida será: "Entero no es válida":
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+&lt;?php
+$int = 100;
+
+if (!filter_var($int, FILTER_VALIDATE_INT) === false) {
+    echo("El entero es valido");
+} else {
+    echo("El entero es invalido");
+}
+?>
+</p></span>
+<h1>Consejo: filter_var () y problema con 0</h1>
+<p>
+  En el ejemplo anterior, si $ int se establece en 0, la función anterior devolverá "Entero no es válido". Para resolver este problema, utilice el código abajo:
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+  &lt;?php
+$int = 0;
+
+if (filter_var($int, FILTER_VALIDATE_INT) === 0 || !filter_var($int, FILTER_VALIDATE_INT) === false) {
+    echo("El entero es valido");
+} else {
+    echo("El entero es invalido");
+}
+?>
+</p></span>
+<h1>Validar una dirección IP</h1>
+<p>
+  En el siguiente ejemplo se utiliza la función filter_var () para comprobar si el $ ip variable es una dirección IP válida:
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+  &lt;?php
+$ip = "127.0.0.1";
+
+if (!filter_var($ip, FILTER_VALIDATE_IP) === false) {
+    echo("$ip es una direccion IP valida");
+} else {
+    echo("$ip es una direccion IP invalida");
+}
+?>
+</p></span>
+<h1>Desinfectar y validar una dirección de correo electrónico</h1>
+<p>
+  En el siguiente ejemplo se utiliza la función filter_var () para retirar todos los caracteres no válidos de la variable $ correo electrónico, a continuación, comprobar si se trata de una dirección de correo electrónico válida:
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+  <?php
+$email = "john.doe@ejemplo.com";
+
+// Saca todos los caracteres ilegales del email
+$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+// Valida el email
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+    echo("$email es un email valido");
+} else {
+    echo("$email es un email invalido"");
+}
+?>
+</p></span>
+<h1>Desinfectar y validar una dirección URL</h1>
+<p>
+  En el siguiente ejemplo se utiliza la función filter_var () para retirar todos los caracteres no válidos desde una URL, a continuación, comprobar si $ url es una URL válida:
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+  &lt;?php
+$url = "http://www.j23schools.com";
+
+// Remueve todos los caracteres ilegales del URL
+$url = filter_var($url, FILTER_SANITIZE_URL);
+
+// Valida el url
+if (!filter_var($url, FILTER_VALIDATE_URL) === false) {
+    echo("$url es una URL valida");
+} else {
+    echo("$url no es una URL valida");
+}
+?>
+</p></span>

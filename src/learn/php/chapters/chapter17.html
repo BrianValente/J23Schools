@@ -1,0 +1,242 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>Variables globales</h1>
+<p>
+  Varias variables predefinidas en PHP son "superglobals", lo que significa que siempre son accesibles, independientemente del alcance - y se puede acceder a ellos desde cualquier función, clase o archivo sin tener que hacer nada especial.
+El variables de PHP superglobal son:
+<ul>
+  <li>$ GLOBALS</li>
+  <li>$ _SERVER</li>
+  <li>$ _REQUEST</li>
+  <li>$ _POST</li>
+  <li>$ _GET</li>
+  <li>$ _FILES</li>
+  <li>$ _ENV</li>
+  <li>$ _COOKIE</li>
+  <li>$ _SESSION</li>
+</ul>
+</p>
+<h1>$ GLOBALS</h1>
+<p>
+  $ GLOBALS es una variable súper mundial PHP que se utiliza para acceder a las variables globales desde cualquier parte del script PHP (también desde el interior de funciones o métodos).
+
+Tiendas PHP todas las variables globales en una matriz llamada $ GLOBALS [ índice ]. El índice contiene el nombre de la variable.
+
+El siguiente ejemplo muestra cómo utilizar el súper variable global $ GLOBALS:
+</p>
+<span><p>&lt;?php
+$x = 75;
+$y = 25;
+
+function addition() {
+    $GLOBALS['z'] = $GLOBALS['x'] + $GLOBALS['y'];
+}
+
+addition();
+echo $z;
+?>
+</p></span>
+<h1>$ _SERVER</h1>
+<p>
+  $ _SERVER Es una variable súper mundial PHP que contiene información acerca de los encabezados, rutas y ubicaciones de scripts.
+El siguiente ejemplo muestra cómo utilizar algunos de los elementos en $ _SERVER:
+</p>
+<span><p>&lt;?php
+echo $_SERVER['PHP_SELF'];
+echo "&lt;br>";
+echo $_SERVER['SERVER_NAME'];
+echo "&lt;br>";
+echo $_SERVER['HTTP_HOST'];
+echo "&lt;br>";
+echo $_SERVER['HTTP_REFERER'];
+echo "&lt;br>";
+echo $_SERVER['HTTP_USER_AGENT'];
+echo "&lt;br>";
+echo $_SERVER['SCRIPT_NAME'];
+?>
+</p></span>
+<table>
+<tbody><tr>
+<th style="width:35%">Código</th>
+<th style="width:65%">Descripción</th>
+</tr>
+<tr>
+<td>$_SERVER['PHP_SELF']</td>
+<td>Devuelve el nombre de el script ejecutado</td>
+</tr>
+<tr>
+<td>$_SERVER['GATEWAY_INTERFACE']</td>
+<td>Devuelve la versión del Common Gateway Interface (CGI) que está usando el servidor</td>
+</tr>
+<tr>
+<td>$_SERVER['SERVER_ADDR']</td>
+<td>Devuelve la IP del servidor</td>
+</tr>
+<tr>
+<td>$_SERVER['SERVER_NAME']</td>
+<td>Devuelve el nombre del servidor</td>
+</tr>
+<tr>
+<td>$_SERVER['SERVER_SOFTWARE']</td>
+<td>Devuelve la indentificación del server</td>
+</tr>
+<tr>
+<td>$_SERVER['SERVER_PROTOCOL']</td>
+<td>Devuelve el nombre y revisión del protocolo</td>
+</tr>
+<tr>
+<td>$_SERVER['REQUEST_METHOD']</td>
+<td>Devuelve el metodo requerido para acceder a la página</td>
+</tr>
+<tr>
+<td>$_SERVER['REQUEST_TIME']</td>
+<td>Devuelve el tiempo que tardó en entrar a la página</td>
+</tr>
+<tr>
+<td>$_SERVER['QUERY_STRING']</td>
+<td>Devuelve la cadena de consulta si la página es accedida mediante una cadena de consulta/td>
+</tr>
+<tr>
+<td>$_SERVER['HTTP_ACCEPT']</td>
+<td>Devuelve la aceptación del header de la consulta</td>
+</tr>
+<tr>
+<td>$_SERVER['HTTP_ACCEPT_CHARSET']</td>
+<td>Devuelve el Accept_Charset header de la consulta</td>
+</tr>
+<tr>
+<td>$_SERVER['HTTP_HOST']</td>
+<td>Devuelve el host header de la consulta </td>
+</tr>
+<tr>
+<td>$_SERVER['HTTP_REFERER']</td>
+<td>Devuelve el url completo</td>
+</tr>
+<tr>
+<td>$_SERVER['HTTPS']</td>
+<td>Devuelve el script consultado mediante un protocolo HTTP securo</td>
+</tr>
+<tr>
+<td>$_SERVER['REMOTE_ADDR']</td>
+<td>Devuelve la IP de donde el usuario está viendo</td>
+</tr>
+<tr>
+<td>$_SERVER['REMOTE_HOST']</td>
+<td>Devuelve el nombre del host de donde está viendo el usuario</td>
+</tr>
+<tr>
+<td>$_SERVER['REMOTE_PORT']</td>
+<td>Devuelve el puerto que está siendo usado para que el usuario se enlace con la página</td>
+</tr>
+<tr>
+<td>$_SERVER['SCRIPT_FILENAME']</td>
+<td>Devuelve la ruta absoluta del script que se está ejecutando</td>
+</tr>
+<tr>
+<td>$_SERVER['SERVER_ADMIN']</td>
+<td>
+Devuelve el valor dado a la directiva SERVER_ADMIN en el archivo de configuración del servidor web</td>
+</tr>
+<tr>
+<td>$_SERVER['SERVER_PORT']</td>
+<td>Devuelve el puerto del servidor utilizado por el servidor web para
+comunicación</td>
+</tr>
+<tr>
+<td>$_SERVER['SERVER_SIGNATURE']</td>
+<td>Devuelve la versión del servidor y el nombre del host virtual que se agregan a páginas generadas por el servidor</td>
+</tr>
+<tr>
+<td>$_SERVER['PATH_TRANSLATED']</td>
+<td>Devuelve la ruta del sistema de archivos a la secuencia de comandos actual</td>
+</tr>
+<tr>
+<td>$_SERVER['SCRIPT_NAME']</td>
+<td>Devuelve la ruta del script actual</td>
+</tr>
+<tr>
+<td>$_SERVER['SCRIPT_URI']</td>
+<td>Devuelve el URI de la página actual</td>
+</tr>
+</tbody></table>
+<h1>$ _REQUEST</h1>
+<p>
+  $ _REQUEST se utiliza para recoger datos después de la presentación de un formulario HTML.
+El siguiente ejemplo muestra un formulario con un campo de entrada y un botón de envío. Cuando un usuario envía los datos haciendo clic en "Enviar", los datos del formulario se envía al archivo especificado en el atributo action de la etiqueta &lt;form>. En este ejemplo, nosotros señalamos el propio archivo de datos de formularios de procesamiento. Si desea utilizar otro archivo PHP para procesar los datos del formulario, reemplace que con el nombre de archivo de su elección. Entonces, podemos utilizar el súper variable global $ _REQUEST para recoger el valor del campo de entrada:
+</p>
+<span><p>&lt;html>
+&lt;body>
+
+&lt;form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  Name: &lt;input type="text" name="fname">
+  &lt;input type="submit">
+&lt;/form>
+
+&lt;?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // collect value of input field
+    $name = $_REQUEST['fname'];
+    if (empty($name)) {
+        echo "Name is empty";
+    } else {
+        echo $name;
+    }
+}
+?>
+
+&lt;/body>
+&lt;/html>
+</p></span>
+<h1>$ _POST</h1>
+<p>
+  PHP $ _POST es ampliamente utilizado para recopilar datos de formularios después de la presentación de un formulario HTML con method = "post". $ _POST También se usa ampliamente para pasar variables.
+El siguiente ejemplo muestra un formulario con un campo de entrada y un botón de envío. Cuando un usuario envía los datos haciendo clic en "Enviar", los datos del formulario se envía al archivo especificado en el atributo action de la etiqueta &lt;form>. En este ejemplo, señalamos que el propio archivo de datos de formularios de procesamiento. Si desea utilizar otro archivo PHP para procesar los datos del formulario, reemplace que con el nombre de archivo de su elección. Entonces, podemos utilizar el súper variable global $ _POST para recoger el valor del campo de entrada:
+</p>
+<span><p>&lt;html>
+&lt;body>
+
+&lt;form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  Name: &lt;input type="text" name="fname">
+  &lt;input type="submit">
+&lt;/form>
+
+&lt;?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // collect value of input field
+    $name = $_POST['fname'];
+    if (empty($name)) {
+        echo "Name is empty";
+    } else {
+        echo $name;
+    }
+}
+?>
+
+&lt;/body>
+&lt;/html>
+</p></span>
+<h1>$ _GET</h1>
+<p>
+  $ _GET también se puede utilizar para recopilar datos de formularios después de la presentación de un formulario HTML con method = "get".
+$ _GET También puede recoger datos enviados en la URL.
+Supongamos que tenemos una página HTML que contiene un hipervínculo con parámetros:
+
+&lt;html>
+&lt;body>
+&lt;a href="test_get.php?subject=PHP&web=W3schools.com">Test $GET&lt;/a>
+&lt;/body>
+&lt;/html>
+
+Cuando un usuario hace clic en el enlace "Test $ GET", los parámetros "sujeto" y "web" son enviados a "test_get.php", y, a continuación, pueden acceder a sus valores de "test_get.php" con $ _GET.
+El siguiente ejemplo muestra el código en "test_get.php":
+</p>
+<span><p>&lt;html>
+&lt;body>
+
+&lt;?php
+echo "Study " . $_GET['subject'] . " at " . $_GET['web'];
+?>
+
+&lt;/body>
+&lt;/html>
+</p></span>

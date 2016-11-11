@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+    <style>
+    code {
+    	display:inline-block;
+    	padding:10px;
+    	border:solid 1px #ffffff;
+    }
+    </style>
+    <title>Variables</title>
+  </head>
+  <body>
+    <h1>Creación (Declarar) Variables PHP</h1>
+    <p>
+    	En PHP, una variable comienza con el signo $, seguido del nombre de la variable:
+    </p>
+    <span><p>&lt;?php
+    	$txt = "Hello world!";
+    	$x = 5;
+    	$y = 10.5;
+    	?>
+    </p>
+    </span>
+    <p>
+    	Después de la ejecución de las afirmaciones anteriores, la variable $ txt contendrá el valor Hola mundo! , La variable $ x contendrá el valor 5 , y la variable $ y contendrá el valor 10.5 .
+
+    Nota: Cuando se asigna un valor a una variable de texto, poner comillas alrededor del valor.
+
+    Nota: A diferencia de otros lenguajes de programación, PHP tiene ningún comando para declarar una variable. Se creó el primer momento en que se asigna un valor a la misma.
+    </p>
+    <span style="background-color:green">Piense de variables como recipientes para el almacenamiento de datos.
+    </span>
+    <h1>Las variables de PHP</h1>
+
+    <p>
+    	Una variable puede tener un nombre corto (como X e Y) o un nombre más descriptivo (edad, carname, total_volume
+
+    	Reglas para las variables de PHP:
+    	<li>Una variable comienza con el signo $, seguido del nombre de la variable</li>
+    	<li>Un nombre de variable debe comenzar con una letra o el carácter de subrayado</li>
+    	<li> Un nombre de variable no puede comenzar con un número</li>
+    	<li>Un nombre de variable sólo puede contener caracteres y guiones alfanuméricos (AZ, 0-9 y _)</li>
+    	<li>Los nombres de variables entre mayúsculas y minúsculas ($ $ edad y la edad son dos variables diferentes)</li>
+    </p>
+    <span style="background-color:green">Recuerde que los nombres de las variables de PHP son mayúsculas y minúsculas!
+    </span>
+    <h1>Variables de salida</h1>
+    <p>
+    	La sentencia echo de PHP a menudo se utiliza para enviar datos a la pantalla.
+
+    El siguiente ejemplo mostrará cómo el texto de salida y una variable:
+    </p>
+    <span><p>&lt;?php
+    	$txt = "W3Schools.com";
+    echo "I love $txt!";
+    	?>
+    </p>
+    </span>
+    <p>	El siguiente ejemplo producirá el mismo resultado que el ejemplo anterior:
+    	<span>&lt;?php
+    		$txt = "W3Schools.com";
+    	echo "I love " . $txt . "!";
+    		?> </span>
+    </p>
+    <p>El siguiente ejemplo es la salida la suma de dos variables:
+    	<span>&lt;?php
+    		$x = 5;
+    	$y = 4;
+    	echo $x + $y;
+    		?> </span>
+    </p>
+    <h1>PHP es un lenguaje de programación relajado Typed</h1>
+    <p>
+    	En el ejemplo anterior, observe que no teníamos que contar PHP que tipo de datos es la variable.
+
+    PHP automáticamente convierte la variable con el tipo de datos correcto, en función de su valor.
+
+    En otros lenguajes como C, C ++ y Java, el programador debe declarar el nombre y el tipo de la variable antes de usarla.
+    </p>
+    <h1>Las variables de PHP Alcance</h1>
+    <p>
+    	En PHP, las variables se pueden declarar en cualquier parte del guión.
+
+    El alcance de una variable es la parte de la secuencia de comandos, donde se puede hacer referencia / usa la variable.
+
+    PHP tiene tres ámbitos de variables diferentes:
+    <li>local</li>
+    <li>global</li>
+    <li>estático</li>
+    </p>
+    <h1>Alcance global y local</h1>
+    <p>
+    	Una variable declarada fuera de una función tiene un alcance global y sólo se puede acceder fuera de una función:
+    </p>
+    <span><p>&lt;?php
+    	$x = 5; // global
+
+    	function myTest() {
+    	    // Usar x dentro de esta función va a generar un error
+    	    echo "&lt;p>Variable x dentro de la función es: $x&lt;/p>";
+    	}
+    	myTest();
+
+    	echo "&lt;p>Variable x fuera de la función es: $x&lt;/p>";
+    </p>
+
+    	?> </span>
+
+  </body>
+</html>

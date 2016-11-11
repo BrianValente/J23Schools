@@ -1,0 +1,167 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+
+
+
+<h1>Capítulo 13: Funciones</h1>
+<ul>
+	<li>
+		Una funcion es un bloque de codigo reusable que puede ser llamado todas las veces que sea necesario.
+	</li>
+	<li>
+		Esto evita el uso excesivo de lineas y la re-escritura de una misma parte del codigo, ayuda a los programadores a escribir codigos modulares
+	</li>
+	<li>
+		Las funciones permiten al programador a separar un gran programa en muchas programas mas pequeños, haciendolo mas manejable y flexible.
+	</li>
+</ul>
+<p>
+	Como cualquier otro lenguaje de programacion avanzado, JavaScript tambien soporta todas las caracteristicas necesarias para escribir codigos modulares. Seguramente hayas visto funciones como alert() y write() en capitulos anteriores. Como habras notado, usamos esas funciones varias veces, pero solo fueron escritas en el nucleo de  JavaScript una sola vez.
+</p>
+<ul>
+	<li>
+		JavaScript nos permite escribir nuestras propias funciones. Esto es lo que vamos a ver en este capitulo.
+	</li>
+</ul>
+<h1>Definicion de funciones</h1>
+<p>
+	Antes de usasr una funcion, debemos definirla. La manera mas comun de hacerla en JavaScript es usando la palabra clave "function", seguido del nombre unico de la funcion, una lista de parametros(o ninguno), y una secuencia de comandos para relizar cuando se llame a la funcion.
+</p>
+<h1>Sintaxis</h1>
+<p>
+	La sintaxis basica de una funcion es la siguiente: <br>
+
+<code>
+&lt;script type="text/javascript"&gt;
+
+      function functionname(parameter-list)
+      {
+         statements
+      }
+
+&lt;/script&gt;
+</code>
+
+<h1>Ejemplo</h1>
+<p>
+	Trata de hacer el siguiente ejemplo. Es una funcion llamada sayHello que no toma parametros de ningun lado.
+</p>
+<code>
+&lt;script type="text/javascript"&gt;
+
+      function sayHello()
+      {
+         alert("Hello there");
+      }
+
+&lt;/script&gt;
+</code>
+
+<h1>Llamando a la funcion</h1>
+<p>
+	Para llamar mas tarde a la funcion en el qcodigo, simplemente necesitas escribir el nombre de esa funcion, asi como se demuestra en el siguiente codigo.
+</p>
+<code>
+&lt;html&gt;
+   &lt;head&gt;
+
+      &lt;script type="text/javascript"&gt;
+         function sayHello()
+         {
+            document.write ("Hello there!");
+         }
+      &lt;/script&gt;
+
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p&gt;Click the following button to call the function&lt;/p&gt;
+
+      &lt;form&gt;
+         &lt;input type="button" onclick="sayHello()" value="Say Hello"&gt;
+      &lt;/form&gt;
+
+      &lt;p&gt;Use different text in write method and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</code>
+
+<h1>Parametros de una funcion</h1>
+<p>
+	Hasta ahora, solo habiamos visto funciones sin parametros. Ahora vamos a ver como hacer esto, capturar parametros en la funcion mientras la llamamos. Estos parametros podemos manipularlos libremente una vez capturados. Una misma funcion puede capturar multiples parametros, cada uno debe estar separado por una coma.
+</p>
+<h1>Ejemplo</h1>
+<p>
+	En el siguiente ejemplo modificamos un poco la funcion sayHello que utilizamos antes y ahora toma dos parametros.
+</p>
+<code>
+&lt;html&gt;
+   &lt;head&gt;
+
+      &lt;script type="text/javascript"&gt;
+         function sayHello(name, age)
+         {
+            document.write (name + " is " + age + " years old.");
+         }
+      &lt;/script&gt;
+
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p&gt;Click the following button to call the function&lt;/p&gt;
+
+      &lt;form&gt;
+         &lt;input type="button" onclick="sayHello('Zara', 7)" value="Say Hello"&gt;
+      &lt;/form&gt;
+
+      &lt;p&gt;Use different parameters inside the function and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+
+
+<h1>El retorno de la funcion.</h1>
+<p>
+	Una funcion de JavaScript puede tener un retorno opcional. Esto puede requerido si se quiere devolver algun valor al codigo original. ESte ademas, debe ser declarado al final de todo el bloque.<br>
+	Por Ejemplo, se puede crear una funcion que pida dos parametros numericos, cuyo retorno seria su multiplicacion o cualquier accion.
+</p>
+
+<h1>Ejemplo</h1>
+<p>
+	En el siguiente ejemplo vamos a poner en pratica lo dicho anteriormente. Vamos a tomar dos palabras y las vamos a concatenar en una sola.
+</p>
+<code>
+
+&lt;html&gt;
+   &lt;head&gt;
+
+      &lt;script type="text/javascript"&gt;
+         function concatenate(first, last)
+         {
+            var full;
+            full = first + last;
+            return full;
+         }
+
+         function secondFunction()
+         {
+            var result;
+            result = concatenate('Zara', 'Ali');
+            document.write (result );
+         }
+      &lt;/script&gt;
+
+   &lt;/head&gt;
+
+   &lt;body&gt;
+      &lt;p&gt;Click the following button to call the function&lt;/p&gt;
+
+      &lt;form&gt;
+         &lt;input type="button" onclick="secondFunction()" value="Call Function"&gt;
+      &lt;/form&gt;
+
+      &lt;p&gt;Use different parameters inside the function and then try...&lt;/p&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+
+</code>
+</code>
+</p>

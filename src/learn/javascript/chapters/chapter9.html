@@ -1,0 +1,119 @@
+<html>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<body>
+
+<h1>Capítulo 9: Ciclo while</h1>
+<p>Mientras escribe un programa, puede encontrarse con una situación en la que necesita para realizar una acción una y otra vez. En tales situaciones, lo que se necesita para escribir sentencias de bucle para reducir el número de líneas.<br>
+
+JavaScript soporta todos los bucles necesarios para aliviar abajo la presión de la programación.</p>
+
+<h2>El bucle while</h2>
+<p>
+El bucle más básico en JavaScript es el tiempo de bucle que se describen en este capítulo. El propósito de un tiempo de bucle es ejecutar una instrucción o bloque de código varias veces, siempre y cuando una expresión es verdadera. Una vez que la expresión se convierte en falsa, el bucle termina.<p>
+
+</h2>Diagrama de flujo</h2>
+El diagrama de flujo del bucle while se ve de la siguiente manera:
+<img src="imgen3.jpg"><br>
+<p>Sintaxis:
+La sintaxis del bucle while en JavaScript es el siguiente:</p>
+<code>
+while (expression){<br>
+   Statement(s) to be executed if expression is true<br>
+}<br><br>
+</code>
+<p>Ejemplo:
+Prueba el siguiente ejemplo para implementar bucle while.</p>
+<code>
+&lt;html&gt;<br>
+   &lt;body&gt;<br>
+
+      &lt;script type="text/javascript"&gt;<br>
+         &lt;!--<br>
+            var count = 0;<br>
+            document.write("Starting Loop ");<br>
+
+            while (count < 10){<br>
+               document.write("Current Count : " + count + "<br />");<br>
+               count++;<br>
+            }<br>
+
+            document.write("Loop stopped!");<br>
+         //--&gt;<br>
+      &lt;/script&gt;<br>
+
+      <p>Set the variable to different value and then try...</p>
+   &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</code>
+<p>
+Salida:<br><p>
+<code>
+Starting Loop<br>
+Current Count : 0<br>
+Current Count : 1<br>
+Current Count : 2<br>
+Current Count : 3<br>
+Current Count : 4<br>
+Current Count : 5<br>
+Current Count : 6<br>
+Current Count : 7<br>
+Current Count : 8<br>
+Current Count : 9<br>
+Loop stopped!<br>
+Set the variable to different value and then try...<br>
+</code> <br>
+<h1>El bucle do ... while</h1>
+<p>
+El tiempo hacer ... bucle es similar al tiempo de bucle excepto que la comprobación de condición que ocurre al final del bucle. Esto significa que el bucle siempre se ejecuta al menos una vez, incluso si la condición es falsa .
+
+Diagrama de flujo
+El diagrama de flujo de un do-while bucle sería de la siguiente manera:</p>
+<img src="imagen4.jpg"><br>
+</h2>Do While Loop</h2>
+<p>Sintaxis:
+La sintaxis para do-while bucle en JavaScript es el siguiente:</p>
+<code>
+do{<br>
+   Statement(s) to be executed;<br>
+} while (expression);<br>
+</code><p>
+Nota - No se pierda el punto y coma se utiliza al final del bucle do ... while.
+
+Ejemplo
+Prueba el siguiente ejemplo para aprender cómo implementar un do-while bucle en JavaScript.</p>
+<code>
+&lt;html&gt;<br>
+   &lt;body&gt;<br>
+
+      &lt;script type="text/javascript"&gt;<br>
+         &lt;!--<br>
+            var count = 0;<br>
+
+            document.write("Starting Loop" + "<br />");<br>
+            do{
+               document.write("Current Count : " + count + "<br />");<br>
+               count++;<br>
+            }<br>
+
+            while (count < 5);<br>
+            document.write ("Loop stopped!");<br>
+         //--&gt;<br>
+      &lt;/script&gt;<br>
+
+      <p>Set the variable to different value and then try...</p>
+   &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</code>
+<p>Salida:<br>
+Starting Loop<br>
+Current Count : 0 <br>
+Current Count : 1 <br>
+Current Count : 2 <br>
+Current Count : 3 <br>
+Current Count : 4<br>
+Loop Stopped!<br>
+Set the variable to different value and then try...</p>
+</body>
+</html>

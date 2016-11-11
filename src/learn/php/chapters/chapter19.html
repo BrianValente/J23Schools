@@ -1,0 +1,182 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+
+<span style="background-color:green;">Piense SEGURIDAD en el tratamiento de las formas de PHP!
+Estas páginas mostrarán cómo procesar las formas de PHP con la seguridad en mente. correcta validación de los datos de forma es importante para proteger su forma de hackers y spammers!</span>
+<p>
+  El formulario HTML estaremos trabajando en estos capítulos, contiene varios campos de entrada: campos obligatorios y opcionales de texto, botones de radio, y un botón de envío:
+</p>
+<span><html><head>
+<style>
+.error {color: #FF0000;}
+</style>
+</head>
+<body>
+
+
+<h2><font><font class="">Formulario PHP Ejemplo de Validación</font></font></h2>
+<p><span class="error"><font><font>* campo requerido.</font></font></span></p>
+<form method="post" action="/php/demo_form_validation_complete.php"><font><font>
+  Nombre: </font></font><input type="text" name="name" value="">
+  <span class="error"><font><font>*</font></font></span>
+  <br><br><font><font>
+  E-mail:</font></font><input type="text" name="email" value="">
+  <span class="error"><font><font>*</font></font></span>
+  <br><br><font><font>
+  Sitio web:</font></font><input type="text" name="website" value="">
+  <span class="error"></span>
+  <br><br><font><font>
+  Comentario: </font></font><textarea name="comment" rows="5" cols="40"></textarea>
+  <br><br><font><font>
+  Género:
+  </font></font><input type="radio" name="gender" value="female"><font><font>Hembra
+  </font></font><input type="radio" name="gender" value="male"><font><font>Hombre
+   </font></font><span class="error"><font><font>*</font></font></span>
+  <br><br>
+  <font><font><input type="submit" name="submit" value=" Presentar"></font></font>
+</form>
+
+<h2><font><font>Tu aportación:</font></font></h2><br><br><br><br>
+
+</body></html></span>
+<p>
+  Las reglas de validación para el formulario de arriba son los siguientes:
+</p>
+<span><table>
+  <tbody><tr>
+    <th style="width:25%">Campo</th>
+    <th style="width:75%">Validación</th>
+  </tr>
+  <tr>
+    <td>Nombre</td>
+    <td>Requerido. + Solo debe contener letras y espacios en blanco</td>
+  </tr>
+  <tr>
+    <td>E-mail</td>
+    <td>Requerido. + Debe contener un E-mail válido</td>
+  </tr>
+  <tr>
+    <td>Website</td>
+    <td>Opcional. Si se presenta, debe ser un URL válido</td>
+  </tr>
+  <tr>
+    <td>Comentario</td>
+    <td>Opcional. Campo para entrada de bastante texto</td>
+  </tr>
+  <tr>
+    <td>Genero</td>
+    <td>Requerido. Debe seleccionar uno</td>
+  </tr>
+</tbody></table></span>
+<h1>Campos de texto</h1>
+<p>
+  El nombre, correo electrónico, y los campos de sitios web son elementos de entrada de texto, y el campo de comentario es un área de texto. El código HTML que se ve así:
+
+Name: &lt;input type="text" name="name">
+E-mail: &lt;input type="text" name="email">
+Website: &lt;input type="text" name="website">
+Comment: &lt;textarea name="comment" rows="5" cols="40">&lt;/textarea>
+
+</p>
+<h1>Botones de selección</h1>
+<p>
+  Los campos de género son botones de radio y el código HTML se ve así:
+
+Gender:
+&lt;input type="radio" name="gender" value="female">Female
+&lt;input type="radio" name="gender" value="male">Male
+</p>
+<h1>Elemento de formulario</h1>
+<p>
+  El código HTML del formulario se ve así:
+
+  &lt;form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+  Cuando se envía el formulario, los datos del formulario se envía con method = "post".
+</p>
+<span style="background-color:green;">¿Cuál es el $ _SERVER [ "PHP_SELF"] variable?
+
+El $ _SERVER [ "PHP_SELF"] es una variable muy global que devuelve el nombre de archivo del script que se está ejecutando.</span>
+
+<p>
+  Por lo tanto, los $ _SERVER [ "PHP_SELF"] envía los datos del formulario enviado a la página en sí, en lugar de pasar a una página diferente. De esta manera, el usuario recibirá mensajes de error en la misma página que la forma.
+</p>
+<span style="background-color:green;">¿Cuál es la función htmlspecialchars()?
+
+Las htmlspecialchars () convierte los caracteres especiales a entidades HTML. Esto significa que va a reemplazar caracteres HTML, como <y> con & lt; y & gt ;. Esto evita que los atacantes explotar el código mediante la inyección de código HTML o Javascript (Cross-site scripting ataques) en formas.</span>
+
+  <h1>Nota grande en PHP Formulario de Seguridad</h1>
+  <p>
+    El $ _SERVER [ "PHP_SELF"] variable puede ser utilizado por los hackers!
+
+Si PHP_SELF se utiliza en su página, entonces el usuario puede introducir una barra (/) y algo más de Cross Site Scripting (XSS) para ejecutar comandos.
+  </p>
+  <span style="background-color:green">Cross-site scripting (XSS) es un tipo de vulnerabilidad de seguridad informática se encuentran típicamente en las aplicaciones Web. XSS permite a los atacantes inyectar secuencias de comandos del lado del cliente en páginas web visitadas por otros usuarios.</span>
+<p>
+  Supongamos que tenemos el siguiente formulario en una página denominada "test_form.php":
+
+&lt;form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
+
+Ahora, si un usuario introduce la URL normales en la barra de direcciones como "http://www.example.com/test_form.php", el código anterior se traduce a:
+
+&lt;form method="post" action="test_form.php">
+
+Hasta aquí todo bien.
+Sin embargo, tenga en cuenta que un usuario entra en la siguiente URL en la barra de direcciones:
+
+http://www.example.com/test_form.php/%22%3E%3Cscript%3Ealert('hacked')%3C/script%3E
+
+En este caso, el código anterior será traducido a:
+
+&lt;form method="post" action="test_form.php/">&lt;script>alert('hacked')&lt;/script>
+
+Este código añade una etiqueta de script y un comando de alerta. Y cuando se carga la página, el código JavaScript se ejecutarán (el usuario verá un cuadro de alerta). Esto es sólo un ejemplo sencillo e inofensivo cómo la variable PHP_SELF puede ser explotado.
+Sé consciente de que cualquier código JavaScript se puede añadir dentro de la etiqueta &lt;script>! Un hacker puede redirigir al usuario a un archivo en otro servidor, y ese archivo puede contener código malicioso que puede alterar las variables globales o enviar el formulario a otra dirección para guardar los datos de usuario, por ejemplo.
+</p>
+<h1>Validar formulario de datos con PHP</h1>
+<p>
+  Lo primero que vamos a hacer es pasar todas las variables a través de htmlspecialchars función de PHP ().
+Cuando usamos los htmlspecialchars () función; a continuación, si un usuario intenta enviar el siguiente en un campo de texto:
+
+&lt;Script> location.href ( 'http://www.hacked.com') </ script>
+
+- Esto no sería ejecutado, ya que se guarda como HTML código escapó, como esto:
+
+& Lt; script de & gt; location.href ( 'http://www.hacked.com') & lt; / script & gt;
+
+El código está ahora a salvo de aparecer en una página o en el interior de un correo electrónico.
+
+También vamos a hacer dos cosas más cuando el usuario envía el formulario:
+<ol>
+  <li>personajes de las tiras innecesarias (más espacio, tabulación, nueva línea) de los datos de entrada del usuario (con la función de cortar PHP ())</li>
+  <li>Retire las barras invertidas (\) a partir de los datos de entrada del usuario (con los stripslashes () de PHP)</li>
+</ol>
+El siguiente paso es crear una función que va a hacer todas las comprobaciones para nosotros (que es mucho más conveniente que escribir el mismo código una y otra vez).
+Vamos a nombrar el test_input función ().
+Ahora, podemos comprobar cada variable $ _POST con la función test_input (), y la secuencia de comandos se parece a esto:
+</p>
+<span><p>&lt;?php
+// define variables and set to empty values
+$name = $email = $gender = $comment = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["name"]);
+  $email = test_input($_POST["email"]);
+  $website = test_input($_POST["website"]);
+  $comment = test_input($_POST["comment"]);
+  $gender = test_input($_POST["gender"]);
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+</p></span>
+<p>
+  Tenga en cuenta que al comienzo de la secuencia de comandos, comprobamos si la solicitud ha sido enviada utilizando $ _SERVER [ "REQUEST_METHOD"]. Si el REQUEST_METHOD es POST, entonces el formulario se ha enviado - y debe ser validado. Si no se ha presentado, omitir la validación y mostrará un formulario en blanco.
+Sin embargo, en el ejemplo anterior, todos los campos de entrada son opcionales. El script funciona bien, incluso si el usuario no introduce ningún dato.
+El siguiente paso es hacer que los campos de entrada necesarios y crear mensajes de error si es necesario.
+</p>

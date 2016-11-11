@@ -1,0 +1,126 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>PHP 5 Galletas</h1>
+<p>
+  Una cookie o galleta se utiliza a menudo para identificar a un usuario.
+</p>
+<h1>¿Qué es una cookie?</h1>
+<p>
+  Una cookie se utiliza a menudo para identificar a un usuario. Una cookie es un pequeño archivo que el servidor se incrusta en el ordenador del usuario./<br>Cada vez que el mismo equipo solicita una página con un navegador, se enviará la cookie también. Con PHP, puede tanto crear y recuperar los valores de las cookies.
+</p>
+<h1>Crear Galletas Con PHP</h1>
+<p>
+  Una cookie es creado con la función setcookie ().
+</p>
+<h2>Sintaxis</h2>
+<span><p>
+  setcookie(nombre, valor, expiracion, direccion, dominio, seguridad, httponly);
+</p></span>
+<p>
+  Sólo el nombre es un requerido . Todos los demás parámetros son opcionales.
+</p>
+<h1>PHP  Crear/Recuperar una galleta</h1>
+<p>
+  En el siguiente ejemplo se crea una cookie llamada "usuario" con el valor "John Doe". La cookie caducará después de 30 días (86400 * 30). El "/" significa que la cookie está disponible en todo el sitio web (en caso contrario, seleccionar el directorio que prefiera).
+
+A continuación, recuperar el valor de la cookie "usuario" (usando la variable global $ _COOKIE). También usamos la función isset () para averiguar si se ha establecido la cookie:
+</p>
+<h1>Ejemplo</h1>
+<span><p>
+  <?php
+$cookie_name = "user";
+$cookie_value = "John Doe";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+?>
+&lt;html>
+&lt;body>
+
+&lt;?php
+if(!isset($_COOKIE[$cookie_name])) {
+    echo "La galleta llamada '" . $cookie_name . "' no esta  colocada!";
+} else {
+    echo "La galleta '" . $cookie_name . "' esta colocada!<br>";
+    echo "El valor es: " . $_COOKIE[$cookie_name];
+}
+?>
+
+&lt;/body>
+&lt;/html>
+</p></span>
+<span><p>
+  Nota: La función setcookie () debe aparecer antes de la etiqueta <html>.
+</p></span>
+<p>
+  Nota: El valor de la cookie se urlencoded automáticamente cuando se envía la cookie, y decodifica automáticamente cuando se reciben (para evitar URLEncoding, el uso setrawcookie () en su lugar).
+</p>
+<h1>Modificar un valor de cookie o galleta</h1>
+<p>
+  Para modificar una cookie, acaba de establecer (de nuevo) la cookie utilizando la función setcookie ():
+</p>
+<h1>Ejemplo</h1>
+<span><p>
+  &lt;?php
+$cookie_name = "user";
+$cookie_value = "Alex Porter";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+?>
+&lt;html>
+&lt;body>
+
+&lt;?php
+if(!isset($_COOKIE[$cookie_name])) {
+    echo "La cookie llamada'" . $cookie_name . "' no esta colocada!";
+} else {
+    echo "La cookie '" . $cookie_name . "' esta colocada!<br>";
+    echo "Su valor es: " . $_COOKIE[$cookie_name];
+}
+?>
+
+&lt;/body>
+&lt;/html>
+</p></span>
+<h1>Eliminar una galleta</h1>
+<p>
+  Para eliminar una cookie, utilice la función setcookie () con una fecha de caducidad en el pasado:
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+  &lt;?php
+// Coloca la hora de expiracion de la cookie para hace una hora
+setcookie("user", "", time() - 3600);
+?>
+&lt;html>
+&lt;body>
+
+&lt;?php
+echo "La galleta de'user' fue borrada.";
+?>
+
+&lt;/body>
+&lt;/html>
+
+
+</p></span>
+<h1>Compruebe si están activadas las cookies</h1>
+<p>
+  En el siguiente ejemplo se crea un pequeño script que comprueba si las cookies están habilitadas. En primer lugar, tratar de crear una cookie de prueba con la función setcookie (), y luego contar la variable de matriz $ _COOKIE:
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+  &lt;?php
+setcookie("test_cookie", "test", time() + 3600, '/');
+?>
+&lt;html>
+&lt;body>
+
+&lt;?php
+if(count($_COOKIE) > 0) {
+    echo "Las cookies estan activadas.";
+} else {
+    echo "Las cookies estan desactivadas.";
+}
+?>
+
+&lt;/body>
+&lt;/html>
+</p></span>

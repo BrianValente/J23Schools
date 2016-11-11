@@ -1,0 +1,302 @@
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<h1>PHP tratamiento de errores</h1>
+<p>
+  El manejo de errores por defecto en PHP es muy simple. Un mensaje de error con el nombre de archivo, número de línea y un mensaje que describe el error se envía al navegador.
+</p>
+<h1>PHP tratamiento de errores</h1>
+<p>
+  Al crear scripts y aplicaciones web, gestión de errores es una parte importante. Si el código carece de código de comprobación de errores, el programa puede parecer muy poco profesional y que puede estar abierto a riesgos de seguridad.
+
+Este tutorial contiene algunos de los errores más comunes control de los métodos en PHP.
+
+Vamos a mostrar los diferentes métodos de tratamiento de errores:
+<li>Sencillo "Die) (" declaraciones</li>
+<li>errores personalizados y disparadores de error</li>
+<li>Error al reportar</li>
+</p>
+<h1>Manejo básico de error: Uso de la función die ()</h1>
+<p>
+  El primer ejemplo muestra una secuencia de comandos simple que se abre un archivo de texto:
+</p>
+<span><p>
+  &lt;?php
+  $file=fopen("Bienvenido.txt","r");
+?>
+</p></span>
+<p>
+  Si no existe el archivo podría obtener un error como este:
+</p>
+<span><p>
+  Warning: fopen(Bienvenido.txt) [function.fopen]: failed to open stream:
+No such file or directory in C:\webfolder\test.php on line 2
+</p></span>
+<p>
+  Para evitar que el usuario un mensaje de error similar a la anterior, probamos si el archivo existe antes de intentar acceder a ella:
+</p>
+<span><p>
+  &lt;?php
+if(!file_exists("Bienvenido.txt")) {
+  die("Archivo no encotrado");
+} else {
+  $file=fopen("Bienvenido.txt","r");
+}
+?>
+</p></span>
+<p>
+  Ahora bien, si no existe el archivo se obtiene un error como este:
+</p>
+<span><p>
+  File not found
+</p></span>
+<p>
+  El código de seguridad es más eficiente que el código anterior, ya que utiliza un simple mecanismo de manejo de errores para detener la secuencia de comandos después de que el error.
+
+Sin embargo, sólo tiene que parar la secuencia de comandos no es siempre el camino correcto a seguir. Vamos a echar un vistazo a las funciones de PHP alternativas para el manejo de errores.
+</p>
+<h1>Creación de un controlador de errores personalizado</h1>
+<p>
+  Creación de un controlador de error personalizado es bastante simple. Sólo tendrá que crear una función especial que se puede llamar cuando se produce un error en PHP.
+
+Esta función debe ser capaz de manejar un mínimo de dos parámetros (nivel de error y el mensaje de error), pero puede aceptar hasta cinco parámetros (opcionalmente: archivo, número de línea, y el contexto de error):
+</p>
+<h1>Sintaxis</h1>
+<span><p>
+  error_function(error_level,error_message,
+error_file,error_line,error_context)
+</p></span>
+<table class="w3-table-all notranslate">
+	<tbody><tr>
+		<th style="width:20%">Parameter</th>
+		<th style="width:80%">Description</th>
+	</tr>
+	<tr>
+		<td>error_level</td>
+		<td>Requerido. Especifica el reporte de nivel de error para el error de usuario-definido. Debe ser un numero.Ver tabka de abajo para posibles reportes de nivel de error</td>
+	</tr>
+	<tr>
+		<td>error_message</td>
+		<td>Requerido.Especifica el mensaje de error para el error de usuario-definido</tr>
+	<tr>
+		<td>error_file</td>
+		<td>Opcional.Especifica el nombre del archivo en el que ocurrio el error
+    </tr>
+	<tr>
+		<td>error_line</td>
+		<td>Opcional.Especifica el numero de linea en la que ocurrio el error
+    </td>
+	</tr>
+	<tr>
+		<td>error_context</td>
+		<td>Opcional. Especifica el un vector que contiene todas las variables y sus valores, que estaban en uso cuando ocurrio el error.</td>
+	</tr>
+</tbody></table>
+<h1>Error niveles de informe</h1>
+<p>
+  Estos niveles de informes de error son los diferentes tipos de errores del gestor de errores definido por el usuario se puede utilizar para:
+</p>
+<table class="w3-table-all notranslate">
+  <tbody><tr>
+    <th style="width:5%">Value</th>
+    <th style="width:30%">Constant</th>
+    <th style="width:65%">Description</th>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>E_WARNING</td>
+    <td>Errores no fatales en tiempo real. La ejecucion del script no se ha detenido</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>E_NOTICE</td>
+    <td>Noticias en tiempo real. El script encontro algo que podria ser un error, pero tambien podria pasar cuando se procesa un script normalmente</td>
+  </tr>
+  <tr>
+    <td>256</td>
+    <td>E_USER_ERROR</td>
+    <td>Errores faltales generados por el usuario. Este es como un  E_ERROR colocado por el programador usando la funcion PHP trigger_error()</td>
+  </tr>
+  <tr>
+    <td>512</td>
+    <td>E_USER_WARNING</td>
+    <td>Alerta de errores no letales generados por el usuario. Este es como un E_WARNING
+	colocado por el programador usando la funcion trigger_error</td>
+  </tr>
+  <tr>
+    <td>1024</td>
+    <td>E_USER_NOTICE</td>
+      <td>Noticia generada por el usuario. Esta es como una E_NOTICE colocada por el programador usando la funcion PHP trigger_errr()</td>
+  </tr>
+  <tr>
+    <td>4096</td>
+    <td>E_RECOVERABLE_ERROR</td>
+    <td>Error fatal atrapable. Este es como un E_ERROR pero puede ser causado por atrapado por un handle definido por un usuario</td>
+  </tr>
+  <tr>
+    <td>8191</td>
+    <td>E_ALL</td>
+    <td>Todos los errores y alertas (E_STRICT se volvio parte deE_ALL en PHP 5.4)</td>
+  </tr>
+</tbody></table>
+<p>
+  Ahora vamos a crear una función para controlar los errores:
+</p>
+<span><p>
+  function customError($errno, $errstr) {
+    echo "<b>Error:</b> [$errno] $errstr<br>";
+    echo "Terminando el Script";
+    die();
+  }
+</p></span>
+<p>
+  El código de seguridad es una simple función de control de errores. Cuando se activa, se pone el nivel de error y un mensaje de error. A continuación, emite el nivel de error y el mensaje y termina el script.
+
+Ahora que hemos creado una función de control de errores que necesitamos para decidir cuando debe ser activado.
+</p>
+<h1>Conjunto controlador de errores
+</h1>
+<p>
+  El gestor de errores por defecto de PHP está construido en el gestor de errores. Vamos a hacer que la función anterior del controlador de errores por defecto para la duración de la secuencia de comandos.
+
+Es posible cambiar el controlador de errores para solicitar sólo algunos errores, de esa manera la secuencia de comandos puede controlar errores diferentes de diferentes maneras. Sin embargo, en este ejemplo vamos a utilizar nuestro controlador de errores personalizado para todos los errores:
+</p>
+<span><p>
+  set_error_handler("customError");
+</p></span>
+<p>
+  Como queremos que nuestra función personalizada para manejar todos los errores, la set_error_handler () sólo se necesita un parámetro, un segundo parámetro podría ser añadido para especificar un nivel de error.
+</p>
+<h2>Ejemplo</h2>
+<span><p>
+  &lt;?php
+//funcion de control de error
+function customError($errno, $errstr) {
+  echo "<b>Error:</b> [$errno] $errstr";
+}
+
+//Colocar el manejador de error
+set_error_handler("customError");
+
+//Activar el error
+echo($test);
+?>
+</p></span>
+<p>
+  La salida del código anterior debería ser algo como esto:
+</p>
+<span><p>
+  Error: [8] Undefined variable: test
+</p></span>
+<h1>Desencadenar un error
+</h1>
+<p>
+  En una secuencia de comandos que los usuarios pueden introducir datos es útil para provocar errores cuando se produce una entrada ilegal. En PHP, esto se realiza por la función trigger_error ().
+</p>
+<h2>Ejemplo</h2>
+<p>
+  En este ejemplo se produce un error si la variable "prueba" es más grande que "1":
+</p>
+<span><p>
+  &lt;?php
+$test=2;
+if ($test>=1) {
+  trigger_error("El valor debe ser 1 o menos");
+}
+?>
+</p></span>
+<p>
+  La salida del código anterior debería ser algo como esto:
+</p>
+<span><p>
+  Notice: El valor debe ser 1 o menos
+en C:\webfolder\test.php en linea 6
+</p></span>
+<p>
+  Un error puede ser activado en cualquier lugar que desee en un guión, y mediante la adición de un segundo parámetro, puede especificar lo que se activa el nivel de error.
+</p>
+<p>
+  Tipos de errores posibles:
+<li>E_USER_ERROR - Error en tiempo de ejecución generados por los usuarios fatal. Los errores que no se pueden recuperar de. La ejecución del script se detiene</li>
+<li>E_USER_WARNING - no fatal generado por los usuarios de alerta en tiempo de ejecución. La ejecución del script no se detiene</li>
+<li>E_USER_NOTICE - Default. Aviso de tiempo de ejecución generados por el usuario. El script encontró algo que podría ser un error, sino que también podría ocurrir cuando se ejecuta una secuencia de comandos normalmente</li>
+</p>
+<h2>Ejemplo</h2>
+<p>
+  En este ejemplo, un E_USER_WARNING se produce si la variable "prueba" es más grande que "1". Si se produce un E_USER_WARNING usaremos nuestro manipulador personalizado y poner fin a la secuencia de comandos:
+</p>
+<span><p>
+  &lt;?php
+//Funcion de manejo de error
+function customError($errno, $errstr) {
+  echo "<b>Error:</b> [$errno] $errstr<br>";
+  echo "Terminando el script";
+  die();
+}
+
+//Coloca el manejador de erro
+set_error_handler("customError",E_USER_WARNING);
+
+//Activar el error
+$test=2;
+if ($test>=1) {
+  trigger_error("Value must be 1 or below",E_USER_WARNING);
+}
+?>
+</p></span>
+<p>
+  La salida del código anterior debería ser algo como esto:
+</p>
+<span><p>
+  Error: [512] El valor debe ser 1 o menos
+Terminando el script
+</p></span>
+<p>
+  Ahora que hemos aprendido a crear nuestros propios errores y cómo activarlas, permite echar un vistazo a el registro de errores.
+</p>
+<h1>Registro de errores</h1>
+<p>
+  or defecto, PHP envía un registro de errores de sistema de registro del servidor o un archivo, dependiendo de cómo la configuración error_log en el archivo php.ini. Al utilizar el error_log () la función que puede enviar registros de errores en un archivo especificado o un destino remoto.
+
+El envío de mensajes de error a sí mismo por correo electrónico puede ser una buena manera de conseguir la notificación de errores específicos.
+</p>
+<h1>Enviar un mensaje de error por E-Mail
+</h1>
+<p>
+  En el siguiente ejemplo vamos a enviar un correo electrónico con un mensaje de error y terminar el guión, si se produce un error específico:
+</p>
+<span><p>
+  &lt;?php
+//Funcion de manejo de errores
+function customError($errno, $errstr) {
+  echo "<b>Error:</b> [$errno] $errstr<br>";
+  echo "El maestro web ha sido notificado";
+  error_log("Error: [$errno] $errstr",1,
+  "someone@example.com","From: webmaster@example.com");
+}
+
+//Colocar el manejador de errores
+set_error_handler("customError",E_USER_WARNING);
+
+//Activar el error
+$test=2;
+if ($test>=1) {
+  trigger_error("El valor debe ser 1 o menos",E_USER_WARNING);
+}
+?>
+</p></span>
+<p>
+  La salida del código anterior debería ser algo como esto:
+</p>
+<span><p>
+  Error: [512] El valor debe ser 1 o menos
+  El maestro web ha sido notificado
+</p></span>
+<p>
+  Y el correo recibido en el código anterior es el siguiente:
+</p>
+<span><p>
+  Error: [512] El valor debe ser 1 o menos
+</p></span>
+<p>
+  Esto no debe ser utilizado con todos los errores. errores regulares deben ser registrados en el servidor mediante el sistema por defecto de PHP registro.
+</p>

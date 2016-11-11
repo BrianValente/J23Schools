@@ -1,0 +1,119 @@
+<html>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+<link rel="stylesheet" type="text/css" href="../styles/curricula.css" />
+<body>
+<h1>Capítulo 8: Switch</h1>
+<p>Puede utilizar múltiples si ... si no ... si las declaraciones, al igual que en el capítulo anterior, para llevar a cabo una rama de múltiples vías. Sin embargo, esto no siempre es la mejor solución, especialmente cuando todas las ramas dependen del valor de una sola variable.<br>
+
+A partir de JavaScript 1.2, se puede utilizar un interruptor de declaración que maneja exactamente esta situación, y lo hace de manera más eficiente que repetirse si ... más si las declaraciones.
+
+<h2>Diagrama de flujo</h2>
+El siguiente diagrama de flujo que explica funciona una sentencia switch de los casos.</p>
+<IMG SRC="switch.jpg"><br>
+
+<p>Sintaxis:
+El objetivo de un interruptor de declaración es dar una expresión para evaluar y varios estados diferentes para ejecutar sobre la base del valor de la expresión. El intérprete comprueba cada caso contra el valor de la expresión hasta que se encuentra una coincidencia. Si nada se compara con un valor predeterminado será utilizado condición.<p>
+<code>
+switch (expression)<br>
+{<br>
+   case condition 1: statement(s)<br>
+   break;<br>
+
+   case condition 2: statement(s)<br>
+   break;<br>
+   ...<br>
+
+   case condition n: statement(s)<br>
+   break;<br>
+
+   default: statement(s)<br>
+}<br>
+</code>
+<p>
+Las vacaciones de declaraciones indican al final de un caso particular. Si se omitieron, el intérprete continuará la ejecución de cada instrucción en cada uno de los siguientes casos.
+
+Ejemplo:<br>
+Prueba el siguiente ejemplo para poner en práctica la declaración switch de los casos.<p>
+<code>
+&lt;html&gt;<br>
+   &lt;body&gt;<br>
+
+      &lt;script type="text/javascript"&gt;<br>
+         &lt;!--<br>
+            var grade='A';<br>
+            document.write("Entering switch block<br />");<br>
+            switch (grade)<br>
+            {<br>
+               case 'A': document.write("Good job<br />");<br>
+               break;<br>
+
+               case 'B': document.write("Pretty good<br />");<br>
+               break;<br>
+
+               case 'C': document.write("Passed<br />");<br>
+               break;<br>
+
+               case 'D': document.write("Not so good<br />");<br>
+               break;<br>
+
+               case 'F': document.write("Failed<br />");<br>
+               break;<br>
+
+               default:  document.write("Unknown grade<br />")<br>
+            }<br>
+            document.write("Exiting switch block");<br>
+         //--&gt;<br>
+      &lt;/script&gt;<br>
+
+      <p>Set the variable to different value and then try...</p>
+   &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</code>
+<p>Salida:</p>
+<code>
+Entering switch block<br>
+Good job<br>
+Exiting switch block<br>
+Set the variable to different value and then try...<br>
+</code>
+<p>Las sentencias break juegan un papel importante en las declaraciones switch-case. Pruebe el siguiente código que utiliza la declaración switch de los casos sin ninguna sentencia break.</p>
+<code>
+&lt;html&gt;<br>
+   &lt;body&gt;<br>
+
+      &lt;script type="text/javascript"&gt;<br>
+         &lt;!--<br>
+            var grade='A';<br>
+            document.write("Entering switch block<br />");<br>
+            switch (grade)<br>
+            {<br>
+               case 'A': document.write("Good job<br />");<br>
+               case 'B': document.write("Pretty good<br />");<br>
+               case 'C': document.write("Passed<br />");<br>
+               case 'D': document.write("Not so good<br />");<br>
+               case 'F': document.write("Failed<br />");<br>
+               default: document.write("Unknown grade<br />")<br>
+            }<br>
+            document.write("Exiting switch block");<br>
+         //--&gt;<br>
+      &lt;/script&gt;<br>
+
+      <p>Set the variable to different value and then try...</p>
+   &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</code>
+<h2>Salida:</h2>
+<code>
+Entering switch block<br>
+Good job<br>
+Pretty good<br>
+Passed<br>
+Not so good<br>
+Failed<br>
+Unknown grade<br>
+Exiting switch block<br>
+Set the variable to different value and then try...<br>
+</code>
+</body>
+</html>
